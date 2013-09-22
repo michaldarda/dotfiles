@@ -1,0 +1,22 @@
+[user]
+        name   = Michał Darda
+        email  = michaldarda@gmail.com
+        helper = osxkeychain
+[color]
+        diff   = auto
+        status = auto
+        branch = auto
+        ui     = true
+[core]
+        excludesfile = ~/.gitignore
+        editor       = subl -w
+[apply]
+        whitespace = nowarn
+[mergetool]
+        keepBackup = false
+[difftool]
+        prompt = false
+[help]
+        autocorrect = 1
+[push]
+        default = simple
