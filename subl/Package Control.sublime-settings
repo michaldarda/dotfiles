@@ -1,0 +1,20 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"CoffeeScript",
+		"Elixir",
+		"Emmet",
+		"Markdown Preview",
+		"Package Control",
+		"RailsCasts Colour Scheme",
+		"Sass",
+		"Solarized Color Scheme",
+		"SublimeLinter",
+		"SublimeREPL",
+		"Tomorrow Color Schemes",
+		"VAlign",
+		"Worksheet"
+	]
+}

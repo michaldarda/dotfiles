@@ -1,0 +1,8 @@
+ln -fs ~/dotfiles/zshrc ~/.zshrc
+ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
+ln -fs ~/dotfiles/git/gitignore ~/.gitignore
+
+# subl
+ln -fs ~/dotfiles/subl/Preferences.sublime-settings /Users/michal/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings
+ln -fs ~/dotfiles/subl/Default\ \(OSX\).sublime-keymap /Users/michal/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Default\ \(OSX\).sublime-keymap
+ln -fs ~/dotfiles/subl/Package\ Control.sublime-settings /Users/michal/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Package\ Control.sublime-settings

@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+#
+# Merges master to $env and deploys changes
+#
+# Usage:
+#   deploy staging
+#   deploy staging migrations
+
+if [ "$1" == "" ] ; then
+  echo "No environment specified"
+  exit
+fi
+
+git checkout $1
+git pull origin $1
+
+git merge master
+git push origin $1
+
+git checkout master
+
+if [ "$2" == "" ] ; then
+  bundle exec cap $1 deploy
+else
+  bundle exec cap $1 deploy:$2
+fi
+
+bundle exec cap $1 deploy:cleanup
+z
