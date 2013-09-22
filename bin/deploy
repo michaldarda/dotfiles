@@ -27,4 +27,3 @@ else
 fi
 
 bundle exec cap $1 deploy:cleanup
-z

@@ -27,12 +27,12 @@
 	[
 		"Vintage"
 	],
-	"theme": "Soda Light 3.sublime-theme",
 	"line_padding_top": -2,
 	"show_minimap": false,
 	"smart_indent": false,
 	"soda_classic_tabs": false,
 	"tab_size": 2,
+	"theme": "Soda Light 3.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"use_tab_stops": true,

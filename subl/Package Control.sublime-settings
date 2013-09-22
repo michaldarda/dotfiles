@@ -2,7 +2,6 @@
 	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"Theme - Soda",
 		"BracketHighlighter",
 		"CoffeeScript",
 		"Elixir",
@@ -12,8 +11,10 @@
 		"RailsCasts Colour Scheme",
 		"Sass",
 		"Solarized Color Scheme",
+		"sublimelint",
 		"SublimeLinter",
 		"SublimeREPL",
+		"Theme - Soda",
 		"Tomorrow Color Schemes",
 		"VAlign",
 		"Worksheet"
