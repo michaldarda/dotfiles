@@ -51,9 +51,9 @@ alias undo="git reset HEAD~1"
 
 # quick folder access
 alias d="cd ~/dotfiles"
-alias p="cd ~/play"
-alias w="cd ~/work"
-alias ex="cd ~/exercises"
+alias p="cd ~/Code/play"
+alias w="cd ~/Code/work"
+alias ex="cd ~/Code/exercises"
 alias s="subl ~/Dropbox/scratchpad"
 
 # chruby
