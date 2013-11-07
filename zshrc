@@ -48,7 +48,7 @@ alias gc="git commit -m"
 alias gca="git commit -am"
 alias amend="git commit --amend -m"
 alias undo="git reset HEAD~1"
-alias diff="git reset HEAD~1 HEAD"
+alias gdl="git diff HEAD~1 HEAD"
 
 # quick folder access
 alias d="cd ~/dotfiles"
