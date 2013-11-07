@@ -48,6 +48,7 @@ alias gc="git commit -m"
 alias gca="git commit -am"
 alias amend="git commit --amend -m"
 alias undo="git reset HEAD~1"
+alias diff="git reset HEAD~1 HEAD"
 
 # quick folder access
 alias d="cd ~/dotfiles"
@@ -59,3 +60,6 @@ alias s="subl ~/Dropbox/scratchpad"
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8

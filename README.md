@@ -2,4 +2,4 @@ dotfiles
 ========
 
 Just run
-`bin\bootstrap`
+`bin/bootstrap`
