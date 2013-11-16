@@ -7,7 +7,6 @@
 	"file_exclude_patterns":
 	[
 		".DS_Store",
-		".gitignore",
 		".gitmodules",
 		"*.pyc"
 	],

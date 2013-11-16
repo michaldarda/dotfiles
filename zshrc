@@ -7,8 +7,17 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # my aliases
 alias rl='. ~/.zshrc'
+
+alias e='subl'
 
 # rails, ruby
 alias be='bundle exec'
@@ -49,6 +58,7 @@ alias gca="git commit -am"
 alias amend="git commit --amend -m"
 alias undo="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
+alias gds="git diff --staged"
 
 # quick folder access
 alias d="cd ~/dotfiles"
@@ -56,10 +66,3 @@ alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias s="subl ~/Dropbox/scratchpad"
-
-# chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
