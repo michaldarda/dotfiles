@@ -1,6 +1,6 @@
 {
 	"auto_indent": true,
-	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
 	"default_line_ending": "unix",
 	"drawWhiteSpace": true,
 	"ensure_newline_at_eof_on_save": true,
@@ -27,7 +27,6 @@
 	[
 		"Vintage"
 	],
-	"line_padding_top": -2,
 	"show_minimap": false,
 	"smart_indent": false,
 	"soda_classic_tabs": false,
