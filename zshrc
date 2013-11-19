@@ -14,22 +14,11 @@ source /usr/local/share/chruby/auto.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# my aliases
+# general aliases
 alias rl='. ~/.zshrc'
-
 alias e='subl'
-
-# rails, ruby
-alias be='bundle exec'
-alias b='bundle'
-
-alias r='ruby'
-alias rc='rails c'
-alias rg='rails g'
-
-alias migr='rake db:migrate'
-alias prep="rake db:test:prepare"
-alias seed="rake db:seed"
+alias t='touch'
+alias tlf='tail -f'
 
 # git aliases
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -55,10 +44,20 @@ alias gsl="git stash list"
 alias gm="git merge"
 alias gc="git commit -m"
 alias gca="git commit -am"
-alias amend="git commit --amend -m"
-alias undo="git reset HEAD~1"
+alias amd="git commit --amend -m"
+alias und="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
+
+# rails, ruby
+alias be='bundle exec'
+alias b='bundle'
+alias r='ruby'
+alias rc='rails c'
+alias rg='rails g'
+alias mgr='rake db:migrate'
+alias prp="rake db:test:prepare"
+alias sd="rake db:seed"
 
 # quick folder access
 alias d="cd ~/dotfiles"
