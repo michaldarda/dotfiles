@@ -28,7 +28,8 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"Markdown"
 	],
 	"show_minimap": false,
 	"smart_indent": false,
