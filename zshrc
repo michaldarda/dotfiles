@@ -14,9 +14,11 @@ source /usr/local/share/chruby/auto.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+alias emacsd='emacs --daemon'
+alias e='emacsclient -nc'
+
 # general aliases
 alias rl='. ~/.zshrc'
-alias e='subl'
 alias t='touch'
 alias tlf='tail -f'
 
@@ -64,4 +66,4 @@ alias d="cd ~/dotfiles"
 alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
-alias s="subl ~/Dropbox/scratchpad"
+alias s="emacsclient -nc ~/Dropbox/scratchpad"
