@@ -15,6 +15,7 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 alias e='open -a Emacs'
+alias emacs='open -a Emacs'
 
 # general aliases
 alias rl='. ~/.zshrc'
@@ -51,6 +52,7 @@ alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
 
 # rails, ruby
+alias prails="pry -r ./config/environment"
 alias be='bundle exec'
 alias b='bundle'
 alias r='ruby'
