@@ -14,8 +14,7 @@ source /usr/local/share/chruby/auto.sh
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-alias e='open -a Emacs'
-alias emacs='open -a Emacs'
+alias e='subl'
 
 # general aliases
 alias rl='. ~/.zshrc'
@@ -50,6 +49,8 @@ alias amd="git commit --amend -m"
 alias und="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
+alias subl-backup="cp -r ~/Library/Application\ Support/Sublime\ Text\ 2 ~/Sync/Sublime\ Text\ 2/"
+alias subl-restore="cp -r ~/Sync/Sublime\ Text\ 2 ~/Library/Application\ Support/"
 
 # rails, ruby
 alias prails="pry -r ./config/environment"

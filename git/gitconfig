@@ -8,7 +8,7 @@
         ui     = true
 [core]
         excludesfile = ~/.gitignore
-        editor       = emacs
+        editor       = subl
 [apply]
         whitespace = nowarn
 [mergetool]
