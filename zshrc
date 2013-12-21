@@ -49,11 +49,10 @@ alias amd="git commit --amend -m"
 alias und="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
-alias subl-backup="cp -r ~/Library/Application\ Support/Sublime\ Text\ 2 ~/Sync/Sublime\ Text\ 2/"
-alias subl-restore="cp -r ~/Sync/Sublime\ Text\ 2 ~/Library/Application\ Support/"
+alias gcf="git clean -f"
 
 # rails, ruby
-alias prails="pry -r ./config/environment"
+alias pra="pry -r ./config/environment"
 alias be='bundle exec'
 alias b='bundle'
 alias r='ruby'
@@ -68,4 +67,4 @@ alias d="cd ~/dotfiles"
 alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
-alias s="open -a Emacs ~/Dropbox/scratchpad"
+alias s="subl ~/Dropbox/scratchpad.todo"

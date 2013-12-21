@@ -1,3 +1,4 @@
 .ruby-version
 .powrc
 .DS_Store
+.tags*
