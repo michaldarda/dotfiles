@@ -61,6 +61,7 @@ alias rg='rails g'
 alias mgr='rake db:migrate'
 alias prp="rake db:test:prepare"
 alias sd="rake db:seed"
+alias dbdump="rake db:structure:dump && rake db:schema:dump"
 
 # quick folder access
 alias d="cd ~/dotfiles"
