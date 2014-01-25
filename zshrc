@@ -69,3 +69,5 @@ alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias s="subl ~/Dropbox/scratchpad.todo"
+
+plugins=(zsh-syntax-highlighting)
