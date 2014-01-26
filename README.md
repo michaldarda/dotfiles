@@ -1,5 +1,5 @@
 # dotfiles
 
 ### Installation
-Simply run
-`bin/bootstrap`
+
+    `bin/bootstrap`

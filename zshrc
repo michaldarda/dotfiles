@@ -3,6 +3,8 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
+plugins=(zsh-syntax-highlighting)
+
 source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
@@ -70,4 +72,4 @@ alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias s="subl ~/Dropbox/scratchpad.todo"
 
-plugins=(zsh-syntax-highlighting)
+export CDPATH=$CDPATH:~/Code/work:~/Code/play
