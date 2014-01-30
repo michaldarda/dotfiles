@@ -17,6 +17,9 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # aliases
+topcmds() {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
 
 # general
 alias rl='. ~/.zshrc'
@@ -56,6 +59,7 @@ alias und="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
 alias gcf="git clean -f"
+alias gbl="git blame"
 
 # rails, ruby
 alias pra="pry -r ./config/environment"
