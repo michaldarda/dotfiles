@@ -21,6 +21,10 @@ topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
 
+alias e='vim'
+alias vi='vim'
+>>>>>>> Vim
+
 # general
 alias rl='. ~/.zshrc'
 alias t='touch'
@@ -76,9 +80,15 @@ alias rdtp="bundle exec rake db:test:prepare"
 alias rds="bundle exec rake db:seed"
 alias rdsd="bundle exec rake db:structure:dump && bundle exec rake db:schema:dump"
 
+export TERM='xterm-256color'
+
 # quick folder access
 alias d="cd ~/dotfiles"
 alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
-alias s="subl ~/Dropbox/sketchpad.todo"
+alias s="vim ~/Dropbox/sketchpad.todo"
+
+# export CDPATH=$CDPATH:~/Code/work:~/Code/play
+#
+export CLICOLOR=1
