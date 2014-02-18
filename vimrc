@@ -144,8 +144,6 @@ if has('gui_running')
   set guifont=Consolas:h13
 endif
 
-set cursorline
-
 " Clear the search buffer when hitting return
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
