@@ -6,12 +6,25 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
+
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# Handle the fact that this file will be used with multiple OSs
+# borrowed from r00k
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+  source /usr/share/chruby/chruby.sh
+  source /usr/share/chruby/auto.sh
+elif [[ $platform == 'Darwin' ]]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+fi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -87,6 +100,7 @@ alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias s="vim ~/Dropbox/sketchpad.todo"
+alias h="cd ~/"
 
 # export CDPATH=$CDPATH:~/Code/work:~/Code/play
 #

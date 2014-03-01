@@ -7,7 +7,7 @@ call vundle#rc()
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 
-Bundle "rcWeber/vim-addon-mw-utils"
+Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'honza/vim-snippets'
 Bundle 'vim-ruby/vim-ruby'
@@ -21,10 +21,11 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-endwise'
 Bundle 'kana/vim-textobj-user'
 Bundle 'nelstrom/vim-textobj-rubyblock'
-"Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-ragtag'
 Bundle 'quanganhdo/grb256'
 Bundle 'kien/ctrlp.vim'
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 
 filetype plugin indent on
 syntax on
@@ -127,6 +128,7 @@ colorscheme grb256
 runtime macros/matchit.vim
 
 autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.java :%s/\s\+$//e
 
 set showmatch
 set nowrap
@@ -159,3 +161,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+set t_Co=16
+autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
