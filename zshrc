@@ -1,3 +1,11 @@
+export TERM='xterm-256color'
+export CLICOLOR=1
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+platform=`uname`
+
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
@@ -6,10 +14,13 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/build-tools
+# borrowed from r00k
+if [[ $platform == 'Linux' ]]; then
+  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/build-tools
+fi
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play
@@ -17,7 +28,6 @@ export CDPATH=$CDPATH:~/Code/work:~/Code/play
 # chruby
 # Handle the fact that this file will be used with multiple OSs
 # borrowed from r00k
-platform=`uname`
 if [[ $platform == 'Linux' ]]; then
   source /usr/share/chruby/chruby.sh
   source /usr/share/chruby/auto.sh
@@ -26,8 +36,6 @@ elif [[ $platform == 'Darwin' ]]; then
   source /usr/local/share/chruby/auto.sh
 fi
 
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 # aliases
 topcmds() {
@@ -44,7 +52,7 @@ alias tf='tail -f'
 alias md='mkdir'
 
 # editor
-alias e='subl'
+alias e='vim'
 
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
@@ -92,7 +100,6 @@ alias rdtp="bundle exec rake db:test:prepare"
 alias rds="bundle exec rake db:seed"
 alias rdsd="bundle exec rake db:structure:dump && bundle exec rake db:schema:dump"
 
-export TERM='xterm-256color'
 
 # quick folder access
 alias d="cd ~/dotfiles"
@@ -103,5 +110,3 @@ alias s="vim ~/Dropbox/sketchpad.todo"
 alias h="cd ~/"
 
 # export CDPATH=$CDPATH:~/Code/work:~/Code/play
-#
-export CLICOLOR=1

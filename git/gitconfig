@@ -1,23 +1,23 @@
 [user]
-        name   = Michał Darda
-        email  = michaldarda@gmail.com
+  name   = Michał Darda
+  email  = michaldarda@gmail.com
 [color]
-        diff   = auto
-        status = auto
-        branch = auto
-        ui     = true
+  diff   = auto
+  status = auto
+  branch = auto
+  ui     = true
 [core]
-        excludesfile = ~/.gitignore
-        editor       = vim
+  excludesfile = ~/.gitignore
+  editor       = vim
 [apply]
-        whitespace = nowarn
+  whitespace = nowarn
 [mergetool]
-        keepBackup = false
+  keepBackup = false
 [difftool]
-        prompt = false
+  prompt = false
 [help]
-        autocorrect = 1
+  autocorrect = 1
 [push]
-        default = simple
+  default = simple
 [credential]
-	helper = osxkeychain
+  helper = keychain
