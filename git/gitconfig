@@ -20,4 +20,4 @@
 [push]
   default = simple
 [credential]
-  helper = keychain
+  helper = store

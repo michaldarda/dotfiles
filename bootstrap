@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/bin/sh
+
+# install oh my zsh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # ZSH
 ln -fs ~/dotfiles/zshrc ~/.zshrc
+
+# VIM
+ln -fs ~/dotfiles/vimrc ~/.vimrc
 
 # GIT
 ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
