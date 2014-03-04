@@ -26,6 +26,7 @@ Bundle 'quanganhdo/grb256'
 Bundle 'kien/ctrlp.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+Bundle 'christoomey/vim-tmux-navigator'
 
 filetype plugin indent on
 syntax on
@@ -162,5 +163,4 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-set t_Co=16
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
