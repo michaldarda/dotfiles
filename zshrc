@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # borrowed from r00k
 if [[ $platform == 'Linux' ]]; then
-  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
+  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
   export PATH=$PATH:$ANDROID_HOME/tools
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export PATH=$PATH:$ANDROID_HOME/build-tools
