@@ -26,16 +26,8 @@ export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/mic
 export CDPATH=$CDPATH:~/Code/work:~/Code/play
 
 # chruby
-# Handle the fact that this file will be used with multiple OSs
-# borrowed from r00k
-if [[ $platform == 'Linux' ]]; then
-  source /usr/share/chruby/chruby.sh
-  source /usr/share/chruby/auto.sh
-elif [[ $platform == 'Darwin' ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-fi
-
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 # aliases
 topcmds() {
