@@ -22,6 +22,13 @@ if [[ $platform == 'Linux' ]]; then
   export PATH=$PATH:$ANDROID_HOME/build-tools
 fi
 
+if [[ $platform == 'Darwin' ]]; then
+  export ANDROID_HOME=/Users/michal/Downloads/adt-bundle-mac-x86_64-20131030/sdk
+  export PATH=$PATH:$ANDROID_HOME/tools
+  export PATH=$PATH:$ANDROID_HOME/platform-tools
+  export PATH=$PATH:$ANDROID_HOME/build-tools
+fi
+
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play
 
