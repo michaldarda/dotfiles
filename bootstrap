@@ -1,13 +1,19 @@
 #!/bin/sh
 
 # install oh my zsh
-#curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
 # ZSH
 ln -fs ~/dotfiles/zshrc ~/.zshrc
 
 # VIM
 ln -fs ~/dotfiles/vimrc ~/.vimrc
+
+#TMUX
+ln -fs ~/dotfiles/tmux.conf ~/.tmux.conf
+
+#GVIM
+ln -fs ~/dotfiles/gvimrc ~/.gvimrc
 
 # GIT
 ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig

@@ -36,6 +36,8 @@ export CDPATH=$CDPATH:~/Code/work:~/Code/play
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
+
 # aliases
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -108,4 +110,6 @@ alias ex="cd ~/Code/exercises"
 alias s="vim ~/Dropbox/sketchpad.todo"
 alias h="cd ~/"
 
-# export CDPATH=$CDPATH:~/Code/work:~/Code/play
+# tmux scripts
+alias bsplit="sh ~/dotfiles/tmux-base-split.sh"
+alias rsplit="sh ~/dotfiles/tmux-rails-split.sh"

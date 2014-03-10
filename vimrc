@@ -130,6 +130,7 @@ runtime macros/matchit.vim
 
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.java :%s/\s\+$//e
+autocmd BufWritePre *.c :%s/\s\+$//e
 
 set showmatch
 set nowrap
@@ -164,3 +165,4 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
