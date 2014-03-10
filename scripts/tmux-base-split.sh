@@ -3,7 +3,9 @@ SESSION=$USER
 
 tmux -2 new-session -d -s $SESSION
 
-# Setup a window for tailing log files
+# Setup a window for programming
+# big vim window
+# and small shell at the bottom
 tmux new-window -t $SESSION:1 -n 'Programming'
 tmux split-window -v
 tmux select-pane -t 0

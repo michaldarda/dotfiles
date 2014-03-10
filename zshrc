@@ -27,16 +27,16 @@ if [[ $platform == 'Darwin' ]]; then
   export PATH=$PATH:$ANDROID_HOME/tools
   export PATH=$PATH:$ANDROID_HOME/platform-tools
   export PATH=$PATH:$ANDROID_HOME/build-tools
+
+  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export CDPATH=$CDPATH:~/Code/work:~/Code/play
+export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
-
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 # aliases
 topcmds() {
@@ -101,15 +101,15 @@ alias rdtp="bundle exec rake db:test:prepare"
 alias rds="bundle exec rake db:seed"
 alias rdsd="bundle exec rake db:structure:dump && bundle exec rake db:schema:dump"
 
-
 # quick folder access
 alias d="cd ~/dotfiles"
 alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
-alias s="vim ~/Dropbox/sketchpad.todo"
+alias s="vim ~/Dropbox/notes"
 alias h="cd ~/"
 
 # tmux scripts
 alias bsplit="sh ~/dotfiles/tmux-base-split.sh"
 alias rsplit="sh ~/dotfiles/tmux-rails-split.sh"
+alias asplit="sh ~/dotfiles/tmux-android-split.sh"
