@@ -4,7 +4,6 @@ export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-platform=`uname`
 
 ZSH=$HOME/.oh-my-zsh
 
@@ -14,22 +13,19 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# borrowed from r00k
-if [[ $platform == 'Linux' ]]; then
+platform=`uname`
+architecture=`uname -i`
+if [[ $platform == 'Linux' ]] && [[ $architecture == 'i686' ]]; then
+  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
+elif [[ $platform == 'Linux' ]] && [[ $architecture == 'i686_x64' ]]; then
   export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/build-tools
-fi
-
-if [[ $platform == 'Darwin' ]]; then
+elif [[ $platform == 'Darwin' ]]; then
   export ANDROID_HOME=/Users/michal/Downloads/adt-bundle-mac-x86_64-20131030/sdk
-  export PATH=$PATH:$ANDROID_HOME/tools
-  export PATH=$PATH:$ANDROID_HOME/platform-tools
-  export PATH=$PATH:$ANDROID_HOME/build-tools
-
-  export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 fi
+
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/build-tools
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
