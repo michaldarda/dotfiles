@@ -15,13 +15,7 @@ source $ZSH/oh-my-zsh.sh
 
 platform=`uname`
 architecture=`uname -i`
-if [[ $platform == 'Linux' ]] && [[ $architecture == 'i686' ]]; then
-  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86-20131030/sdk
-elif [[ $platform == 'Linux' ]] && [[ $architecture == 'i686_x64' ]]; then
-  export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
-elif [[ $platform == 'Darwin' ]]; then
-  export ANDROID_HOME=/Users/michal/Downloads/adt-bundle-mac-x86_64-20131030/sdk
-fi
+export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
 
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools

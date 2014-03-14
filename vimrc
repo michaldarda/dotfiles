@@ -166,3 +166,6 @@ nnoremap <C-l> <C-w>l
 
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
+
+" pretty json
+com! PrettyJSON %!python -m json.tool
