@@ -4,7 +4,6 @@ export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-
 ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
@@ -27,6 +26,12 @@ export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 # chruby
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+# using chruby to switch rubies, rvm installing rubies
+source ~/.rvm/scripts/extras/chruby.sh
+# add rvm rubies dir
+RUBIES+=(
+  ~/.rvm/rubies/**
+)
 
 # aliases
 topcmds() {
@@ -41,9 +46,6 @@ alias rl='. ~/.zshrc'
 alias t='touch'
 alias tf='tail -f'
 alias md='mkdir'
-
-# editor
-alias e='vim'
 
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
