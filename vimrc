@@ -27,6 +27,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'chriskempson/base16-vim'
+Bundle 'scrooloose/nerdtree'
 
 filetype plugin indent on
 syntax on
@@ -124,12 +126,12 @@ function! RenameFile()
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
-colorscheme grb256
 
 runtime macros/matchit.vim
 
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.java :%s/\s\+$//e
+autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.c :%s/\s\+$//e
 
 set showmatch
@@ -166,6 +168,14 @@ nnoremap <C-l> <C-w>l
 
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
 " pretty json
 com! PrettyJSON %!python -m json.tool
+
+set background=dark
+let base16colorspace=256  " Access colors present in 256 colorspace
+set t_Co=256 " 256 color mode"
+colorscheme base16-bright
+
+map <C-n> :NERDTreeToggle<CR>
