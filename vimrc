@@ -126,7 +126,6 @@ function! RenameFile()
 endfunction
 map <Leader>n :call RenameFile()<cr>
 
-
 runtime macros/matchit.vim
 
 autocmd BufWritePre *.rb :%s/\s\+$//e
@@ -147,7 +146,7 @@ autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 let g:ctrlp_map = '<leader>t'
 
 if has('gui_running')
-  set guifont=Consolas:h13
+  set guifont=Inconsolata:9
 endif
 
 " Clear the search buffer when hitting return
@@ -173,9 +172,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 " pretty json
 com! PrettyJSON %!python -m json.tool
 
-set background=dark
-let base16colorspace=256  " Access colors present in 256 colorspace
 set t_Co=256 " 256 color mode"
-colorscheme base16-twilight
 
 map <C-n> :NERDTreeToggle<CR>
+set background=dark
