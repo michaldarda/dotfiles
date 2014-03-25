@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
-
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'honza/vim-snippets'
@@ -34,6 +33,7 @@ Bundle 'xolox/vim-notes'
 Bundle 'xolox/vim-easytags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'tpope/vim-surround'
+Bundle 'terryma/vim-multiple-cursors'
 
 filetype plugin indent on
 syntax on
@@ -179,7 +179,7 @@ com! PrettyJSON %!python -m json.tool
 
 set t_Co=256 " 256 color mode"
 
-map <C-n> :NERDTreeToggle<CR>
+map <leader>b :NERDTreeToggle<CR>
 set background=dark
 
 let g:notes_directories = ['~/Dropbox']
