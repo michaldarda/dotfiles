@@ -29,6 +29,11 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'chriskempson/base16-vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
+Bundle 'xolox/vim-easytags'
+Bundle 'jeffkreeftmeijer/vim-numbertoggle'
+Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
 syntax on
@@ -176,3 +181,5 @@ set t_Co=256 " 256 color mode"
 
 map <C-n> :NERDTreeToggle<CR>
 set background=dark
+
+let g:notes_directories = ['~/Dropbox']
