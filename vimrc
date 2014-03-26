@@ -183,3 +183,4 @@ map <leader>b :NERDTreeToggle<CR>
 set background=dark
 
 let g:notes_directories = ['~/Dropbox']
+set spell spelllang=en_us
