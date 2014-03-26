@@ -150,10 +150,6 @@ autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 
 let g:ctrlp_map = '<leader>t'
 
-if has('gui_running')
-  set guifont=Inconsolata:9
-endif
-
 " Clear the search buffer when hitting return
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
@@ -179,7 +175,10 @@ com! PrettyJSON %!python -m json.tool
 
 set t_Co=256 " 256 color mode"
 
-map <leader>b :NERDTreeToggle<CR>
+com! -nargs=* Get !curl <f-args>
+com! -nargs=* Post !curl --data <f-args>
+
+map <C-x> :NERDTreeToggle<CR>
 set background=dark
 
 let g:notes_directories = ['~/Dropbox']

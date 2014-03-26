@@ -5,4 +5,6 @@ set guioptions-=L  "remove left-hand scroll bar
 
 set background=dark
 colorscheme base16-twilight
-set guifont=Inconsolata\ 11
+set guifont=Inconsolata\ 12
+set lines=999 columns=999
+set tabline=enabled
