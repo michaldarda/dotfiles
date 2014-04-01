@@ -5,7 +5,7 @@ export LANG=en_US.UTF-8
 
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="dardam"
 
 plugins=(zsh-syntax-highlighting)
 
@@ -14,12 +14,14 @@ source $ZSH/oh-my-zsh.sh
 platform=`uname`
 architecture=`uname -i`
 export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
+export GRADLE_HOME=~/gradle/bin
+export ECLIPSE_PATH=~/eclipse
 
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 
-export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$GRADLE_HOME:$ECLIPSE_PATH:/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 
 # chruby
@@ -104,3 +106,5 @@ alias h="cd ~/"
 alias bsplit="sh ~/dotfiles/scripts/tmux-base-split.sh"
 alias rsplit="sh ~/dotfiles/scripts/tmux-rails-split.sh"
 alias asplit="sh ~/dotfiles/scripts/tmux-android-split.sh"
+
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64

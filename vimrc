@@ -34,6 +34,9 @@ Bundle 'xolox/vim-easytags'
 Bundle 'jeffkreeftmeijer/vim-numbertoggle'
 Bundle 'tpope/vim-surround'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'Raimondi/delimitMate.git'
+Bundle 'Shougo/neocomplcache.vim'
+Bundle "mattn/emmet-vim"
 
 filetype plugin indent on
 syntax on
@@ -134,7 +137,6 @@ map <Leader>n :call RenameFile()<cr>
 runtime macros/matchit.vim
 
 autocmd BufWritePre *.rb :%s/\s\+$//e
-autocmd BufWritePre *.java :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.c :%s/\s\+$//e
 
@@ -179,7 +181,24 @@ com! -nargs=* Get !curl <f-args>
 com! -nargs=* Post !curl --data <f-args>
 
 map <C-x> :NERDTreeToggle<CR>
-set background=dark
+set background=light
 
 let g:notes_directories = ['~/Dropbox']
 set spell spelllang=en_us
+
+let g:EclimCompletionMethod = 'omnifunc'
+
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
+
+set clipboard=unnamedplus
+
+" dont add the comments
+set formatoptions-=or
+
+" (Hopefully) removes the delay when hitting esc in insert mode
+set noesckeys
+set ttimeout
+set ttimeoutlen=1
