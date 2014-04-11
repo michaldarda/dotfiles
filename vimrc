@@ -184,7 +184,6 @@ map <C-x> :NERDTreeToggle<CR>
 set background=light
 
 let g:notes_directories = ['~/Dropbox']
-set spell spelllang=en_us
 
 let g:EclimCompletionMethod = 'omnifunc'
 
@@ -202,3 +201,5 @@ set formatoptions-=or
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
+
+"set spell spelllang=en_us

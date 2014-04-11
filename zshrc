@@ -13,9 +13,11 @@ source $ZSH/oh-my-zsh.sh
 
 platform=`uname`
 architecture=`uname -i`
+
 export ANDROID_HOME=/home/michal/Downloads/adt-bundle-linux-x86_64-20131030/sdk
 export GRADLE_HOME=~/gradle/bin
 export ECLIPSE_PATH=~/eclipse
+export ANDROID_HOME=~/android-studio/sdk
 
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
