@@ -37,6 +37,9 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Raimondi/delimitMate.git'
 Bundle 'Shougo/neocomplcache.vim'
 Bundle "mattn/emmet-vim"
+Bundle 'othree/html5.vim'
+Bundle 'tpope/timl'
+Bundle 'endel/vim-github-colorscheme'
 
 filetype plugin indent on
 syntax on
@@ -184,6 +187,7 @@ map <C-x> :NERDTreeToggle<CR>
 set background=light
 
 let g:notes_directories = ['~/Dropbox']
+"set spell spelllang=en_us
 
 let g:EclimCompletionMethod = 'omnifunc'
 
@@ -201,5 +205,3 @@ set formatoptions-=or
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
-
-"set spell spelllang=en_us
