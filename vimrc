@@ -184,7 +184,7 @@ com! -nargs=* Get !curl <f-args>
 com! -nargs=* Post !curl --data <f-args>
 
 map <C-x> :NERDTreeToggle<CR>
-set background=light
+set background=dark
 
 let g:notes_directories = ['~/Dropbox']
 "set spell spelllang=en_us

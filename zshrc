@@ -23,7 +23,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 
-export PATH=$GRADLE_HOME:$ECLIPSE_PATH:/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=$GRADLE_HOME:$ECLIPSE_PATH:/opt/ffmpeg/bin:/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 
 # chruby
