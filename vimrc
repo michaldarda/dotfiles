@@ -40,6 +40,8 @@ Bundle "mattn/emmet-vim"
 Bundle 'othree/html5.vim'
 Bundle 'tpope/timl'
 Bundle 'endel/vim-github-colorscheme'
+Bundle 'tpope/vim-dispatch'
+Bundle 'tpope/vim-eunuch'
 
 filetype plugin indent on
 syntax on
@@ -170,7 +172,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
@@ -183,18 +184,11 @@ set t_Co=256 " 256 color mode"
 com! -nargs=* Get !curl <f-args>
 com! -nargs=* Post !curl --data <f-args>
 
-map <C-x> :NERDTreeToggle<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
 set background=dark
 
 let g:notes_directories = ['~/Dropbox']
 "set spell spelllang=en_us
-
-let g:EclimCompletionMethod = 'omnifunc'
-
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
 
 set clipboard=unnamedplus
 
@@ -205,3 +199,5 @@ set formatoptions-=or
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
+
+let g:ragtag_global_maps = 1

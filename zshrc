@@ -110,3 +110,6 @@ alias rsplit="sh ~/dotfiles/scripts/tmux-rails-split.sh"
 alias asplit="sh ~/dotfiles/scripts/tmux-android-split.sh"
 
 export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
