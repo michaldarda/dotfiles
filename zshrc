@@ -5,7 +5,7 @@ export LANG=en_US.UTF-8
 
 ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="dardam"
+ZSH_THEME="robbyrussell"
 
 plugins=(zsh-syntax-highlighting)
 
@@ -27,14 +27,8 @@ export PATH=$GRADLE_HOME:$ECLIPSE_PATH:/opt/ffmpeg/bin:/usr/local/bin:$PATH:./bi
 export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-# using chruby to switch rubies, rvm installing rubies
-source ~/.rvm/scripts/extras/chruby.sh
-# add rvm rubies dir
-RUBIES+=(
-  ~/.rvm/rubies/**
-)
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
 
 # aliases
 topcmds() {
