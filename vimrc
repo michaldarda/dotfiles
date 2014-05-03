@@ -43,6 +43,8 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'vim-scala'
 
+call vundle#end()            " required
+
 filetype plugin indent on
 syntax on
 set expandtab
