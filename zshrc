@@ -16,6 +16,7 @@ architecture=`uname -i`
 
 export GRADLE_HOME=~/gradle/bin
 export ANDROID_HOME=~/android-studio/sdk
+export ECLIPSE_PATH=~/eclipse
 
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
@@ -25,8 +26,8 @@ export PATH=$GRADLE_HOME:$ECLIPSE_PATH::/usr/local/bin:$PATH:./bin:/usr/local/bi
 export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
 
 # chruby
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 # aliases
 topcmds() {
@@ -72,6 +73,7 @@ alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
 alias gcf="git clean -f"
 alias gbl="git blame"
+alias gpo="git push origin"
 
 # rails, ruby
 alias pra="pry -r ./config/environment"
@@ -101,5 +103,10 @@ alias bsplit="sh ~/dotfiles/scripts/tmux-base-split.sh"
 alias rsplit="sh ~/dotfiles/scripts/tmux-rails-split.sh"
 alias asplit="sh ~/dotfiles/scripts/tmux-android-split.sh"
 
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export GOPATH="/home/michal/go"
+export PATH="$GOPATH/bin:$PATH"

@@ -41,7 +41,8 @@ Plugin 'tpope/timl'
 Plugin 'endel/vim-github-colorscheme'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
-Plugin 'vim-scala'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'fatih/vim-go'
 
 call vundle#end()            " required
 
@@ -146,6 +147,9 @@ runtime macros/matchit.vim
 autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.py :%s/\s\+$//e
 autocmd BufWritePre *.c :%s/\s\+$//e
+autocmd BufWritePre *.scala :%s/\s\+$//e
+autocmd BufWritePre *.java :%s/\s\+$//e
+autocmd BufWritePre *.go :%s/\s\+$//e
 
 set showmatch
 set nowrap
@@ -175,6 +179,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType go set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
@@ -203,3 +208,5 @@ set ttimeout
 set ttimeoutlen=1
 
 let g:ragtag_global_maps = 1
+
+imap ,/ </<C-X><C-O>
