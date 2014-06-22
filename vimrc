@@ -119,7 +119,7 @@ function! RunCurrentLineInTest()
     call SetTestFileWithLine()
   end
 
-  exec "!bundle exec rspec" g:bjo_test_file . ":" . g:bjo_test_file_line
+  exec "!bundle exec rspecg:bjo_test_file . ":. g:bjo_test_file_line
 endfunction
 
 function! SetTestFile()
@@ -172,8 +172,8 @@ call MapCR()
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-"
-" " Quicker window movement
+
+" Quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -186,7 +186,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 " pretty json
 com! PrettyJSON %!python -m json.tool
 
-set t_Co=256 " 256 color mode"
+set t_Co=256 "256 color mode"
 
 com! -nargs=* Get !curl <f-args>
 com! -nargs=* Post !curl --data <f-args>
