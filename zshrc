@@ -67,13 +67,14 @@ alias gsl="git stash list"
 alias gm="git merge"
 alias gc="git commit -m"
 alias gca="git commit -am"
-alias amd="git commit --amend -m"
-alias und="git reset HEAD~1"
+alias gam="git commit --amend -m"
+alias gun="git reset HEAD~1"
 alias gdl="git diff HEAD~1 HEAD"
 alias gds="git diff --staged"
 alias gcf="git clean -f"
 alias gbl="git blame"
 alias gpo="git push origin"
+alias gpro="git pull --rebase origin"
 
 # rails, ruby
 alias pra="pry -r ./config/environment"
@@ -106,7 +107,8 @@ alias asplit="sh ~/dotfiles/scripts/tmux-android-split.sh"
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 export GOPATH="/home/michal/go"
 export PATH="$GOPATH/bin:$PATH"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
