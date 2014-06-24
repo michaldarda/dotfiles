@@ -144,24 +144,20 @@ map <Leader>n :call RenameFile()<cr>
 
 runtime macros/matchit.vim
 
-autocmd BufWritePre *.rb :%s/\s\+$//e
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.c :%s/\s\+$//e
-autocmd BufWritePre *.scala :%s/\s\+$//e
-autocmd BufWritePre *.java :%s/\s\+$//e
-autocmd BufWritePre *.go :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffeescript autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 set showmatch
 set nowrap
 set smarttab
 set autoread
 
+" Disable splash
 set shortmess=aTItoO
 
 nmap <leader>v :e ~/.vimrc<CR>
 autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 
-let g:ctrlp_map = '<leader>t'
+nmap <leader>t :CtrlPMixed<CR>
 
 " Clear the search buffer when hitting return
 function! MapCR()
@@ -178,10 +174,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType go set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType c set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+
+" normally I always use 2 spaces, exceptions here
+autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 " pretty json
 com! PrettyJSON %!python -m json.tool
@@ -208,5 +203,3 @@ set ttimeout
 set ttimeoutlen=1
 
 let g:ragtag_global_maps = 1
-
-imap ,/ </<C-X><C-O>
