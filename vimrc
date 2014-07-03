@@ -3,7 +3,6 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'ervandew/supertab'
 Plugin 'garbas/vim-snipmate'
@@ -42,7 +41,14 @@ Plugin 'endel/vim-github-colorscheme'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'derekwyatt/vim-scala'
-Plugin 'fatih/vim-go'
+Plugin 'burnettk/vim-angular'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'matthewsimo/angular-vim-snippets'
+"Plugin 'fatih/vim-go'
+Plugin 'evanmiller/nginx-vim-syntax'
+Plugin 'mileszs/ack.vim'
+Plugin 'majutsushi/tagbar.git'
 
 call vundle#end()            " required
 
@@ -160,10 +166,10 @@ autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 nmap <leader>t :CtrlPMixed<CR>
 
 " Clear the search buffer when hitting return
-function! MapCR()
-  nnoremap <cr> :nohlsearch<cr>
-endfunction
-call MapCR()
+" function! MapCR()
+"   nnoremap <cr> :nohlsearch<cr>
+" endfunction
+" call MapCR()
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -203,3 +209,11 @@ set ttimeout
 set ttimeoutlen=1
 
 let g:ragtag_global_maps = 1
+
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+let g:ackprg="ack -H --nocolor --nogroup --column"
+
+nmap <leader>a :tab split<CR>:Ack ""<Left>
+nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
