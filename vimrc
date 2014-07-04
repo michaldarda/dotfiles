@@ -150,7 +150,7 @@ map <Leader>n :call RenameFile()<cr>
 
 runtime macros/matchit.vim
 
-autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffeescript autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 set showmatch
 set nowrap
