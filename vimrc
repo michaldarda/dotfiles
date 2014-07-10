@@ -74,10 +74,10 @@ set smartcase
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
 
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
 imap <up> <nop>
 imap <down> <nop>
@@ -164,6 +164,8 @@ nmap <leader>v :e ~/.vimrc<CR>
 autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 
 nmap <leader>t :CtrlPMixed<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>c :tabnew<CR>
 
 " Clear the search buffer when hitting return
 " function! MapCR()
@@ -217,3 +219,5 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 
 nmap <leader>a :tab split<CR>:Ack ""<Left>
 nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
+set cursorline
