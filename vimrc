@@ -49,6 +49,7 @@ Plugin 'matthewsimo/angular-vim-snippets'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'mileszs/ack.vim'
 Plugin 'majutsushi/tagbar.git'
+Plugin 'wting/rust.vim'
 
 call vundle#end()            " required
 
