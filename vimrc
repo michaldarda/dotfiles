@@ -49,6 +49,9 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
+Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'ck3g/vim-change-hash-syntax'
 
 call vundle#end()            " required
 
@@ -60,7 +63,8 @@ set shiftwidth=2
 set noswapfile
 set number
 set laststatus=2
-set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+" set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+" let g:airline#extensions#tabline#enabled = 1
 set backspace=indent,eol,start
 set autoindent
 set history=50
