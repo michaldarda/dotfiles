@@ -21,8 +21,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
+"Plugin 'guns/vim-clojure-static'
+"Plugin 'tpope/vim-fireplace'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
@@ -36,20 +36,18 @@ Plugin 'Shougo/neocomplcache.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/timl'
-Plugin 'endel/vim-github-colorscheme'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'burnettk/vim-angular'
+"Plugin 'derekwyatt/vim-scala'
 Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'matthewsimo/angular-vim-snippets'
 "Plugin 'fatih/vim-go'
 Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'majutsushi/tagbar.git'
 Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
-Plugin 'bling/vim-airline'
+if has("gui_running")
+  Plugin 'bling/vim-airline'
+endif
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ck3g/vim-change-hash-syntax'
 
@@ -64,7 +62,6 @@ set noswapfile
 set number
 set laststatus=2
 " set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-" let g:airline#extensions#tabline#enabled = 1
 set backspace=indent,eol,start
 set autoindent
 set history=50
@@ -145,7 +142,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" normally I always use 2 spaces, exceptions here
+" normally I always use 2 spaces to indent, exceptions here
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 " pretty json
@@ -176,5 +173,10 @@ nnoremap <leader>l :TagbarToggle<CR>
 
 nmap <leader>a :tab split<CR>:Ag ""<Left>
 nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
-
-set cursorline
+if has("gui_running")
+  set cursorline
+  set showtabline=2
+  let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline_theme = 'wombat'
+endif
