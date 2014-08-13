@@ -5,7 +5,7 @@ set guioptions-=L  "remove left-hand scroll bar
 
 set background=dark
 colorscheme base16-chalk
-set guifont=Droid\ Sans\ Mono \11
+set guifont=Droid\ Sans\ Mono\ 11
 set lines=999 columns=999
 set tabline=enabled
 

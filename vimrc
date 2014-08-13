@@ -28,7 +28,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-easytags'
+" Plugin 'xolox/vim-easytags'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
@@ -50,6 +50,7 @@ if has("gui_running")
 endif
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ck3g/vim-change-hash-syntax'
+Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()            " required
 

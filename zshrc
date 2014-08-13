@@ -23,11 +23,12 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 
 export PATH=$GRADLE_HOME:$ECLIPSE_PATH::/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
+# export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
+export CDPATH=$CDPATH:~/projects/main:~/projects/testing:~/projects/documentation:~/projects/gems:~/projects/support:~/projects/deployment
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh
 
 # aliases
 topcmds() {
@@ -65,7 +66,7 @@ alias gs="git stash"
 alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gm="git merge"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gca="git commit -am"
 alias gam="git commit --amend -m"
 alias gun="git reset HEAD~1"
@@ -75,6 +76,15 @@ alias gcf="git clean -f"
 alias gbl="git blame"
 alias gpo="git push origin"
 alias gpro="git pull --rebase origin"
+alias grbi="git rebase -i HEAD~5"
+alias grbi1="git rebase -i HEAD~1"
+alias grbi2"git rebase -i HEAD~2"
+alias grbi3="git rebase -i HEAD~3"
+alias grbi="git rebase -i HEAD~4"
+alias grbi10="git rebase -i HEAD~10"
+alias grbi20="git rebase -i HEAD~20"
+alias grbi30="git rebase -i HEAD~30"
+alias grbi40="git rebase -i HEAD~40"
 
 # rails, ruby
 alias pra="pry -r ./config/environment"
@@ -112,3 +122,6 @@ export PATH="$GOPATH/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
