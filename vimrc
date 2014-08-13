@@ -21,8 +21,8 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
@@ -176,8 +176,7 @@ nmap <leader>a :tab split<CR>:Ag ""<Left>
 nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
 if has("gui_running")
   set cursorline
-  set showtabline=2
-  let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#enabled = 1
   " let g:airline#extensions#tabline#fnamemod = ':t'
   let g:airline_theme = 'wombat'
 endif
