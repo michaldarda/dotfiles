@@ -23,12 +23,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools
 
 export PATH=$GRADLE_HOME:$ECLIPSE_PATH::/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-# export CDPATH=$CDPATH:~/Code/work:~/Code/play:~/Code/examples:~/Code/exercises
-export CDPATH=$CDPATH:~/projects/main:~/projects/testing:~/projects/documentation:~/projects/gems:~/projects/support:~/projects/deployment
-
-# chruby
-# source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh
 
 # aliases
 topcmds() {
@@ -122,11 +116,7 @@ export PATH="$GOPATH/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-# alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
 export PATH=$PATH:~/bins
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
-
-alias cdcw="cd ~/projects/deployment/cw-install"
+source ~/dotfiles/zsh_home
+source ~/dotfiles/zsh_work

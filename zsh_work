@@ -1,0 +1,5 @@
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
+export CDPATH=$CDPATH:~/projects/main:~/projects/testing:~/projects/documentation:~/projects/gems:~/projects/support:~/projects/deployment
+
+alias cdcw="cd ~/projects/deployment/cw-install"
