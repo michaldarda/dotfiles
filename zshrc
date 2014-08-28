@@ -46,7 +46,7 @@ alias md='mkdir'
 
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
-alias gpr="git pull --rebase"
+alias gpr="git pull --rebase --stat"
 alias gpu="git push"
 alias ga="git add"
 alias gd="git diff"
@@ -80,7 +80,7 @@ alias grbi="git rebase -i HEAD~5"
 alias grbi1="git rebase -i HEAD~1"
 alias grbi2"git rebase -i HEAD~2"
 alias grbi3="git rebase -i HEAD~3"
-alias grbi="git rebase -i HEAD~4"
+alias grbi4="git rebase -i HEAD~4"
 alias grbi10="git rebase -i HEAD~10"
 alias grbi20="git rebase -i HEAD~20"
 alias grbi30="git rebase -i HEAD~30"
@@ -125,3 +125,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
 export PATH=$PATH:~/bins
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+alias ssh-gen-config='cat ~/.ssh/*_config > ~/.ssh/config'
+
+alias cdcw="cd ~/projects/deployment/cw-install"

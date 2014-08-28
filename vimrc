@@ -51,6 +51,7 @@ endif
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'greyblake/vim-preview'
 
 call vundle#end()            " required
 
@@ -171,12 +172,17 @@ let g:ragtag_global_maps = 1
 
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>] :Preview<CR>
 
 nmap <leader>a :tab split<CR>:Ag ""<Left>
 nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
 if has("gui_running")
   set cursorline
+  " set showtabline=2
   " let g:airline#extensions#tabline#enabled = 1
   " let g:airline#extensions#tabline#fnamemod = ':t'
   let g:airline_theme = 'wombat'
 endif
+
+" Markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
