@@ -32,7 +32,7 @@ Plugin 'xolox/vim-notes'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'Shougo/neocomplcache.vim'
+"Plugin 'Shougo/neocomplcache.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/timl'
@@ -42,16 +42,18 @@ Plugin 'tpope/vim-eunuch'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'fatih/vim-go'
 Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'majutsushi/tagbar.git'
+"Plugin 'majutsushi/tagbar.git'
 Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
 if has("gui_running")
   Plugin 'bling/vim-airline'
 endif
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ck3g/vim-change-hash-syntax'
+"Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'greyblake/vim-preview'
+Plugin 'greyblake/vim-preview' "Markdown
+Plugin 'oblitum/rainbow' "parens
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
 call vundle#end()            " required
 
@@ -91,7 +93,6 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 nmap <leader>h :nohlsearch<cr>
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 map <Leader>f :w<cr>:call RunCurrentTest()<CR>
 map <Leader>g :w<cr>:call RunCurrentLineInTest()<CR>
@@ -125,6 +126,7 @@ nmap <leader>v :e ~/.vimrc<CR>
 autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 
 nmap <leader>t :CtrlPMixed<CR>
+nmap <Leader>p :CtrlPCmdPalette<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>c :tabnew<CR>
 
@@ -186,3 +188,5 @@ endif
 
 " Markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
+
+let g:rainbow_active = 1

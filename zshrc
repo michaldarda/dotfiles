@@ -116,7 +116,7 @@ export PATH="$GOPATH/bin:$PATH"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-export PATH=$PATH:~/bins
+export PATH=$PATH:~/bin
 
 source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work
