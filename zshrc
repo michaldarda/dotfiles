@@ -31,6 +31,7 @@ topcmds() {
 
 alias e='vim'
 alias vi='vim'
+alias gvim='gvim 2> /dev/null'
 
 # general
 alias rl='. ~/.zshrc'

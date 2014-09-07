@@ -55,6 +55,7 @@ Plugin 'greyblake/vim-preview' "Markdown
 "Plugin 'oblitum/rainbow' "parens
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()            " required
 
@@ -78,7 +79,15 @@ set hlsearch
 set ignorecase
 set smartcase
 
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+
+set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
+set wildignore+=/tmp,*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
+
+let g:ctrlp_working_path_mode = 'ra'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " map <up> <nop>
 " map <down> <nop>
@@ -94,9 +103,6 @@ imap <c-e> <c-o>$
 imap <c-a> <c-o>^
 
 nmap <leader>h :nohlsearch<cr>
-
-map <Leader>f :w<cr>:call RunCurrentTest()<CR>
-map <Leader>g :w<cr>:call RunCurrentLineInTest()<CR>
 
 match ErrorMsg '\s\+$'
 
@@ -173,8 +179,6 @@ set ttimeoutlen=1
 
 let g:ragtag_global_maps = 1
 
-let g:tagbar_usearrows = 1
-nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>] :Preview<CR>
 
 nmap <leader>a :tab split<CR>:Ag ""<Left>
@@ -194,3 +198,6 @@ endif
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
 
 "let g:rainbow_active = 1
+if has("gui_running")
+  set shell=/bin/zsh\ -i
+end
