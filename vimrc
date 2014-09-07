@@ -52,8 +52,9 @@ Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'greyblake/vim-preview' "Markdown
-Plugin 'oblitum/rainbow' "parens
+"Plugin 'oblitum/rainbow' "parens
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plugin 'mkitt/tabline.vim'
 
 call vundle#end()            " required
 
@@ -178,15 +179,18 @@ nnoremap <leader>] :Preview<CR>
 
 nmap <leader>a :tab split<CR>:Ag ""<Left>
 nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
+set showtabline=2
 if has("gui_running")
+  "" Enable the list of buffers
   set cursorline
-  " set showtabline=2
-  " let g:airline#extensions#tabline#enabled = 1
-  " let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline_theme = 'wombat'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#show_buffers = 1
+  let g:airline#extensions#tabline#tab_min_count = 0
+  let g:airline#extensions#tabline#buf_min_count = 0
 endif
 
 " Markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
 
-let g:rainbow_active = 1
+"let g:rainbow_active = 1
