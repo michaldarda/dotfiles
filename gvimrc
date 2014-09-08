@@ -12,4 +12,4 @@ set lines=999 columns=999
 let base16colorspace=256
 
 " No audible bell
-set vb
+"set vb
