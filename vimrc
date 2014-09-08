@@ -55,7 +55,6 @@ Plugin 'greyblake/vim-preview' "Markdown
 "Plugin 'oblitum/rainbow' "parens
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
-Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()            " required
 
