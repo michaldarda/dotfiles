@@ -21,6 +21,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -79,6 +80,8 @@ set ignorecase
 set smartcase
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_syntax_highlight = 1
 
 set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
 set wildignore+=/tmp,*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
@@ -135,6 +138,7 @@ nmap <leader>t :CtrlPMixed<CR>
 nmap <Leader>p :CtrlPCmdPalette<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>c :tabnew<CR>
+nmap <Leader>fu :CtrlPFunky<Cr>
 
 " Clear the search buffer when hitting return
 " function! MapCR()
