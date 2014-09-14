@@ -29,11 +29,8 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
-" Plugin 'xolox/vim-easytags'
-" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
-"Plugin 'Shougo/neocomplcache.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/timl'
@@ -41,20 +38,17 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'pangloss/vim-javascript'
-"Plugin 'fatih/vim-go'
 Plugin 'evanmiller/nginx-vim-syntax'
-"Plugin 'majutsushi/tagbar.git'
 Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'greyblake/vim-preview' "Markdown
-"Plugin 'oblitum/rainbow' "parens
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
+Plugin 'godlygeek/tabular'
 if has("gui_running")
   Plugin 'bling/vim-airline'
 endif
@@ -72,7 +66,6 @@ set shiftwidth=2
 set noswapfile
 set number
 set laststatus=2
-" set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 set backspace=indent,eol,start
 set autoindent
 set history=50
@@ -151,7 +144,6 @@ nmap <Leader>p :CtrlPCmdPalette<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>c :tabnew<CR>
 nmap <Leader>fu :CtrlPFunky<Cr>
-
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
