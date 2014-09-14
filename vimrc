@@ -30,7 +30,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 " Plugin 'xolox/vim-easytags'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
 "Plugin 'Shougo/neocomplcache.vim'
@@ -39,7 +39,7 @@ Plugin 'othree/html5.vim'
 Plugin 'tpope/timl'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
-"Plugin 'derekwyatt/vim-scala'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'pangloss/vim-javascript'
 "Plugin 'fatih/vim-go'
 Plugin 'evanmiller/nginx-vim-syntax'
@@ -56,11 +56,15 @@ Plugin 'greyblake/vim-preview' "Markdown
 "Plugin 'oblitum/rainbow' "parens
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
+Plugin 'vim-scripts/loremipsum'
 
 call vundle#end()            " required
 
-filetype plugin indent on
+filetype on
+filetype indent on
+filetype plugin on
 syntax on
+
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -132,7 +136,6 @@ set autoread
 set shortmess=aTItoO
 
 nmap <leader>v :e ~/.vimrc<CR>
-autocmd FileType eruby setl indentexpr=XmlIndentGet(v:lnum,1)
 
 nmap <leader>t :CtrlPMixed<CR>
 nmap <Leader>p :CtrlPCmdPalette<CR>
@@ -179,6 +182,7 @@ set formatoptions-=or
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
+set smartindent
 
 let g:ragtag_global_maps = 1
 
@@ -204,3 +208,7 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf mark
 if has("gui_running")
   set shell=/bin/zsh\ -i
 end
+
+let tlist_clojure_settings = 'lisp;f:function'
+let vimclojure#HighlightBuiltins=1
+let vimclojure#ParenRainbow=1
