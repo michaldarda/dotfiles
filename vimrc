@@ -83,96 +83,28 @@ set hlsearch
 set ignorecase
 set smartcase
 
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_extensions = ['funky']
-let g:ctrlp_funky_syntax_highlight = 1
-
 set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
 set wildignore+=/tmp,*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
-
-let g:ctrlp_working_path_mode = 'ra'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
-
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
-imap <c-e> <c-o>$
-imap <c-a> <c-o>^
-
-nmap <leader>h :nohlsearch<cr>
-
-match ErrorMsg '\s\+$'
-
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <Leader>n :call RenameFile()<cr>
-
-runtime macros/matchit.vim
-
-autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 set showmatch
 set nowrap
 set smarttab
 set autoread
 
+runtime macros/matchit.vim
+
+autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 " Disable splash
 set shortmess=aTItoO
-
-nmap <leader>v :e ~/.vimrc<CR>
-
-nmap <leader>t :CtrlPMixed<CR>
-nmap <Leader>p :CtrlPCmdPalette<CR>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <leader>c :tabnew<CR>
-nmap <Leader>fu :CtrlPFunky<Cr>
-
-" Clear the search buffer when hitting return
-" function! MapCR()
-"   nnoremap <cr> :nohlsearch<cr>
-" endfunction
-" call MapCR()
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+match ErrorMsg '\s\+$'
 
-" normally I always use 2 spaces to indent, exceptions here
-autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
-
-" pretty json
-com! PrettyJSON %!python -m json.tool
-
-set t_Co=256 "256 color mode"
-
-nnoremap <leader>d :NERDTreeToggle<CR>
 set background=dark
-
-let g:notes_directories = ['~/Dropbox']
-"set spell spelllang=en_us
-
 set clipboard=unnamedplus
 
 " dont add the comments
@@ -183,6 +115,103 @@ set noesckeys
 set ttimeout
 set ttimeoutlen=1
 set smartindent
+set showtabline=2
+
+set wildmode=longest,list,full
+set wildmenu
+
+" Markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
+
+" normally I always use 2 spaces to indent, exceptions here
+autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
+
+set t_Co=256 "256 color mode"
+
+"set spell spelllang=en_us
+"
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+nmap <leader>h :nohlsearch<cr>
+
+nmap <leader>v :e ~/.vimrc<CR>
+nmap <leader>g :e ~/.vimrc<CR>
+
+nmap <leader>t :CtrlPMixed<CR>
+nmap <Leader>p :CtrlPCmdPalette<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>c :tabnew<CR>
+nmap <Leader>fu :CtrlPFunky<Cr>
+
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+if has("gui_running")
+  set shell=/bin/zsh\ -i
+
+  set cursorline
+
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#tabline#show_buffers = 0
+
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+  set guioptions+=c
+
+  set background=dark
+  colorscheme base16-chalk
+  set guifont=Droid\ Sans\ Mono\ 11
+  set lines=999 columns=999
+
+  let base16colorspace=256
+end
+
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <Leader>r :call RenameFile()<cr>
+
+" Clear the search buffer when hitting return
+" function! MapCR()
+"   nnoremap <cr> :nohlsearch<cr>
+" endfunction
+" call MapCR()
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_syntax_highlight = 1
+
+let g:ctrlp_working_path_mode = 'ra'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" pretty json
+com! PrettyJSON %!python -m json.tool
+nnoremap <leader>d :NERDTreeToggle<CR>
+
+let g:notes_directories = ['~/Dropbox']
 
 let g:ragtag_global_maps = 1
 
@@ -190,24 +219,6 @@ nnoremap <leader>] :Preview<CR>
 
 nmap <leader>a :tab split<CR>:Ag ""<Left>
 nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
-set showtabline=2
-if has("gui_running")
-  "" Enable the list of buffers
-  set cursorline
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#tabline#show_buffers = 1
-  let g:airline#extensions#tabline#tab_min_count = 0
-  let g:airline#extensions#tabline#buf_min_count = 0
-endif
-
-" Markdown
-au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
-
-"let g:rainbow_active = 1
-if has("gui_running")
-  set shell=/bin/zsh\ -i
-end
 
 let tlist_clojure_settings = 'lisp;f:function'
 let vimclojure#HighlightBuiltins=1
