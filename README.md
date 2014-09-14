@@ -1,10 +1,18 @@
 # dotfiles
 
+### Requirements
+
+    sudo apt-get install vim zsh tmux ctags indent
+
+    gem install pry ctags
+
+    gem ctags
+
 ### Installation
 
-Assuming that you've got vim zsh, git installed, just run
+Run
 
-    $ sh bootstrap
+    $ ./bootstrap
 
 ### Vim
 

@@ -12,9 +12,13 @@ ln -fs ~/dotfiles/vimrc ~/.vimrc
 #TMUX
 ln -fs ~/dotfiles/tmux.conf ~/.tmux.conf
 
-#GVIM
-ln -fs ~/dotfiles/gvimrc ~/.gvimrc
-
 # GIT
 ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -fs ~/dotfiles/git/gitignore ~/.gitignore
+
+# pry
+ln -fs ~/dotfiles/pryrc ~/.pryrc
+
+# gems
+ln -fs ~/dotfiles/gemrc ~/.gemrc
+

@@ -46,9 +46,6 @@ Plugin 'evanmiller/nginx-vim-syntax'
 "Plugin 'majutsushi/tagbar.git'
 Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
-if has("gui_running")
-  Plugin 'bling/vim-airline'
-endif
 Plugin 'Lokaltog/vim-easymotion'
 "Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -57,6 +54,10 @@ Plugin 'greyblake/vim-preview' "Markdown
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
+Plugin 'tpope/vim-abolish'
+if has("gui_running")
+  Plugin 'bling/vim-airline'
+endif
 
 call vundle#end()            " required
 

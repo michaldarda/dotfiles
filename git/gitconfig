@@ -1,18 +1,18 @@
 [init]
 	templatedir = ~/.git_template
 [user]
-  name   = Michał Darda
-  email  = michaldarda@gmail.com
+  name = Michał Darda
+  email = michaldarda@gmail.com
 [alias]
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"]
 [color]
-  diff   = auto
+  diff = auto
   status = auto
   branch = auto
-  ui     = true
+  ui = true
 [core]
   excludesfile = ~/.gitignore
-  editor       = vim
+  editor = vim
 [apply]
   whitespace = nowarn
 [mergetool]
@@ -23,5 +23,3 @@
   autocorrect = 1
 [push]
   default = simple
-[credential]
-  helper = store
