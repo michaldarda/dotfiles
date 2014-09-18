@@ -206,7 +206,7 @@ endif
 com! PrettyJSON %!python -m json.tool
 nnoremap <leader>d :NERDTreeToggle<CR>
 
-let g:notes_directories = ['~/Dropbox']
+let g:notes_directories = ['~/Dropbox/notes']
 
 let g:ragtag_global_maps = 1
 
