@@ -25,7 +25,6 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'chriskempson/base16-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
@@ -49,7 +48,9 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
+Plugin 'scrooloose/syntastic'
 if has("gui_running")
+  Plugin 'chriskempson/base16-vim'
   Plugin 'bling/vim-airline'
 endif
 
@@ -136,8 +137,9 @@ imap <right> <nop>
 
 nmap <leader>h :nohlsearch<cr>
 
-nmap <leader>v :e ~/.vimrc<CR>
-nmap <leader>g :e ~/.vimrc<CR>
+nmap <leader>v :tabe ~/.vimrc<CR>
+
+nmap <leader>n :Note<Space>
 
 nmap <leader>t :CtrlPMixed<CR>
 nmap <Leader>p :CtrlPCmdPalette<CR>
@@ -166,12 +168,12 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
   set guioptions+=c
 
+  let base16colorspace=256
   set background=dark
   colorscheme base16-chalk
-  set guifont=Droid\ Sans\ Mono\ 11
-  set lines=999 columns=999
 
-  let base16colorspace=256
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+  set lines=999 columns=999
 end
 
 function! RenameFile()
@@ -210,8 +212,8 @@ let g:ragtag_global_maps = 1
 
 nnoremap <leader>] :Preview<CR>
 
-nmap <leader>a :tab split<CR>:Ag ""<Left>
-nmap <leader>A :tab split<CR>:Ag <C-r><C-w><CR>
+nmap <leader>a :Ag ""<Left>
+nmap <leader>A :Ag <C-r><C-w><CR>
 
 let tlist_clojure_settings = 'lisp;f:function'
 let vimclojure#HighlightBuiltins=1
