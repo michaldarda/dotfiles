@@ -11,18 +11,14 @@ plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-export GRADLE_HOME=~/gradle/bin
-export ANDROID_HOME=~/android-studio/sdk
-export ECLIPSE_PATH=~/eclipse
-
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/build-tools
-
-export PATH=$GRADLE_HOME:$ECLIPSE_PATH::/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+function update_gem_ctags {
+  bundle show --paths | xargs ctags -R
 }
 
 # aliases
@@ -92,19 +88,9 @@ alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
 alias h="cd ~/"
 
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export LD_LIBRARY_PATH="$HOME/.linuxbrew/lib:$LD_LIBRARY_PATH"
-
-export GOPATH="/home/michal/go"
-export PATH="$GOPATH/bin:$PATH"
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/bin
 
 source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work
-
-function update_gem_ctags {
-  bundle show --paths | xargs ctags -R
-}
