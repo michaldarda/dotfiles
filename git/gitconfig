@@ -1,5 +1,5 @@
 [init]
-	templatedir = ~/.git_template
+  templatedir = ~/.git_template
 [user]
   name = Michał Darda
   email = michaldarda@gmail.com
