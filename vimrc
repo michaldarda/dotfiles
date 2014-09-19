@@ -172,7 +172,7 @@ if has("gui_running")
   set background=dark
   colorscheme base16-chalk
 
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+  set guifont=DejaVu\ Sans\ Mono\ 11
   set lines=999 columns=999
 end
 
