@@ -3,10 +3,8 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'ervandew/supertab'
-Plugin 'garbas/vim-snipmate'
-Plugin 'tomtom/tlib_vim'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -22,8 +20,9 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
@@ -49,6 +48,7 @@ Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/syntastic'
+Plugin 'jpalardy/vim-slime'
 if has("gui_running")
   Plugin 'chriskempson/base16-vim'
   Plugin 'bling/vim-airline'
@@ -60,6 +60,8 @@ filetype on
 filetype indent on
 filetype plugin on
 syntax on
+
+hi Visual term=reverse cterm=reverse guibg=White
 
 set expandtab
 set tabstop=2
@@ -89,6 +91,8 @@ set autoread
 runtime macros/matchit.vim
 
 autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+"autocmd FileType ruby set colorcolumn=79
 
 " Disable splash
 set shortmess=aTItoO
@@ -141,11 +145,13 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 
 nmap <leader>n :Note<Space>
 
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlPMixed<CR>
 nmap <Leader>p :CtrlPCmdPalette<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>c :tabnew<CR>
-nmap <Leader>fu :CtrlPFunky<Cr>
+nmap <Leader>fn :CtrlPFunky<Cr>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -218,3 +224,52 @@ nmap <leader>A :Ag <C-r><C-w><CR>
 let tlist_clojure_settings = 'lisp;f:function'
 let vimclojure#HighlightBuiltins=1
 let vimclojure#ParenRainbow=1
+
+let g:slime_target = "tmux"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_paste_file = "$HOME/.slime_paste"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+function! RunCurrentSpecFile()
+  if InSpecFile()
+    let l:spec = @%
+    call SetLastSpecCommand(l:spec)
+    call RunSpecs(l:spec)
+  else
+    call RunLastSpec()
+  endif
+endfunction
+
+function! RunNearestSpec()
+  if InSpecFile()
+    let l:spec = @% . ":" . line(".")
+    call SetLastSpecCommand(l:spec)
+    call RunSpecs(l:spec)
+  else
+    call RunLastSpec()
+  endif
+endfunction
+
+function! RunLastSpec()
+  if exists("s:last_spec_command")
+    call RunSpecs(s:last_spec_command)
+  endif
+endfunction
+
+function! InSpecFile()
+  return match(expand("%"), "_spec.rb$") != -1
+endfunction
+
+function! SetLastSpecCommand(spec)
+  let s:last_spec_command = a:spec
+endfunction
+
+function! RunSpecs(spec)
+  execute substitute(":Dispatch rspec", "{spec}", a:spec, "g")
+endfunction
+
+map <Leader>R :call RunCurrentSpecFile()<CR>
+map <Leader>r :call RunNearestSpec()<CR>
