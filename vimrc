@@ -49,11 +49,12 @@ Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/syntastic'
 Plugin 'jpalardy/vim-slime'
+Plugin 'takac/vim-hardtime'
+Plugin 'tpope/vim-repeat'
 if has("gui_running")
   Plugin 'chriskempson/base16-vim'
   Plugin 'bling/vim-airline'
 endif
-
 call vundle#end()            " required
 
 filetype on
@@ -104,7 +105,7 @@ set splitright
 match ErrorMsg '\s\+$'
 
 set background=dark
-set clipboard=unnamedplus
+set clipboard=unnamedplus " Enable copy pasting
 
 " dont add the comments
 set formatoptions-=or
@@ -273,3 +274,5 @@ endfunction
 
 map <Leader>R :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunNearestSpec()<CR>
+
+"let g:hardtime_default_on = 1
