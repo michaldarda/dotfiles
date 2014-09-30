@@ -5,5 +5,5 @@ export CDPATH=$CDPATH:~/projects/main:~/projects/testing:~/projects/documentatio
 alias cdcw="cd ~/projects/deployment/cw-install"
 
 alias sngx="sudo /opt/nginx/sbin/nginx"
-alias kngx="killall nginx"
-alias rngx="killall nginx & sudo /opt/nginx/sbin/nginx"
+alias kngx="sudo killall nginx"
+alias rngx="sudo killall nginx && sudo /opt/nginx/sbin/nginx"

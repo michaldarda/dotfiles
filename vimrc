@@ -149,6 +149,7 @@ nmap <leader>n :Note<Space>
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlPMixed<CR>
+nmap <leader>y :CtrlP<Space>
 nmap <Leader>p :CtrlPCmdPalette<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <leader>c :tabnew<CR>
@@ -229,6 +230,8 @@ let vimclojure#ParenRainbow=1
 let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_paste_file = "$HOME/.slime_paste"
+
+"set colorcolumn=79
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"

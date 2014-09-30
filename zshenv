@@ -1,10 +1,10 @@
 # aliases
 alias e='vim'
 alias vi='vim'
-alias gvim='gvim 2> /dev/null'
+#alias gvim='0echo "Use vim instead"'
 
 # general
-alias rl='. ~/.zshrc'
+alias rl='. ~/.zshrc && . ~/.zshenv'
 alias t='touch'
 alias tf='tail -f'
 alias md='mkdir'

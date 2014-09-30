@@ -25,5 +25,5 @@ function update_gem_ctags {
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/bin
 
-source ~/dotfiles/zsh_home
+#source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work

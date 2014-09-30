@@ -5,6 +5,7 @@
   email = michaldarda@gmail.com
 [alias]
   ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"]
+  contributors = "shortlog -s"
 [color]
   diff = auto
   status = auto
