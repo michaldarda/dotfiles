@@ -1,0 +1,23 @@
+snippet cont "rspec: context block"
+context '$1' do
+	${0:${VISUAL:# assertions...}}
+end
+endsnippet
+
+snippet it "rspec: it block"
+it '$1' do
+	${0:${VISUAL:# assertions...}}
+end
+endsnippet
+
+snippet desc "rspec: describe block"
+describe '$1' do
+	${0:${VISUAL:# assertions...}}
+end
+endsnippet
+
+snippet def "ruby method"
+def $1($2)
+	${0:${VISUAL:# method body..}}
+end
+endsnippet
