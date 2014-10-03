@@ -278,4 +278,11 @@ endfunction
 map <Leader>R :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunNearestSpec()<CR>
 
-"let g:hardtime_default_on = 1
+let g:hardtime_default_on = 1
+"let g:hardtime_showmsg = 1
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_mri_args = "-W"
+
+command Rubocop :SyntasticCheck rubocop
+command Rubylint :SyntasticCheck rubylint
+let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
