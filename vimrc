@@ -1,3 +1,4 @@
+let g:ruby_path = '/usr/bin/ruby'
 set nocompatible
 filetype off
 
@@ -51,6 +52,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'jpalardy/vim-slime'
 Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'gorkunov/smartpairs.vim'
 if has("gui_running")
   Plugin 'chriskempson/base16-vim'
   Plugin 'bling/vim-airline'
@@ -102,7 +106,7 @@ set shortmess=aTItoO
 set splitbelow
 set splitright
 
-match ErrorMsg '\s\+$'
+"match ErrorMsg '\s\+$'
 
 set background=dark
 set clipboard=unnamedplus " Enable copy pasting
@@ -146,8 +150,8 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 
 nmap <leader>n :Note<Space>
 
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
+" let g:ctrlp_match_window_bottom = 0
+" let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlPMixed<CR>
 nmap <leader>y :CtrlP<Space>
 nmap <Leader>p :CtrlPCmdPalette<CR>
@@ -170,17 +174,17 @@ if has("gui_running")
   let g:airline#extensions#tabline#fnamemod = ':t'
   let g:airline#extensions#tabline#show_buffers = 0
 
-  set guioptions-=m  "remove menu bar
-  set guioptions-=T  "remove toolbar
-  set guioptions-=r  "remove right-hand scroll bar
-  set guioptions-=L  "remove left-hand scroll bar
+  set guioptions-=m "remove menu bar
+  set guioptions-=T "remove toolbar
+  set guioptions-=r "remove right-hand scroll bar
+  set guioptions-=L "remove left-hand scroll bar
   set guioptions+=c
 
   let base16colorspace=256
   set background=dark
   colorscheme base16-chalk
 
-  set guifont=DejaVu\ Sans\ Mono\ 11
+  set guifont=Consolas\ 13
   set lines=999 columns=999
 end
 
@@ -278,11 +282,28 @@ endfunction
 map <Leader>R :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunNearestSpec()<CR>
 
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 "let g:hardtime_showmsg = 1
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_args = "-W"
+" let g:syntastic_ruby_checkers = ['mri']
+" let g:syntastic_ruby_mri_args = "-W"
 
-command Rubocop :SyntasticCheck rubocop
-command Rubylint :SyntasticCheck rubylint
-let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+" command Rubocop :SyntasticCheck rubocop
+" command Rubylint :SyntasticCheck rubylint
+" let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
+"
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command =
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
