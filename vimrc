@@ -66,7 +66,9 @@ filetype indent on
 filetype plugin on
 syntax on
 
-hi Visual term=reverse cterm=reverse guibg=White
+let mapleader=","
+
+" hi Visual term=reverse cterm=reverse guibg=White
 
 set expandtab
 set tabstop=2
@@ -124,6 +126,9 @@ set showtabline=2
 set wildmode=longest,list,full
 set wildmenu
 
+set title
+nnoremap ; :
+
 " Markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
 
@@ -134,10 +139,10 @@ set t_Co=256 "256 color mode"
 
 "set spell spelllang=en_us
 "
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 imap <up> <nop>
 imap <down> <nop>
@@ -283,14 +288,13 @@ map <Leader>R :call RunCurrentSpecFile()<CR>
 map <Leader>r :call RunNearestSpec()<CR>
 
 " let g:hardtime_default_on = 1
-"let g:hardtime_showmsg = 1
+" let g:hardtime_showmsg = 1
 " let g:syntastic_ruby_checkers = ['mri']
 " let g:syntastic_ruby_mri_args = "-W"
 
-" command Rubocop :SyntasticCheck rubocop
-" command Rubylint :SyntasticCheck rubylint
+command Rubocop :SyntasticCheck rubocop
+command Rubylint :SyntasticCheck rubylint
 " let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
-"
 
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
@@ -307,3 +311,4 @@ else
   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
+
