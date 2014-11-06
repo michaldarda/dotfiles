@@ -28,6 +28,5 @@ export PATH=$PATH:~/bin
 #gopath
 export PATH=$PATH:/usr/local/go/bin
 
-source ~/dotfiles/zsh_home
+# source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work
-
