@@ -27,6 +27,8 @@ export PATH=$PATH:~/bin
 
 #gopath
 export PATH=$PATH:/usr/local/go/bin
+#cabal
+export PATH=$PATH:~/.cabal/bin
 
-# source ~/dotfiles/zsh_home
+source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work

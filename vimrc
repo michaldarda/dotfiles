@@ -1,4 +1,6 @@
 let g:ruby_path = '/usr/bin/ruby'
+let g:haddock_browser="/usr/bin/google-chrome"
+
 set nocompatible
 filetype off
 
@@ -48,14 +50,19 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
-Plugin 'scrooloose/syntastic'
+Plugin 'benekastah/neomake'
 Plugin 'jpalardy/vim-slime'
 Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'gorkunov/smartpairs.vim'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'lukerandall/haskellmode-vim'
+Plugin 'vim-scripts/TagHighlight'
 if has("gui_running")
+  Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
   Plugin 'bling/vim-airline'
 endif
@@ -67,8 +74,6 @@ filetype plugin on
 syntax on
 
 let mapleader=","
-
-" hi Visual term=reverse cterm=reverse guibg=White
 
 set expandtab
 set tabstop=2
@@ -98,8 +103,7 @@ set autoread
 runtime macros/matchit.vim
 
 autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
-
-"autocmd FileType ruby set colorcolumn=79
+autocmd FileType ruby autocmd BufWritePre <buffer> :Neomake
 
 " Disable splash
 set shortmess=aTItoO
@@ -108,15 +112,13 @@ set shortmess=aTItoO
 set splitbelow
 set splitright
 
-"match ErrorMsg '\s\+$'
-
 set background=dark
 set clipboard=unnamedplus " Enable copy pasting
 
 " dont add the comments
 set formatoptions-=or
 
-" (Hopefully) removes the delay when hitting esc in insert mode
+" removes the delay when hitting esc in insert mode
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
@@ -137,8 +139,6 @@ autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 set t_Co=256 "256 color mode"
 
-"set spell spelllang=en_us
-"
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
@@ -155,8 +155,9 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 
 nmap <leader>n :Note<Space>
 
-" let g:ctrlp_match_window_bottom = 0
-" let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+
 nmap <leader>t :CtrlPMixed<CR>
 nmap <leader>y :CtrlP<Space>
 nmap <Leader>p :CtrlPCmdPalette<CR>
@@ -187,9 +188,9 @@ if has("gui_running")
 
   let base16colorspace=256
   set background=dark
-  colorscheme base16-chalk
+  colorscheme jellybeans
 
-  set guifont=Consolas\ 13
+  set guifont=Consolas\ 12
   set lines=999 columns=999
 end
 
@@ -204,12 +205,6 @@ function! RenameFile()
 endfunction
 map <Leader>r :call RenameFile()<cr>
 
-" Clear the search buffer when hitting return
-" function! MapCR()
-"   nnoremap <cr> :nohlsearch<cr>
-" endfunction
-" call MapCR()
-
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_syntax_highlight = 1
@@ -219,7 +214,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" pretty json
 com! PrettyJSON %!python -m json.tool
 nnoremap <leader>d :NERDTreeToggle<CR>
 
@@ -240,76 +234,14 @@ let g:slime_target = "tmux"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_paste_file = "$HOME/.slime_paste"
 
-"set colorcolumn=79
-
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-function! RunCurrentSpecFile()
-  if InSpecFile()
-    let l:spec = @%
-    call SetLastSpecCommand(l:spec)
-    call RunSpecs(l:spec)
-  else
-    call RunLastSpec()
-  endif
-endfunction
-
-function! RunNearestSpec()
-  if InSpecFile()
-    let l:spec = @% . ":" . line(".")
-    call SetLastSpecCommand(l:spec)
-    call RunSpecs(l:spec)
-  else
-    call RunLastSpec()
-  endif
-endfunction
-
-function! RunLastSpec()
-  if exists("s:last_spec_command")
-    call RunSpecs(s:last_spec_command)
-  endif
-endfunction
-
-function! InSpecFile()
-  return match(expand("%"), "_spec.rb$") != -1
-endfunction
-
-function! SetLastSpecCommand(spec)
-  let s:last_spec_command = a:spec
-endfunction
-
-function! RunSpecs(spec)
-  execute substitute(":Dispatch rspec", "{spec}", a:spec, "g")
-endfunction
-
-map <Leader>R :call RunCurrentSpecFile()<CR>
-map <Leader>r :call RunNearestSpec()<CR>
-
 " let g:hardtime_default_on = 1
 " let g:hardtime_showmsg = 1
-" let g:syntastic_ruby_checkers = ['mri']
-" let g:syntastic_ruby_mri_args = "-W"
-
-command Rubocop :SyntasticCheck rubocop
-command Rubylint :SyntasticCheck rubylint
 " let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-
-" if executable('ag')
-"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"   let g:ctrlp_user_command =
-"     \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
-
-"   " ag is fast enough that CtrlP doesn't need to cache
-"   let g:ctrlp_use_caching = 0
-" else
-"   " Fall back to using git ls-files if Ag is not available
-"   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
-"   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-" endif
