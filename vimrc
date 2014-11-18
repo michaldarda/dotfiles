@@ -21,8 +21,6 @@ Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
@@ -61,6 +59,13 @@ Plugin 'jgdavey/vim-blockle'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'lukerandall/haskellmode-vim'
 Plugin 'vim-scripts/TagHighlight'
+
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/vimfiler.vim'
+Plugin 'yuku-t/unite-git'
+
 if has("gui_running")
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
@@ -155,15 +160,8 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 
 nmap <leader>n :Note<Space>
 
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-
-nmap <leader>t :CtrlPMixed<CR>
-nmap <leader>y :CtrlP<Space>
-nmap <Leader>p :CtrlPCmdPalette<CR>
-nmap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>t :<C-u>Unite -start-insert -auto-preview git_cached<CR>
 nmap <leader>c :tabnew<CR>
-nmap <Leader>fn :CtrlPFunky<Cr>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -205,20 +203,10 @@ function! RenameFile()
 endfunction
 map <Leader>r :call RenameFile()<cr>
 
-let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
-let g:ctrlp_extensions = ['funky']
-let g:ctrlp_funky_syntax_highlight = 1
-
-let g:ctrlp_working_path_mode = 'ra'
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
 com! PrettyJSON %!python -m json.tool
 nnoremap <leader>d :NERDTreeToggle<CR>
 
 let g:notes_directories = ['~/Dropbox/notes']
-
 let g:ragtag_global_maps = 1
 
 nnoremap <leader>] :Preview<CR>
@@ -237,11 +225,9 @@ let g:slime_paste_file = "$HOME/.slime_paste"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " let g:hardtime_default_on = 1
 " let g:hardtime_showmsg = 1
 " let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
