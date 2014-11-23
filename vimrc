@@ -49,7 +49,7 @@ Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
 Plugin 'benekastah/neomake'
-Plugin 'jpalardy/vim-slime'
+Plugin 'epeli/slimux'
 Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
 Plugin 'fatih/vim-go'
@@ -59,13 +59,14 @@ Plugin 'jgdavey/vim-blockle'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'lukerandall/haskellmode-vim'
 Plugin 'vim-scripts/TagHighlight'
-
+Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
-Plugin 'Shougo/vimfiler.vim'
-Plugin 'yuku-t/unite-git'
-
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'tpope/vim-leiningen'
 if has("gui_running")
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
@@ -144,15 +145,15 @@ autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 set t_Co=256 "256 color mode"
 
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+" map <up> <nop>
+" map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
 
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
+" imap <up> <nop>
+" imap <down> <nop>
+" imap <left> <nop>
+" imap <right> <nop>
 
 nmap <leader>h :nohlsearch<cr>
 
@@ -160,8 +161,24 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 
 nmap <leader>n :Note<Space>
 
-nnoremap <leader>t :<C-u>Unite -start-insert -auto-preview git_cached<CR>
 nmap <leader>c :tabnew<CR>
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+
+nmap <leader>t :CtrlPMixed<CR>
+nmap <leader>y :CtrlP<Space>
+nmap <Leader>p :CtrlPCmdPalette<CR>
+nmap <leader>b :CtrlPBuffer<CR>
+nmap <Leader>fn :CtrlPFunky<Cr>
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+let g:ctrlp_extensions = ['funky']
+let g:ctrlp_funky_syntax_highlight = 1
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -170,6 +187,8 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 if has("gui_running")
+  autocmd GUIEnter * set vb t_vb=
+
   set shell=/bin/zsh\ -i
 
   set cursorline
@@ -188,7 +207,7 @@ if has("gui_running")
   set background=dark
   colorscheme jellybeans
 
-  set guifont=Consolas\ 12
+  set guifont=Consolas\ 13
   set lines=999 columns=999
 end
 
@@ -230,4 +249,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " let g:hardtime_showmsg = 1
 " let g:hardtime_ignore_buffer_patterns = [ "CustomPatt[ae]rn", "NERD.*" ]
 
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
+let g:slimux_select_from_current_window = 1
+map <Leader>s :SlimuxREPLSendLine<CR>
+vmap <Leader>s :SlimuxREPLSendSelection<CR>
