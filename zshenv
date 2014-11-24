@@ -1,7 +1,7 @@
 # aliases
 alias e='vim'
 alias vi='vim'
-#alias gvim='0echo "Use vim instead"'
+# #alias gvim='0echo "Use vim instead"'
 
 # general
 alias rl='. ~/.zshrc && . ~/.zshenv'

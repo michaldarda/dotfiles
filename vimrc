@@ -67,6 +67,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-leiningen'
+Plugin 'p0deje/vim-ruby-interpolation'
 if has("gui_running")
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
@@ -119,7 +120,7 @@ set splitbelow
 set splitright
 
 set background=dark
-set clipboard=unnamedplus " Enable copy pasting
+
 
 " dont add the comments
 set formatoptions-=or
@@ -252,3 +253,23 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:slimux_select_from_current_window = 1
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+
+" if executable('ag')
+"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+"   let g:ctrlp_user_command =
+"     \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+
+"   " ag is fast enough that CtrlP doesn't need to cache
+"   let g:ctrlp_use_caching = 0
+" else
+"   " Fall back to using git ls-files if Ag is not available
+"   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+" endif
+"
+set clipboard=unnamedplus " Enable copy pasting
