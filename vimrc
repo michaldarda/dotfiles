@@ -48,7 +48,7 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
-Plugin 'benekastah/neomake'
+" Plugin 'benekastah/neomake'
 Plugin 'epeli/slimux'
 Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
@@ -68,6 +68,7 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-leiningen'
 Plugin 'p0deje/vim-ruby-interpolation'
+Plugin 'scrooloose/syntastic'
 if has("gui_running")
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
@@ -110,7 +111,7 @@ set autoread
 runtime macros/matchit.vim
 
 autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
-autocmd FileType ruby autocmd BufWritePre <buffer> :Neomake
+" autocmd FileType ruby autocmd BufWritePre <buffer> :Neomake
 
 " Disable splash
 set shortmess=aTItoO
@@ -273,3 +274,4 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 " endif
 "
 set clipboard=unnamedplus " Enable copy pasting
+let g:syntastic_ruby_checkers = ['ruby-lint']
