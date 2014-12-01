@@ -9,36 +9,22 @@ call vundle#begin()
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-surround'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-textobj-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'guns/vim-clojure-highlight'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'mattn/emmet-vim'
-Plugin 'othree/html5.vim'
 Plugin 'tpope/timl'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'pangloss/vim-javascript'
-Plugin 'evanmiller/nginx-vim-syntax'
-Plugin 'wting/rust.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -48,32 +34,58 @@ Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
-" Plugin 'benekastah/neomake'
 Plugin 'epeli/slimux'
 Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
-Plugin 'fatih/vim-go'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'gorkunov/smartpairs.vim'
-Plugin 'jgdavey/vim-blockle'
-Plugin 'bitc/vim-hdevtools'
-Plugin 'lukerandall/haskellmode-vim'
 Plugin 'vim-scripts/TagHighlight'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'arkwright/vim-whiplash'
+" ruby, rails
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'jgdavey/vim-blockle'
+Plugin 'p0deje/vim-ruby-interpolation'
+"scala
+Plugin 'derekwyatt/vim-scala'
+"javascript
+Plugin 'pangloss/vim-javascript'
+" coffeescript
+Plugin 'kchmck/vim-coffee-script'
+" rust
+Plugin 'wting/rust.vim'
+"go
+Plugin 'fatih/vim-go'
+"clojure
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-leiningen'
-Plugin 'p0deje/vim-ruby-interpolation'
-Plugin 'scrooloose/syntastic'
-Plugin 'arkwright/vim-whiplash'
+" haskell
+Plugin 'bitc/vim-hdevtools'
+Plugin 'lukerandall/haskellmode-vim'
+" nginx
+Plugin 'evanmiller/nginx-vim-syntax'
+" web, html5
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
 if has("gui_running")
+  " themes
   Plugin 'zenorocha/dracula-theme'
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
+  Plugin 'vim-scripts/pyte'
+
   Plugin 'bling/vim-airline'
 endif
 call vundle#end()            " required
@@ -211,7 +223,7 @@ if has("gui_running")
   set background=dark
   colorscheme jellybeans
 
-  set guifont=Consolas\ 13
+  set guifont=Consolas\ 12
   set lines=999 columns=999
 end
 
