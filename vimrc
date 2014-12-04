@@ -46,6 +46,7 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'arkwright/vim-whiplash'
+Plugin 'bogado/file-line'
 " ruby, rails
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
@@ -81,10 +82,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 if has("gui_running")
   " themes
-  Plugin 'zenorocha/dracula-theme'
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
-  Plugin 'vim-scripts/pyte'
 
   Plugin 'bling/vim-airline'
 endif
@@ -274,7 +273,6 @@ if exists("g:ctrlp_user_command")
 endif
 let g:ctrlp_working_path_mode = 'r'
 
-set clipboard=unnamedplus " Enable copy pasting
 let g:syntastic_ruby_checkers = ['ruby-lint']
 
 let g:WhiplashProjectsDir = "~/projects"
@@ -285,3 +283,11 @@ if has("gui_running")
 endif
 
 let NERDTreeChDirMode=2
+
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+else
+  set clipboard=unnamed
+endif
+
+
