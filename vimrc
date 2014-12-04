@@ -273,7 +273,7 @@ if exists("g:ctrlp_user_command")
 endif
 let g:ctrlp_working_path_mode = 'r'
 
-let g:syntastic_ruby_checkers = ['ruby-lint']
+" let g:syntastic_ruby_checkers = ['ruby-lint']
 
 let g:WhiplashProjectsDir = "~/projects"
 let g:WhiplashConfigDir = '~/dotfiles/vim/whiplash/'
@@ -290,4 +290,8 @@ else
   set clipboard=unnamed
 endif
 
-
+let g:syntastic_ruby_exec = '/home/michal/.rubies/ruby-2.1.2/bin/ruby'
+let g:syntastic_mri_exec = '/home/michal/.rubies/ruby-2.1.2/bin/ruby'
+let g:syntastic_check_on_open = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list=1
