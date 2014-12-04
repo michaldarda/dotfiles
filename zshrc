@@ -21,14 +21,19 @@ function update_gem_ctags {
   bundle show --paths | xargs ctags -R
 }
 
+function tnew {
+  tmux new-session -As `basename $PWD`
+}
+
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/dotfiles/scripts
 
 #gopath
 export PATH=$PATH:/usr/local/go/bin
 #cabal
 export PATH=$PATH:~/.cabal/bin
 
-#source ~/dotfiles/zsh_home
+source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_work

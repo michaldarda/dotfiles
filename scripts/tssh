@@ -1,0 +1,5 @@
+#!/bin/bash
+
+tmux new-window -n "$1"
+tmux send-keys "ssh $1" C-m &&
+tmux send-keys "sudo -u deploy -i" C-m

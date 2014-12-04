@@ -1,7 +1,7 @@
 # aliases
 alias e='vim'
 alias vi='vim'
-# #alias gvim='0echo "Use vim instead"'
+alias tl='tail -f /var/log/cubiware/*.log'
 
 # general
 alias rl='. ~/.zshrc && . ~/.zshenv'
