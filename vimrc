@@ -223,7 +223,7 @@ if has("gui_running")
   set background=dark
   colorscheme jellybeans
 
-  set guifont=Consolas\ 12
+  set guifont=Consolas\ 13
   set lines=999 columns=999
 end
 
@@ -277,7 +277,7 @@ let g:ctrlp_working_path_mode = 'r'
 set clipboard=unnamedplus " Enable copy pasting
 let g:syntastic_ruby_checkers = ['ruby-lint']
 
-let g:WhiplashProjectsDir = "~/Code/"
+let g:WhiplashProjectsDir = "~/projects"
 let g:WhiplashConfigDir = '~/dotfiles/vim/whiplash/'
 
 if has("gui_running")
