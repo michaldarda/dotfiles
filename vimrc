@@ -1,7 +1,7 @@
+set nocompatible
 let g:ruby_path = '/usr/bin/ruby'
 let g:haddock_browser="/usr/bin/google-chrome"
 
-set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -276,7 +276,7 @@ let g:ctrlp_working_path_mode = 'r'
 
 " let g:syntastic_ruby_checkers = ['ruby-lint']
 
-let g:WhiplashProjectsDir = "~/projects"
+let g:WhiplashProjectsDir = "~/Code/"
 let g:WhiplashConfigDir = '~/dotfiles/vim/whiplash/'
 
 if has("gui_running")
@@ -299,7 +299,3 @@ let g:syntastic_auto_loc_list=1
 
 " Highlight merge conflict markers
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
-
-" Move visual block
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
