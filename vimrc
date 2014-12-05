@@ -80,6 +80,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 " web, html5
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
+Plugin 'svermeulen/vim-easyclip'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'
@@ -295,3 +296,10 @@ let g:syntastic_mri_exec = '/home/michal/.rubies/ruby-2.1.2/bin/ruby'
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list=1
+
+" Highlight merge conflict markers
+match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
+
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
