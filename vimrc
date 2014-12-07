@@ -221,11 +221,11 @@ if has("gui_running")
 
   let base16colorspace=256
 
-  " set background=dark
-  " colorscheme jellybeans
+  set background=dark
+  colorscheme jellybeans
 
-  set background=light
-  colorscheme base16-brewer
+  " set background=light
+  " colorscheme base16-atelierlakeside
 
   set guifont=Consolas\ 13
   " set lines=999 columns=999
