@@ -220,11 +220,15 @@ if has("gui_running")
   set guioptions+=c
 
   let base16colorspace=256
-  set background=dark
-  colorscheme jellybeans
+
+  " set background=dark
+  " colorscheme jellybeans
+
+  set background=light
+  colorscheme base16-brewer
 
   set guifont=Consolas\ 13
-  set lines=999 columns=999
+  " set lines=999 columns=999
 end
 
 function! RenameFile()
