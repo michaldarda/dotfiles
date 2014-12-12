@@ -22,20 +22,17 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Raimondi/delimitMate.git'
-Plugin 'tpope/timl'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-eunuch'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'greyblake/vim-preview' "Markdown
-Plugin 'fisadev/vim-ctrlp-cmdpalette'
 Plugin 'mkitt/tabline.vim'
 Plugin 'vim-scripts/loremipsum'
 Plugin 'tpope/vim-abolish'
 Plugin 'godlygeek/tabular'
 Plugin 'epeli/slimux'
-Plugin 'takac/vim-hardtime'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'gorkunov/smartpairs.vim'
@@ -45,7 +42,6 @@ Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'arkwright/vim-whiplash'
 Plugin 'bogado/file-line'
 " ruby, rails
 Plugin 'vim-ruby/vim-ruby'
@@ -80,12 +76,11 @@ Plugin 'evanmiller/nginx-vim-syntax'
 " web, html5
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
-Plugin 'svermeulen/vim-easyclip'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
-
+  " airline
   Plugin 'bling/vim-airline'
 endif
 call vundle#end()            " required
@@ -125,7 +120,6 @@ set autoread
 runtime macros/matchit.vim
 
 autocmd FileType c,cpp,java,php,ruby,go,scala,python,javascript,coffee autocmd BufWritePre <buffer> :%s/\s\+$//e
-" autocmd FileType ruby autocmd BufWritePre <buffer> :Neomake
 
 " Disable splash
 set shortmess=aTItoO
@@ -135,7 +129,6 @@ set splitbelow
 set splitright
 
 set background=dark
-
 
 " dont add the comments
 set formatoptions-=or
@@ -161,15 +154,15 @@ autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 set t_Co=256 "256 color mode"
 
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
-" imap <up> <nop>
-" imap <down> <nop>
-" imap <left> <nop>
-" imap <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 nmap <leader>h :nohlsearch<cr>
 
@@ -181,9 +174,7 @@ nmap <leader>c :tabnew<CR>
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 
-nmap <leader>t :CtrlPMixed<CR>
-nmap <leader>y :CtrlP<Space>
-nmap <Leader>p :CtrlPCmdPalette<CR>
+nmap <leader>t :Ctrl<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <Leader>fn :CtrlPFunky<Cr>
 
@@ -195,12 +186,6 @@ if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
 
 if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
@@ -228,7 +213,6 @@ if has("gui_running")
   " colorscheme base16-atelierlakeside
 
   set guifont=Consolas\ 13
-  " set lines=999 columns=999
 end
 
 function! RenameFile()
@@ -243,6 +227,9 @@ endfunction
 map <Leader>r :call RenameFile()<cr>
 
 com! PrettyJSON %!python -m json.tool
+
+let NERDTreeChDirMode=0
+let g:ctrlp_working_path_mode=0
 nnoremap <leader>d :NERDTreeToggle<CR>
 
 let g:notes_directories = ['~/Dropbox/notes']
@@ -273,22 +260,6 @@ let g:slimux_select_from_current_window = 1
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
 
-if exists("g:ctrlp_user_command")
-  unlet g:ctrlp_user_command
-endif
-let g:ctrlp_working_path_mode = 'r'
-
-" let g:syntastic_ruby_checkers = ['ruby-lint']
-
-let g:WhiplashProjectsDir = "~/Code/"
-let g:WhiplashConfigDir = '~/dotfiles/vim/whiplash/'
-
-if has("gui_running")
-  nmap <leader>t :CtrlPCurWD<CR>
-endif
-
-let NERDTreeChDirMode=2
-
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
 else
@@ -303,3 +274,11 @@ let g:syntastic_auto_loc_list=1
 
 " Highlight merge conflict markers
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
+
+function! SwitchProject(project_path)
+  execute "cd " . a:project_path
+  execute "lcd " . a:project_path
+endfunction
+
+command! -buffer -complete=file_in_path -nargs=1 SwitchProject call SwitchProject(<f-args>)
+nmap <leader>sp :SwitchProject ~/Code/
