@@ -26,8 +26,11 @@ wallpaper2    = themedir .. "/background.png"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
 wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
+minewall      = home .. "/Pictures/death_star.jpg"
 
-if awful.util.file_readable(wallpaper1) then
+if awful.util.file_readable(minewall) then
+  theme.wallpaper = minewall
+elseif awful.util.file_readable(wallpaper1) then
   theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
   theme.wallpaper = wallpaper2
@@ -40,7 +43,7 @@ else
 end
 --}}}
 
-theme.font          = "Monaco 9"
+theme.font          = "Consolas 12"
 
 theme.bg_normal     = "#121212"
 theme.bg_focus      = "#212121"

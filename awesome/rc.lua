@@ -12,6 +12,8 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local vicious = require("vicious")
 
+require("volume")
+
 -- Initialize widget
 memwidget = wibox.widget.textbox()
 -- Register widget
@@ -80,8 +82,7 @@ local layouts =
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
+    awful.layout.suit.spiral.dwindle, awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier
 }
@@ -212,6 +213,7 @@ for s = 1, screen.count() do
     right_layout:add(memwidget)
     right_layout:add(cpuwidget)
     right_layout:add(batwidget)
+    right_layout:add(volume_widget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -291,12 +293,21 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
     -- Lockscreen
     awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("dm-tool lock") end),
+    -- Volume
+    awful.key({modkey,}, "]", function ()
+      awful.util.spawn("amixer set Master 9%+") end),
+    awful.key({modkey}, "[", function ()
+      awful.util.spawn("amixer set Master 9%-") end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end),
-    awful.key({modkey, altkey}, 1,     function () awful.screen.focus(2) end),
-    awful.key({modkey, altkey}, 9,     function () awful.screen.focus(1) end)
+    awful.key({ modkey,           },  "p",     function ()
+	    awful.util.spawn("dmenu_run -i -p 'Run command:' -nb '" .. 
+		    beautiful.bg_normal .. "' -nf '" .. beautiful.fg_normal .. 
+		    "' -sb '" .. beautiful.bg_focus .. 
+		    "' -sf '" .. beautiful.fg_focus .. "'")
+      end)
 )
 
 clientkeys = awful.util.table.join(
@@ -389,7 +400,9 @@ awful.rules.rules = {
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "Gvim" },
-      properties = { size_hints_honor = false } },
+      properties = { maximized_vertical = true, maximized_horizontal = true, size_hints_honor = false } },
+    { rule = { class = "Terminal" },
+      properties = { maximized_vertical = true, maximized_horizontal = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
@@ -469,4 +482,6 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+awful.util.spawn_with_shell("pgrep nm-applet && echo 'already running' || nm-applet &")
 -- }}}
