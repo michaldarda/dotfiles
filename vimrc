@@ -171,10 +171,8 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 nmap <leader>n :Note<Space>
 
 nmap <leader>c :tabnew<CR>
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
 
-nmap <leader>t :Ctrl<CR>
+nmap <leader>t :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <Leader>fn :CtrlPFunky<Cr>
 
@@ -275,10 +273,30 @@ let g:syntastic_auto_loc_list=1
 " Highlight merge conflict markers
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
-function! SwitchProject(project_path)
-  execute "cd " . a:project_path
-  execute "lcd " . a:project_path
+function! ChangeProject(target)
+  execute "cd " . a:target
 endfunction
 
-command! -buffer -complete=file_in_path -nargs=1 SwitchProject call SwitchProject(<f-args>)
-nmap <leader>sp :SwitchProject ~/Code/
+function! CdPaths()
+  let paths = split(globpath(&cdpath, '*'), '\n')
+  let result = []
+  for path in paths
+    if isdirectory(path)
+      let result += [path]
+    endif
+  endfor
+  return result
+endfunction
+
+function! CompleteDirInCdPath(ArgLead, CmdLine, CursorPos)
+  let result = []
+  for path in CdPaths()
+    if path =~ a:ArgLead
+      let result += [fnamemodify(path, ':t')]
+    end
+  endfor
+  return join(result, "\n")
+endfunction
+
+command! -nargs=1 -complete=custom,CompleteDirInCdPath ChangeProject call ChangeProject(<q-args>)
+cabbr p ChangeProject
