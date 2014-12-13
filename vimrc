@@ -275,6 +275,7 @@ match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
 function! ChangeProject(target)
   execute "cd " . a:target
+  edit .
 endfunction
 
 function! CdPaths()
@@ -300,3 +301,24 @@ endfunction
 
 command! -nargs=1 -complete=custom,CompleteDirInCdPath ChangeProject call ChangeProject(<q-args>)
 cabbr p ChangeProject
+
+function! OpenFileInCWD(filename)
+  let l:current_working_dir = getcwd()
+  let l:filepath = l:current_working_dir . '/' . a:filename
+  if filereadable(l:filepath)
+    execute "edit " . l:filepath
+  else
+    echom "File " . l:filepath . " doesn't exists"
+  endif
+endfunction
+
+function! Rgemfile()
+  call OpenFileInCWD("Gemfile")
+endfunction
+
+function! Rgemfilelock()
+  call OpenFileInCWD("Gemfile.lock")
+endfunction
+
+command! Rgemfile call Rgemfile()
+command! Rglock call Rgemfilelock()
