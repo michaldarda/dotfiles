@@ -172,6 +172,8 @@ nmap <leader>n :Note<Space>
 
 nmap <leader>c :tabnew<CR>
 
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <Leader>fn :CtrlPFunky<Cr>
@@ -278,7 +280,7 @@ function! ChangeProject(target)
   edit .
 endfunction
 
-function! CdPaths()
+function! DirsCdPath()
   let paths = split(globpath(&cdpath, '*'), '\n')
   let result = []
   for path in paths
@@ -289,9 +291,9 @@ function! CdPaths()
   return result
 endfunction
 
-function! CompleteDirInCdPath(ArgLead, CmdLine, CursorPos)
+function! DirInCdPathCompletion(ArgLead, CmdLine, CursorPos)
   let result = []
-  for path in CdPaths()
+  for path in DirsCdPath()
     if path =~ a:ArgLead
       let result += [fnamemodify(path, ':t')]
     end
@@ -299,7 +301,7 @@ function! CompleteDirInCdPath(ArgLead, CmdLine, CursorPos)
   return join(result, "\n")
 endfunction
 
-command! -nargs=1 -complete=custom,CompleteDirInCdPath ChangeProject call ChangeProject(<q-args>)
+command! -nargs=1 -complete=custom,DirInCdPathCompletion ChangeProject call ChangeProject(<q-args>)
 cabbr p ChangeProject
 
 function! OpenFileInCWD(filename)
