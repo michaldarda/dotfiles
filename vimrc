@@ -77,8 +77,10 @@ Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/CmdlineComplete'
+Plugin 'janko-m/vim-test'
 if has("gui_running")
   " themes
+  Plugin 'ajh17/Spacegray.vim'
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
   " airline
@@ -327,3 +329,8 @@ command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
 
 cmap <Tab> <Plug>CmdlineCompleteForward
+
+nmap <silent> <leader>q :TestNearest<CR>
+nmap <silent> <leader>w :TestFile<CR>
+nmap <silent> <leader>e :TestSuite<CR>
+nmap <silent> <leader>d :TestLast<CR>
