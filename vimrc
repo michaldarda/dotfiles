@@ -76,6 +76,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 " web, html5
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
+Plugin 'vim-scripts/CmdlineComplete'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'

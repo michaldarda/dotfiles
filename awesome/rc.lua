@@ -17,15 +17,15 @@ require("volume")
 -- Initialize widget
 memwidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "MEM $1%", 13)
+vicious.register(memwidget, vicious.widgets.mem, " MEM $1% ", 13)
 
 -- Initialize widget
 cpuwidget = wibox.widget.textbox()
 -- Register widget
-vicious.register(cpuwidget, vicious.widgets.cpu, "CPU $1%")
+vicious.register(cpuwidget, vicious.widgets.cpu, " CPU $1% ")
 
 batwidget = wibox.widget.textbox()
-vicious.register(batwidget, vicious.widgets.bat, "BAT: $2%", 61, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, " BAT: $2% ", 61, "BAT0")
 
 -- Load Debian menu entries
 require("debian.menu")
@@ -296,6 +296,8 @@ globalkeys = awful.util.table.join(
 
     -- Lockscreen
     awful.key({ modkey, "Control" }, "l", function () awful.util.spawn("dm-tool lock") end),
+    -- Lockscreen
+    awful.key({ modkey, }, "s", function () awful.util.spawn("mate-screenshot") end),
     -- Volume
     awful.key({modkey,}, "]", function ()
       awful.util.spawn("amixer set Master 9%+") end),
