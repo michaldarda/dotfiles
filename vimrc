@@ -325,3 +325,5 @@ endfunction
 
 command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
+
+cmap <Tab> <Plug>CmdlineCompleteForward
