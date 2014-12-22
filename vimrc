@@ -80,11 +80,8 @@ Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'janko-m/vim-test'
 if has("gui_running")
   " themes
-  Plugin 'ajh17/Spacegray.vim'
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
-  " airline
-  " Plugin 'bling/vim-airline'
 endif
 call vundle#end()            " required
 
@@ -95,7 +92,7 @@ syntax on
 
 let mapleader=","
 
-" set number
+set number
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -175,11 +172,8 @@ imap <left> <nop>
 imap <right> <nop>
 
 nmap <leader>h :nohlsearch<cr>
-
 nmap <leader>v :tabe ~/.vimrc<CR>
-
 nmap <leader>n :Note<Space>
-
 nmap <leader>c :tabnew<CR>
 
 let g:ctrlp_match_window_bottom = 0
@@ -204,15 +198,11 @@ if has("gui_running")
 
   set cursorline
 
-  " let g:airline#extensions#tabline#enabled = 1
-  " let g:airline#extensions#tabline#fnamemod = ':t'
-  " let g:airline#extensions#tabline#show_buffers = 0
-
   set guioptions-=m "remove menu bar
   set guioptions-=T "remove toolbar
   set guioptions-=r "remove right-hand scroll bar
   set guioptions-=L "remove left-hand scroll bar
-  set guioptions-=e
+  set guioptions-=e "console-like tabs in gvim
   set guioptions+=c
 
   let base16colorspace=256
@@ -249,7 +239,6 @@ let g:ragtag_global_maps = 1
 nnoremap <leader>] :Preview<CR>
 
 nmap <leader>a :Ag ""<Left>
-nmap <leader>A :Ag <C-r><C-w><CR>
 
 let tlist_clojure_settings = 'lisp;f:function'
 let vimclojure#HighlightBuiltins=1
@@ -277,8 +266,6 @@ else
   set clipboard=unnamed
 endif
 
-let g:syntastic_ruby_exec = '/home/michal/.rubies/ruby-2.1.2/bin/ruby'
-let g:syntastic_mri_exec = '/home/michal/.rubies/ruby-2.1.2/bin/ruby'
 let g:syntastic_check_on_open = 1
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list=1
@@ -336,9 +323,9 @@ endfunction
 command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
 
-cmap <Tab> <Plug>CmdlineCompleteForward
+cmap <c-x> <Plug>CmdlineCompleteForward
 
 nmap <silent> <leader>q :TestNearest<CR>
 nmap <silent> <leader>w :TestFile<CR>
 nmap <silent> <leader>e :TestSuite<CR>
-"nmap <silent> <leader>d :TestLast<CR>
+nmap <silent> <leader>l :TestLast<CR>
