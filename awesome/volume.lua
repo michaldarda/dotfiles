@@ -21,7 +21,6 @@ function update_volume(widget)
    else
        -- For the mute button
        volume = volume .. "M"
-
    end
    widget:set_markup(volume)
 end

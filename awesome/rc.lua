@@ -27,9 +27,6 @@ vicious.register(cpuwidget, vicious.widgets.cpu, " CPU $1% ")
 batwidget = wibox.widget.textbox()
 vicious.register(batwidget, vicious.widgets.bat, " BAT: $2% ", 61, "BAT0")
 
--- Load Debian menu entries
-require("debian.menu")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -60,7 +57,7 @@ end
 beautiful.init("~/.config/awesome/themes/grey-new/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "gnome-terminal"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -115,7 +112,6 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "Debian", debian.menu.Debian_menu.Debian },
                                     { "open terminal", terminal }
                                   }
                         })

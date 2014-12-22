@@ -84,7 +84,7 @@ if has("gui_running")
   Plugin 'nanotech/jellybeans.vim'
   Plugin 'chriskempson/base16-vim'
   " airline
-  Plugin 'bling/vim-airline'
+  " Plugin 'bling/vim-airline'
 endif
 call vundle#end()            " required
 
@@ -95,12 +95,19 @@ syntax on
 
 let mapleader=","
 
+" set number
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set noswapfile
-set number
 set laststatus=2
+set statusline=%f         " Path to the file
+set statusline+=\ "
+set statusline+=%l        " Current line
+set statusline+=/         " Separator
+set statusline+=%L        " Total lines
+set statusline+=%=        " Switch to the right side
+set statusline+=%{fugitive#statusline()}
 set backspace=indent,eol,start
 set autoindent
 set history=50
@@ -197,14 +204,15 @@ if has("gui_running")
 
   set cursorline
 
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#tabline#show_buffers = 0
+  " let g:airline#extensions#tabline#enabled = 1
+  " let g:airline#extensions#tabline#fnamemod = ':t'
+  " let g:airline#extensions#tabline#show_buffers = 0
 
   set guioptions-=m "remove menu bar
   set guioptions-=T "remove toolbar
   set guioptions-=r "remove right-hand scroll bar
   set guioptions-=L "remove left-hand scroll bar
+  set guioptions-=e
   set guioptions+=c
 
   let base16colorspace=256
@@ -333,4 +341,4 @@ cmap <Tab> <Plug>CmdlineCompleteForward
 nmap <silent> <leader>q :TestNearest<CR>
 nmap <silent> <leader>w :TestFile<CR>
 nmap <silent> <leader>e :TestSuite<CR>
-nmap <silent> <leader>d :TestLast<CR>
+"nmap <silent> <leader>d :TestLast<CR>
