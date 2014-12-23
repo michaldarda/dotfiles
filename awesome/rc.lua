@@ -11,8 +11,38 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local vicious = require("vicious")
+local treesome = require("treesome")
 
-require("volume")
+volume_widget = wibox.widget.textbox()
+volume_widget:set_align("right")
+
+function update_volume(widget)
+   local fd = io.popen("amixer sget Master")
+   local status = fd:read("*all")
+   fd:close()
+
+   -- local volume = tonumber(string.match(status, "(%d?%d?%d)%%")) / 100
+   local volume = string.match(status, "(%d?%d?%d)%%")
+   volume = string.format("AUDIO: % 3d", volume)
+
+   status = string.match(status, "%[(o[^%]]*)%]")
+
+   if string.find(status, "on", 1, true) then
+       -- For the volume numbers
+       volume = volume .. "%"
+   else
+       -- For the mute button
+       volume = volume .. "M"
+   end
+   widget:set_markup(volume)
+end
+
+update_volume(volume_widget)
+
+mytimer = timer({ timeout = 0.2 })
+mytimer:connect_signal("timeout", function () update_volume(volume_widget) end)
+mytimer:start()
+
 
 -- Initialize widget
 memwidget = wibox.widget.textbox()
@@ -54,7 +84,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("~/.config/awesome/themes/grey-new/theme.lua")
+beautiful.init("~/.config/awesome/themes/zhuravlik/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
@@ -72,16 +102,16 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle, awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    -- awful.layout.suit.tile,
+    -- awful.layout.suit.tile.left,
+    -- awful.layout.suit.tile.bottom,
+    -- awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle, awful.layout.suit.max,
+    -- awful.layout.suit.max.fullscreen,
+    -- awful.layout.suit.magnifier
 }
 -- }}}
 
@@ -143,20 +173,14 @@ mytaglist.buttons = awful.util.table.join(
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
-                                              if c == client.focus then
-                                                  c.minimized = true
-                                              else
-                                                  -- Without this, the following
-                                                  -- :isvisible() makes no sense
                                                   c.minimized = false
+
                                                   if not c:isvisible() then
-                                                      awful.tag.viewonly(c:tags()[1])
+                                                    awful.tag.viewonly(c:tags()[1])
                                                   end
-                                                  -- This will also un-minimize
-                                                  -- the client, if needed
+
                                                   client.focus = c
                                                   c:raise()
-                                              end
                                           end),
                      awful.button({ }, 3, function ()
                                               if instance then
