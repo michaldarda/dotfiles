@@ -9,6 +9,17 @@ alias t='touch'
 alias tf='tail -f'
 alias md='mkdir'
 
+# Push and pop directories on directory stack
+alias pu='pushd'
+alias po='popd'
+
+# cds
+alias ...='cd ../..'
+alias -- -='cd -'
+
+# ll
+alias ll='ls -lh'
+
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gpr="git pull --rebase --stat"
