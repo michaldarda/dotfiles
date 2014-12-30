@@ -78,6 +78,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'janko-m/vim-test'
+Plugin 'nicwest/QQ.vim'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'
