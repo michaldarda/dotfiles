@@ -16,6 +16,15 @@ local treesome = require("treesome")
 volume_widget = wibox.widget.textbox()
 volume_widget:set_align("right")
 
+-- Disk usage widget
+diskwidget = widget({ type = 'imagebox' })
+diskwidget.image = image("/home/username/.config/awesome/du.png")
+disk = require("diskusage")
+-- the first argument is the widget to trigger the diskusage
+-- the second/third is the percentage at which a line gets orange/red
+-- true = show only local filesystems
+disk.addToWidget(diskwidget, 75, 90, false)
+
 function update_volume(widget)
    local fd = io.popen("amixer sget Master")
    local status = fd:read("*all")

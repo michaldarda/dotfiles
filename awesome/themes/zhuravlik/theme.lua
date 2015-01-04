@@ -14,7 +14,7 @@ theme.border_width  = "1"
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 
-theme.font          = "DejaVu Sans Regular 9"
+theme.font          = "DejaVu Sans Regular 10"
 
 home          = os.getenv("HOME")
 minewall      = home .. "/Pictures/alps2.jpg"
