@@ -12,9 +12,6 @@ setopt prompt_subst
 
 export HISTSIZE=2000
 export HISTFILE="$HOME/.zsh_history"
-setopt hist_ignore_space
-
-bindkey "^R" history-incremental-pattern-search-backward
 
 # get the name of the branch we are on
 function git_prompt_info() {
@@ -27,10 +24,11 @@ function git_prompt_info() {
 
 # get name of current ruby version
 function prompt_rvm {
-    rbv=`rvm-prompt`
-    rbv=${rbv#ruby-}
-    [[ $rbv == *"@"* ]] || rbv="${rbv}"
-    echo $rbv
+  if rvm-prompt 2>/dev/null; then
+    rvm-prompt
+  else
+    ruby -e 'print RUBY_VERSION'
+  fi
 }
 
 # Checks if working tree is dirty
@@ -174,17 +172,15 @@ POST_1_7_2_GIT=$(git_compare_version "1.7.2")
 #clean up the namespace slightly by removing the checker function
 unset -f git_compare_version
 
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 autoload colors; colors
 LS_COLORS="di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32";
 LSCOLORS="ExGxFxDxCxDxDxhbhdacEc";
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%} '
-RPROMPT='$(rvm-prompt)'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
 
 export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 
@@ -205,17 +201,24 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/dotfiles/scripts
 
-#gopath
-export PATH=$PATH:/usr/local/go/bin
 #cabal
 export PATH=$PATH:~/.cabal/bin
 
+#gopath
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/gopath
 
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-#source ~/dotfiles/zsh_home
-source ~/dotfiles/zsh_work
+source ~/dotfiles/zsh_home
+# source ~/dotfiles/zsh_work
 
 setopt cdablevars
 setopt correct
+setopt hist_ignore_space
+
+bindkey "^R" history-incremental-pattern-search-backward
+
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%} '
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+RPROMPT='$(prompt_rvm)'
