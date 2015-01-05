@@ -214,7 +214,7 @@ if has("gui_running")
   " set background=light
   " colorscheme base16-atelierlakeside
 
-  set guifont=Consolas\ 12
+  set guifont=Consolas\ 14
 end
 
 function! RenameFile()
