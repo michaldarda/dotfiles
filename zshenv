@@ -75,3 +75,9 @@ alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
 alias h="cd ~/"
+
+if [[ `hostname` == MICHAL-ARCH ]]; then
+  source ~/dotfiles/zsh_home
+elif [[ `hostname` == MICHAL-UBUNTU ]]; then
+  source ~/dotfiles/zsh_work
+fi

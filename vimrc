@@ -9,11 +9,11 @@ call vundle#begin()
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-operator-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -78,7 +78,14 @@ Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/CmdlineComplete'
 Plugin 'janko-m/vim-test'
+Plugin 'fmoralesc/vim-tutor-mode'
 Plugin 'nicwest/QQ.vim'
+Plugin 'kshenoy/vim-signature'
+Plugin 'deris/vim-shot-f'
+Plugin 'osyo-manga/vim-textobj-multiblock'
+Plugin 'rhysd/vim-textobj-anyblock'
+Plugin 'thinca/vim-textobj-between'
+Plugin 'rhysd/vim-operator-surround'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'
@@ -214,7 +221,7 @@ if has("gui_running")
   " set background=light
   " colorscheme base16-atelierlakeside
 
-  set guifont=Consolas\ 14
+  set guifont=Consolas\ 13
 end
 
 function! RenameFile()
@@ -321,6 +328,8 @@ function! Rgemfilelock()
   call OpenFileInCWD("Gemfile.lock")
 endfunction
 
+noremap s <NOP>
+
 command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
 
@@ -330,3 +339,43 @@ nmap <silent> <leader>q :TestNearest<CR>
 nmap <silent> <leader>w :TestFile<CR>
 nmap <silent> <leader>e :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
+
+" operator mappings
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+
+" delete or replace most inner surround
+
+" if you use vim-textobj-multiblock
+nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
+nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
+
+" if you use vim-textobj-anyblock
+nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-anyblock-a)
+nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
+
+" if you use vim-textobj-between
+nmap <silent>sdb <Plug>(operator-surround-delete)<Plug>(textobj-between-a)
+nmap <silent>srb <Plug>(operator-surround-replace)<Plug>(textobj-between-a)
+
+nnoremap <silent> \a :set opfunc=<SID>AckMotion<CR>g@
+xnoremap <silent> \a :<C-U>call <SID>AckMotion(visualmode())<CR>
+
+function! s:CopyMotionForType(type)
+  if a:type ==# 'v'
+    silent execute "normal! `<" . a:type . "`>y"
+  elseif a:type ==# 'char'
+    silent execute "normal! `[v`]y"
+  endif
+endfunction
+
+function! s:AckMotion(type) abort
+  let reg_save = @@
+
+  call s:CopyMotionForType(a:type)
+
+  execute "normal! :Ag " . shellescape(@@) . "\<cr>"
+
+  let @@ = reg_save
+endfunction
