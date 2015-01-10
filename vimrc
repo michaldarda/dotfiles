@@ -17,7 +17,6 @@ Plugin 'kana/vim-operator-user'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'tpope/vim-ragtag'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'scrooloose/nerdtree'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-notes'
 Plugin 'terryma/vim-multiple-cursors'
@@ -86,6 +85,8 @@ Plugin 'osyo-manga/vim-textobj-multiblock'
 Plugin 'rhysd/vim-textobj-anyblock'
 Plugin 'thinca/vim-textobj-between'
 Plugin 'rhysd/vim-operator-surround'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'dandorman/vim-colors'
 if has("gui_running")
   " themes
   Plugin 'nanotech/jellybeans.vim'
@@ -107,6 +108,7 @@ set shiftwidth=2
 set noswapfile
 set laststatus=2
 set statusline=%f         " Path to the file
+set statusline+=%2*\ %y\  " FileType
 set statusline+=\ "
 set statusline+=%l        " Current line
 set statusline+=/         " Separator
@@ -168,6 +170,13 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf mark
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 set t_Co=256 "256 color mode"
+" in case t_Co alone doesn't work, add this as well:
+" i.e. Force 256 colors harder
+let &t_AB="\e[48;5;%dm"
+let &t_AF="\e[38;5;%dm"
+set enc=utf-8
+set term=screen-256color
+let $TERM='screen-256color'
 
 map <up> <nop>
 map <down> <nop>
@@ -218,9 +227,6 @@ if has("gui_running")
   set background=dark
   colorscheme jellybeans
 
-  " set background=light
-  " colorscheme base16-atelierlakeside
-
   set guifont=Consolas\ 13
 end
 
@@ -237,9 +243,7 @@ map <Leader>r :call RenameFile()<cr>
 
 com! PrettyJSON %!python -m json.tool
 
-let NERDTreeChDirMode=0
 let g:ctrlp_working_path_mode=0
-nnoremap <leader>d :NERDTreeToggle<CR>
 
 let g:notes_directories = ['~/Dropbox/notes']
 let g:ragtag_global_maps = 1
@@ -328,10 +332,15 @@ function! Rgemfilelock()
   call OpenFileInCWD("Gemfile.lock")
 endfunction
 
+function! Rgspec()
+  execute "edit **/*.gemspec"
+endfunction
+
 noremap s <NOP>
 
 command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
+command! Rgspec call Rgspec()
 
 cmap <c-x> <Plug>CmdlineCompleteForward
 
@@ -359,8 +368,8 @@ nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
 nmap <silent>sdb <Plug>(operator-surround-delete)<Plug>(textobj-between-a)
 nmap <silent>srb <Plug>(operator-surround-replace)<Plug>(textobj-between-a)
 
-nnoremap <silent> \a :set opfunc=<SID>AckMotion<CR>g@
-xnoremap <silent> \a :<C-U>call <SID>AckMotion(visualmode())<CR>
+nnoremap <silent> \a :set opfunc=<SID>AgMotion<CR>g@
+xnoremap <silent> \a :<C-U>call <SID>AgMotion(visualmode())<CR>
 
 function! s:CopyMotionForType(type)
   if a:type ==# 'v'
@@ -370,7 +379,7 @@ function! s:CopyMotionForType(type)
   endif
 endfunction
 
-function! s:AckMotion(type) abort
+function! s:AgMotion(type) abort
   let reg_save = @@
 
   call s:CopyMotionForType(a:type)
@@ -379,3 +388,6 @@ function! s:AckMotion(type) abort
 
   let @@ = reg_save
 endfunction
+
+hi Visual term=reverse cterm=reverse guibg=White
+hi Search term=reverse cterm=reverse guibg=White

@@ -18,13 +18,14 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:DejaVu Sans 10
+# font pango:DejaVu Sans 11
+font pango:Consolas 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -128,17 +129,15 @@ bindsym $mod+r mode "resize"
 bar {
   status_command i3status
     position          top
-
-    # $i3-theme-bar
-    colors {
-      background #D6CEC8
-        statusline #000000
-        separator #D6CEC8
-        focused_workspace #08226C #08226C #ffffff
-        active_workspace #555555 #555555 #D4CFB4
-        inactive_workspace #949494 #949494 #D4CFB4
-        urgent_workspace   #2E5492 #2E5492 #ffffff
-    }
+  colors {
+    separator #666666
+    background #222222
+    statusline #dddddd
+    focused_workspace #0088CC #0088CC #ffffff
+    active_workspace #333333 #333333 #ffffff
+    inactive_workspace #333333 #333333 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
 }
 
 # Pulse Audio controls
@@ -150,13 +149,9 @@ bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
-# windows classic 8 theme for i3wm by lasers
-# $i3-theme-window
-# class                 border  backgr. text    indicator
-client.focused          #949494 #2E5492 #ffffff #08226C
-client.focused_inactive #949494 #848484 #D4CFB4 #292d2e
-client.unfocused        #949494 #848484 #D4CFB4 #292d2e
-client.urgent           #949494 #900000 #ffffff #A65900
-
 # $i3-background
 exec --no-startup-id xsetroot -solid #3975A9
+client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused_inactive #333333 #333333 #888888 #292d2e
+client.unfocused #333333 #333333 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000
