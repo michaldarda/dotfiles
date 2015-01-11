@@ -133,7 +133,7 @@ bar {
     separator #666666
     background #222222
     statusline #dddddd
-    focused_workspace #0088CC #0088CC #ffffff
+    focused_workspace #1c648f #1c648f #ffffff
     active_workspace #333333 #333333 #ffffff
     inactive_workspace #333333 #333333 #888888
     urgent_workspace #2f343a #900000 #ffffff
@@ -150,8 +150,8 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # $i3-background
-exec --no-startup-id xsetroot -solid #3975A9
-client.focused #0088CC #0088CC #ffffff #dddddd
+exec --no-startup-id nitrogen --restore
+client.focused #1c648f #1c648f #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
