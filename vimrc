@@ -287,6 +287,7 @@ let g:syntastic_auto_loc_list=1
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
 function! ChangeProject(target)
+  execute "tabe"
   execute "lcd " . a:target
   edit .
 endfunction
