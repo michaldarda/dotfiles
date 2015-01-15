@@ -108,7 +108,7 @@ set tabstop=2
 set shiftwidth=2
 set noswapfile
 set laststatus=2
-set statusline=%f         " Path to the file
+set statusline=%F         " Path to the file
 set statusline+=%2*\ %y\  " FileType
 set statusline+=\ "
 set statusline+=%l        " Current line
@@ -287,7 +287,7 @@ let g:syntastic_auto_loc_list=1
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
 function! ChangeProject(target)
-  execute "cd " . a:target
+  execute "lcd " . a:target
   edit .
 endfunction
 
