@@ -14,7 +14,7 @@ alias pu='pushd'
 alias po='popd'
 
 # cds
-alias ...='cd ../..'
+alias ..='cd ../..'
 alias -- -='cd -'
 
 # ll
@@ -78,13 +78,13 @@ alias h="cd ~/"
 
 if [[ `hostname` == MICHAL-ARCH ]]; then
   source ~/dotfiles/zsh_home
-elif [[ `hostname` == michal-ACTINA-PRIME ]]; then
-  RUBIES+=(~/.rvm/rubies/ruby-1.9.3-p327)
-
+  source /usr/share/chruby/chruby.sh
+  source /usr/share/chruby/auto.sh
+  source ~/dotfiles/zsh_pacman
+elif [[ `hostname` == MICHAL-UBUNTU ]]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
 
   source ~/dotfiles/zsh_work
   source ~/dotfiles/zsh_apt_get
-  source ~/dotfiles/zsh_rvm
 fi

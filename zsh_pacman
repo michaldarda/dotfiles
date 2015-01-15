@@ -1,0 +1,8 @@
+alias pasyu='sudo pacman -Syu'
+alias pass='sudo pacman -Ss'
+alias pascc='sudo pacman -Scc'
+alias pas='sudo pacman -S'
+
+alias yass='sudo yaourt -Ss'
+alias yascc='sudo yaourt -Scc'
+alias yas='sudo yaourt -S'
