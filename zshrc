@@ -24,11 +24,7 @@ function git_prompt_info() {
 
 # get name of current ruby version
 function prompt_rvm {
-  if rvm-prompt 2>/dev/null; then
-    rvm-prompt
-  else
-    ruby -e 'print RUBY_VERSION'
-  fi
+  ruby -e 'print RUBY_VERSION'
 }
 
 # Checks if working tree is dirty
