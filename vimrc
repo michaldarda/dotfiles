@@ -93,6 +93,7 @@ if has("gui_running")
   Plug 'nanotech/jellybeans.vim'
   Plug 'chriskempson/base16-vim'
 endif
+Plug 'dietsche/vim-lastplace'
 call plug#end()
 
 filetype on
