@@ -55,6 +55,7 @@ Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'rhysd/vim-operator-surround'
 Plug 'dandorman/vim-colors'
+Plug 'dietsche/vim-lastplace'
 " ruby, rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -93,7 +94,6 @@ if has("gui_running")
   Plug 'nanotech/jellybeans.vim'
   Plug 'chriskempson/base16-vim'
 endif
-Plug 'dietsche/vim-lastplace'
 call plug#end()
 
 filetype on
@@ -250,7 +250,7 @@ let g:ctrlp_working_path_mode=0
 let g:notes_directories = ['~/Dropbox/notes']
 let g:ragtag_global_maps = 1
 
-nnoremap <leader>] :Preview<CR>
+nnoremap <leader>m :Preview<CR>
 
 nmap <leader>a :Ag ""<Left>
 
@@ -263,7 +263,7 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
 let g:slime_paste_file = "$HOME/.slime_paste"
 
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-x>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " let g:hardtime_default_on = 1
