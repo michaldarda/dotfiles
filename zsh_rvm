@@ -1,3 +1,0 @@
-alias rb19='rvm use 1.9.3-p327'
-alias rb21='rvm use 2.1.5'
-alias rb22='rvm use 2.2.0'
