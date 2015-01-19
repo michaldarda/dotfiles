@@ -11,7 +11,7 @@
     palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
     icon_bell = False
     show_titlebar = False
-    font = Consolas 14
+    font = Consolas 13
     allow_bold = False
   [[Base16 Atelier Forest Light]]
     palette = "#f1efee:#f22c40:#5ab738:#d5911a:#407ee7:#6666ea:#00ad9c:#a8a19f:#766e6b:#f22c40:#5ab738:#d5911a:#407ee7:#6666ea:#00ad9c:#1b1918"

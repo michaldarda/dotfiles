@@ -54,7 +54,6 @@ Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'rhysd/vim-operator-surround'
-Plug 'dandorman/vim-colors'
 Plug 'dietsche/vim-lastplace'
 " ruby, rails
 Plug 'vim-ruby/vim-ruby'
@@ -89,11 +88,10 @@ Plug 'evanmiller/nginx-vim-syntax'
 "  elixir
 Plug 'elixir-lang/vim-elixir'
 " gui color schemes
-if has("gui_running")
-  " themes
-  Plug 'nanotech/jellybeans.vim'
-  Plug 'chriskempson/base16-vim'
-endif
+Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
+Plug 'quanganhdo/grb256'
+Plug 'godlygeek/csapprox'
 call plug#end()
 
 filetype on
@@ -102,7 +100,7 @@ filetype plugin on
 syntax on
 
 let mapleader=","
-
+"
 set number
 set expandtab
 set tabstop=2
@@ -172,8 +170,8 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf mark
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
 set t_Co=256 "256 color mode"
-" in case t_Co alone doesn't work, add this as well:
-" i.e. Force 256 colors harder
+" " in case t_Co alone doesn't work, add this as well:
+" " i.e. Force 256 colors harder
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
 set enc=utf-8
@@ -210,6 +208,11 @@ if exists("g:ctrlp_user_command")
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
+let base16colorspace=256
+set cursorline
+
+colorscheme grb256
+
 if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
 
@@ -223,8 +226,6 @@ if has("gui_running")
   set guioptions-=L "remove left-hand scroll bar
   set guioptions-=e "console-like tabs in gvim
   set guioptions+=c
-
-  let base16colorspace=256
 
   set background=dark
   colorscheme jellybeans
@@ -394,3 +395,4 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
+set t_ut=

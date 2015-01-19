@@ -21,7 +21,7 @@ alias -- -='cd -'
 alias ll='ls -lh'
 
 # git
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit"
 alias gpr="git pull --rebase --stat"
 alias gpu="git push"
 alias gpuf="git push -f"
