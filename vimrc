@@ -91,7 +91,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
-Plug 'godlygeek/csapprox'
+Plug 'chriskempson/base16-vim'
+"Plug 'godlygeek/csapprox'
 call plug#end()
 
 filetype on
@@ -228,7 +229,6 @@ if has("gui_running")
   set guioptions+=c
 
   set background=dark
-  colorscheme jellybeans
 
   set guifont=Consolas\ 13
 end
@@ -395,4 +395,4 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-set t_ut=
+" set t_ut=
