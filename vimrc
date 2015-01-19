@@ -20,7 +20,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'Raimondi/delimitMate.git'
+Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'rking/ag.vim'
@@ -87,12 +87,12 @@ Plug 'lukerandall/haskellmode-vim'
 Plug 'evanmiller/nginx-vim-syntax'
 "  elixir
 Plug 'elixir-lang/vim-elixir'
-" gui color schemes
+" color schemes, etc
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
 Plug 'chriskempson/base16-vim'
-"Plug 'godlygeek/csapprox'
+Plug 'godlygeek/csapprox'
 call plug#end()
 
 filetype on
