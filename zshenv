@@ -76,13 +76,15 @@ alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
 alias h="cd ~/"
 
+alias r="ranger"
+
 if [[ `hostname` == MICHAL-ARCH ]]; then
   source ~/dotfiles/zsh_home
   source /usr/share/chruby/chruby.sh
   source /usr/share/chruby/auto.sh
 
   source ~/dotfiles/zsh_pacman
-elif [[ `hostname` == MICHAL-UBUNTU ]]; then
+elif [[ `hostname` == michal-ACTINA-PRIME ]]; then
   source /usr/local/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
 

@@ -10,7 +10,8 @@ promptinit
 
 setopt prompt_subst
 
-export HISTSIZE=2000
+export HISTSIZE=1000
+export SAVEHIST=1000
 export HISTFILE="$HOME/.zsh_history"
 
 # get the name of the branch we are on
