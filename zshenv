@@ -84,10 +84,5 @@ if [[ `hostname` == MICHAL-ARCH ]]; then
   source /usr/share/chruby/auto.sh
 
   source ~/dotfiles/zsh_pacman
-elif [[ `hostname` == michal-ACTINA-PRIME ]]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-
   source ~/dotfiles/zsh_work
-  source ~/dotfiles/zsh_apt_get
 fi

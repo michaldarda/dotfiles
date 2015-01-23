@@ -93,6 +93,7 @@ Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/csapprox'
+Plug 'maxbrunsfeld/vim-yankstack'
 call plug#end()
 
 filetype on
