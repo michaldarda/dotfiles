@@ -94,6 +94,8 @@ Plug 'quanganhdo/grb256'
 Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/csapprox'
 Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'mxw/vim-jsx'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 filetype on
