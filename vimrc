@@ -215,7 +215,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 let base16colorspace=256
 set cursorline
 
-colorscheme grb256
+colorscheme default
 
 if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
