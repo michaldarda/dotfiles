@@ -87,15 +87,13 @@ Plug 'lukerandall/haskellmode-vim'
 Plug 'evanmiller/nginx-vim-syntax'
 "  elixir
 Plug 'elixir-lang/vim-elixir'
+" jsx
+Plug 'mxw/vim-jsx'
 " color schemes, etc
+Plug 'godlygeek/csapprox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
-Plug 'chriskempson/base16-vim'
-Plug 'godlygeek/csapprox'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'mxw/vim-jsx'
-Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 filetype on
@@ -214,9 +212,6 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 
 let base16colorspace=256
 set cursorline
-
-colorscheme grb256
-
 
 if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
@@ -399,5 +394,4 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-" set t_ut=
-colorscheme grb256
+colorscheme jellybeans
