@@ -25,7 +25,7 @@ function git_prompt_info() {
 
 # get name of current ruby version
 function prompt_rvm {
-  ruby -e 'print RUBY_VERSION'
+  ruby -e 'print "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"'
 }
 
 # Checks if working tree is dirty
@@ -179,7 +179,28 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 
-export PATH=/usr/local/bin:$PATH:./bin:/usr/local/bin:/usr/local/sbin:/Users/michal/.sfs:/Users/michal/dotfiles/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+
+
+# set the colors to your liking
+local vi_normal_marker="[%{$fg[green]%}%BN%b%{$reset_color%}]"
+local vi_insert_marker="[%{$fg[cyan]%}%BI%b%{$reset_color%}]"
+local vi_unknown_marker="[%{$fg[red]%}%BU%b%{$reset_color%}]"
+local vi_mode="$vi_insert_marker"
+vi_mode_indicator () {
+  case ${KEYMAP} in
+    (vicmd)      echo $vi_normal_marker ;;
+    (main|viins) echo $vi_insert_marker ;;
+    (*)          echo $vi_unknown_marker ;;
+  esac
+}
+
+# Reset mode-marker and prompt whenever the keymap changes
+function zle-line-init zle-keymap-select {
+  vi_mode="$(vi_mode_indicator)"
+  zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -206,13 +227,25 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/gopath
 
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 setopt cdablevars
 setopt correct
 setopt hist_ignore_space
 
-bindkey "^R" history-incremental-pattern-search-backward
-
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='${ret_status}%{$fg_bold[green]%}%p ${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 RPROMPT='$(prompt_rvm)'
+
+bindkey -v
+
+bindkey "^R" history-incremental-pattern-search-backward
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
+export KEYTIMEOUT=1

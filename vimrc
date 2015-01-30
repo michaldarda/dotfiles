@@ -215,7 +215,8 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-
 let base16colorspace=256
 set cursorline
 
-colorscheme default
+colorscheme grb256
+
 
 if has("gui_running")
   autocmd GUIEnter * set vb t_vb=
@@ -399,3 +400,4 @@ endfunction
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
 " set t_ut=
+colorscheme grb256
