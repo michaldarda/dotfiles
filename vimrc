@@ -94,6 +94,7 @@ Plug 'godlygeek/csapprox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
+Plug 'vim-scripts/dbext.vim'
 call plug#end()
 
 filetype on
@@ -395,3 +396,5 @@ endfunction
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
 colorscheme jellybeans
+
+let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=test'
