@@ -401,5 +401,3 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=test'
 let g:SuperTabDefaultCompletionType = "context"
-
-:map ^H :ls:e #
