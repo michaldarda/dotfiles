@@ -233,7 +233,7 @@ setopt cdablevars
 setopt correct
 setopt hist_ignore_space
 
-PROMPT='${ret_status}%{$fg_bold[green]%}%p ${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$reset_color%} ${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 RPROMPT='$(prompt_rvm)'
 
