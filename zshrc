@@ -247,5 +247,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
+bindkey "^?" backward-delete-char
 
 export KEYTIMEOUT=1

@@ -110,6 +110,7 @@ set tabstop=2
 set shiftwidth=2
 set noswapfile
 set laststatus=2
+
 set statusline=%F         " Path to the file
 set statusline+=%2*\ %y\  " FileType
 set statusline+=\ "
@@ -401,3 +402,5 @@ set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=test'
 let g:SuperTabDefaultCompletionType = "context"
+
+inoremap jj <Esc>
