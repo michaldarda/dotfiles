@@ -397,7 +397,7 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-colorscheme jellybeans
+colorscheme default
 
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete

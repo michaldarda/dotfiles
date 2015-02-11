@@ -15,13 +15,12 @@
     use_custom_command = True
     icon_bell = False
     show_titlebar = False
-    font = Consolas 13
+    font = Droid Sans Mono Slashed 13.099609375
     background_color = "#ffffff"
     allow_bold = False
   [[Base16 Chalk Dark]]
     scrollbar_position = hidden
     palette = "#3b3b3b:#cf6a4c:#99ad6a:#d8ad4c:#597bc5:#a037b0:#71b9f8:#adadad:#636363:#f79274:#c1d592:#ffd574:#81a3ed:#c85fd8:#99e1ff:#d5d5d5"
-    copy_on_selection = True
     background_image = None
     custom_command = /usr/bin/tmux -2
     use_system_font = False
@@ -29,7 +28,7 @@
     foreground_color = "#d0d0d0"
     use_custom_command = True
     show_titlebar = False
-    font = Consolas 13
+    font = Droid Sans Mono Slashed 14
     background_color = "#151515"
     allow_bold = False
 [layouts]
