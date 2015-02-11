@@ -95,6 +95,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
 Plug 'vim-scripts/dbext.vim'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 filetype on
