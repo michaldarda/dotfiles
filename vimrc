@@ -96,6 +96,7 @@ Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 filetype on
