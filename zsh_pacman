@@ -3,6 +3,7 @@ alias pass='pacman -Ss'
 alias pasy='sudo pacman -Sy'
 alias pascc='sudo pacman -Scc'
 alias pas='sudo pacman -S'
+alias pars='sudo pacman -Rs'
 
 alias yass='yaourt -Ss'
 alias yascc='yaourt -Scc'

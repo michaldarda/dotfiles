@@ -97,6 +97,9 @@ Plug 'quanganhdo/grb256'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
+Plug 'flazz/vim-colorschemes'
+Plug 'mihaifm/bufstop'
+Plug 'chazy/cscope_maps'
 call plug#end()
 
 filetype on
@@ -151,7 +154,6 @@ set shortmess=aTItoO
 set splitbelow
 set splitright
 
-set background=dark
 
 " dont add the comments
 set formatoptions-=or
@@ -399,6 +401,7 @@ endfunction
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
 colorscheme default
+set background=light
 
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
@@ -406,3 +409,5 @@ let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=t
 let g:SuperTabDefaultCompletionType = "context"
 
 inoremap jj <Esc>
+
+map <space> :Bufstop<CR>
