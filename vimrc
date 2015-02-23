@@ -90,7 +90,7 @@ Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
-Plug 'godlygeek/csapprox'
+" Plug 'godlygeek/csapprox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
@@ -100,6 +100,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'mihaifm/bufstop'
 Plug 'chazy/cscope_maps'
+Plug 'croaky/vim-colors-github'
 call plug#end()
 
 filetype on
@@ -400,7 +401,7 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-colorscheme default
+colorscheme emacs
 set background=light
 
 set completeopt=longest,menuone
@@ -410,4 +411,4 @@ let g:SuperTabDefaultCompletionType = "context"
 
 inoremap jj <Esc>
 
-map <space> :Bufstop<CR>
+map <space> :Bufstop<CR>j
