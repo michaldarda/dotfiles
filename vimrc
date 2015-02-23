@@ -111,6 +111,7 @@ syntax on
 let mapleader=","
 "
 set number
+set relativenumber
 set expandtab
 set tabstop=2
 set shiftwidth=2
