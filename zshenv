@@ -59,6 +59,7 @@ alias grbi10="git rebase -i HEAD~10"
 alias grbi20="git rebase -i HEAD~20"
 alias grbi30="git rebase -i HEAD~30"
 alias grbi40="git rebase -i HEAD~40"
+alias gpb="git checkout --"
 
 # rails, ruby
 alias be='bundle exec'
@@ -76,7 +77,18 @@ alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
 alias h="cd ~/"
 
-alias r="ranger"
+alias prake="RAILS_ENV=production bundle exec rake"
+alias rreset="bundle exec rake db:reset"
+alias migr="bundle exec rake db:migrate"
+alias pmigr="RAILS_ENV=production bundle exec rake db:migrate"
+alias prep="bundle exec rake db:test:prepare"
+alias railsc="bundle exec rails c"
+alias prailsc="RAILS_ENV=production bundle exec rails c"
+alias my="mysql -u root"
+
+function myload {
+  pv $2 | mysql -u root $1
+}
 
 if [[ `hostname` == MICHAL-ARCH ]]; then
   source ~/dotfiles/zsh_home

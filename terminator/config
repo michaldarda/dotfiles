@@ -15,7 +15,7 @@
     use_custom_command = True
     icon_bell = False
     show_titlebar = False
-    font = Consolas 13.099609375
+    font = Source Code Pro 13.099609375
     background_color = "#ffffff"
     allow_bold = False
   [[Base16 Chalk Dark]]
@@ -28,7 +28,7 @@
     foreground_color = "#d0d0d0"
     use_custom_command = True
     show_titlebar = False
-    font = Droid Sans Mono Slashed 14
+    font = Source Code Pro 13.099609375
     background_color = "#151515"
     allow_bold = False
 [layouts]

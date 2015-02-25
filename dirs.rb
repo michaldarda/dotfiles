@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-ROOT_DIR = '/home/michal/Code'
+ROOT_DIR = '/home/michal/projects'
 HOOKS_DIR = '/home/michal/dotfiles/git_template/hooks'
 
 def git_project?(dir)
@@ -39,3 +39,4 @@ end
 
 p copy_git_hooks_to_all_git_projects(ROOT_DIR)
 p run_command_in_every_git_project(ROOT_DIR, "git ctags")
+p run_command_in_every_git_project(ROOT_DIR, "git cscope")

@@ -407,9 +407,9 @@ set background=light
 
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
-let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=test'
+let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 let g:SuperTabDefaultCompletionType = "context"
 
 inoremap jj <Esc>
 
-map <space> :Bufstop<CR>j
+nnoremap <space> :buffers<CR>:buffer<Space>
