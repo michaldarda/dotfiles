@@ -87,14 +87,14 @@ alias prailsc="RAILS_ENV=production bundle exec rails c"
 alias my="mysql -u root"
 
 function myload {
+  mysql -u root -e "drop database $1" -T
+  mysql -u root -e "create database $1" -T
   pv $2 | mysql -u root $1
 }
 
-if [[ `hostname` == MICHAL-ARCH ]]; then
-  source ~/dotfiles/zsh_home
-  source /usr/share/chruby/chruby.sh
-  source /usr/share/chruby/auto.sh
+source ~/dotfiles/zsh_home
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
 
-  source ~/dotfiles/zsh_pacman
-  source ~/dotfiles/zsh_work
-fi
+source ~/dotfiles/zsh_pacman
+source ~/mdarda_dotfiles/cubiware.zsh || "Skipping work dotfiles"

@@ -90,7 +90,7 @@ Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
-" Plug 'godlygeek/csapprox'
+Plug 'godlygeek/csapprox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'morhetz/gruvbox'
 Plug 'quanganhdo/grb256'
@@ -101,6 +101,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'mihaifm/bufstop'
 Plug 'chazy/cscope_maps'
 Plug 'croaky/vim-colors-github'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 filetype on
@@ -413,3 +414,8 @@ let g:SuperTabDefaultCompletionType = "context"
 inoremap jj <Esc>
 
 nnoremap <space> :buffers<CR>:buffer<Space>
+
+" try
+"   nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
+"   xnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line("'<"),line("'>"))<CR>
+" endtry
