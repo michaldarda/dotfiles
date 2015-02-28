@@ -178,9 +178,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-
-
-
 # set the colors to your liking
 local vi_normal_marker="[%{$fg[green]%}%BN%b%{$reset_color%}]"
 local vi_insert_marker="[%{$fg[cyan]%}%BI%b%{$reset_color%}]"
@@ -208,10 +205,6 @@ topcmds() {
 
 function update_gem_ctags {
   bundle show --paths | xargs ctags -R
-}
-
-function tnew {
-  tmux new-session -As `basename $PWD`
 }
 
 ### Added by the Heroku Toolbelt
@@ -250,3 +243,13 @@ bindkey '^E' end-of-line
 bindkey "^?" backward-delete-char
 
 export KEYTIMEOUT=1
+
+_not_inside_tmux() { [[ -z "$TMUX" ]] }
+
+ensure_tmux_is_running() {
+  if _not_inside_tmux; then
+    tat
+  fi
+}
+
+ensure_tmux_is_running

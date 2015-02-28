@@ -1,7 +1,7 @@
 # aliases
 alias e='vim'
 alias vi='vim'
-alias tl='tail -f /var/log/cubiware/*.log'
+alias tlf='tail -f'
 
 # general
 alias rl='. ~/.zshrc && . ~/.zshenv'
@@ -61,13 +61,6 @@ alias grbi30="git rebase -i HEAD~30"
 alias grbi40="git rebase -i HEAD~40"
 alias gpb="git checkout --"
 
-# rails, ruby
-alias be='bundle exec'
-alias b='bundle'
-alias rc='rails c'
-alias rs='rails s'
-alias rg='rails g'
-alias rgm='rails g migration'
 
 # quick folder access
 alias d="cd ~/dotfiles"
@@ -77,6 +70,13 @@ alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
 alias h="cd ~/"
 
+# rails, ruby
+alias be='bundle exec'
+alias b='bundle'
+alias rc='rails c'
+alias rs='rails s'
+alias rg='rails g'
+alias rgm='rails g migration'
 alias prake="RAILS_ENV=production bundle exec rake"
 alias rreset="bundle exec rake db:reset"
 alias migr="bundle exec rake db:migrate"
@@ -85,16 +85,21 @@ alias prep="bundle exec rake db:test:prepare"
 alias railsc="bundle exec rails c"
 alias prailsc="RAILS_ENV=production bundle exec rails c"
 alias my="mysql -u root"
+alias mvim="vim -u ~/.vimrcmin"
 
+# mysql
 function myload {
   mysql -u root -e "drop database $1" -T
   mysql -u root -e "create database $1" -T
   pv $2 | mysql -u root $1
 }
 
-source ~/dotfiles/zsh_home
+# chruby
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
 
+# other files
+source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_pacman
-source ~/mdarda_dotfiles/cubiware.zsh || "Skipping work dotfiles"
+[[ -f ~/zsh_cubiware ]] && source ~/zsh_cubiware
+[[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh

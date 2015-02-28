@@ -102,6 +102,7 @@ Plug 'mihaifm/bufstop'
 Plug 'chazy/cscope_maps'
 Plug 'croaky/vim-colors-github'
 Plug 'wakatime/vim-wakatime'
+Plug 'jaywilliams/vim-vwilight'
 call plug#end()
 
 filetype on
