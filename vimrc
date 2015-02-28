@@ -357,7 +357,6 @@ map <silent>sd <Plug>(operator-surround-delete)
 map <silent>sr <Plug>(operator-surround-replace)
 
 " delete or replace most inner surround
-
 " if you use vim-textobj-multiblock
 nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
 nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
