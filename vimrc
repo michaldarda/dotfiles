@@ -24,7 +24,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
 Plug 'rking/ag.vim'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'greyblake/vim-preview' "Markdown
 Plug 'mkitt/tabline.vim'
@@ -38,15 +37,14 @@ Plug 'gorkunov/smartpairs.vim'
 Plug 'vim-scripts/TagHighlight'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
-Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/vimproc.vim'
+" Plug 'Shougo/vimshell.vim'
+" Plug 'Shougo/vimproc.vim'
 Plug 'scrooloose/syntastic'
 Plug 'bogado/file-line'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'janko-m/vim-test'
-Plug 'fmoralesc/vim-tutor-mode'
 Plug 'nicwest/QQ.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'deris/vim-shot-f'
@@ -63,46 +61,38 @@ Plug 'tpope/vim-bundler'
 Plug 'jgdavey/vim-blockle'
 Plug 'p0deje/vim-ruby-interpolation'
 "scala
-Plug 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 "javascript
 Plug 'pangloss/vim-javascript'
 " coffeescript
 Plug 'kchmck/vim-coffee-script'
-" rust
-Plug 'wting/rust.vim'
-"go
-Plug 'fatih/vim-go'
-"clojure
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-leiningen'
-" haskell
-Plug 'bitc/vim-hdevtools'
-Plug 'lukerandall/haskellmode-vim'
 " nginx
 Plug 'evanmiller/nginx-vim-syntax'
+"go
+" Plug 'fatih/vim-go'
+"clojure
+" Plug 'tpope/vim-fireplace'
+" Plug 'guns/vim-clojure-static'
+" Plug 'guns/vim-clojure-highlight'
+" Plug 'kien/rainbow_parentheses.vim'
+" Plug 'guns/vim-sexp'
+" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+" Plug 'tpope/vim-leiningen'
+" haskell
+" Plug 'bitc/vim-hdevtools'
+" Plug 'lukerandall/haskellmode-vim'
 "  elixir
-Plug 'elixir-lang/vim-elixir'
+" Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
 Plug 'godlygeek/csapprox'
-Plug 'nanotech/jellybeans.vim'
-Plug 'morhetz/gruvbox'
-Plug 'quanganhdo/grb256'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
-Plug 'mihaifm/bufstop'
 Plug 'chazy/cscope_maps'
-Plug 'croaky/vim-colors-github'
 Plug 'wakatime/vim-wakatime'
-Plug 'jaywilliams/vim-vwilight'
 call plug#end()
 
 filetype on
@@ -157,7 +147,6 @@ set shortmess=aTItoO
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
 set splitright
-
 
 " dont add the comments
 set formatoptions-=or
