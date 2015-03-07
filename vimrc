@@ -89,10 +89,11 @@ Plug 'mxw/vim-jsx'
 Plug 'godlygeek/csapprox'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'chazy/cscope_maps'
 Plug 'wakatime/vim-wakatime'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 filetype on
@@ -392,7 +393,7 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-colorscheme emacs
+colorscheme github
 set background=light
 
 set completeopt=longest,menuone
@@ -408,3 +409,6 @@ nnoremap <space> :buffers<CR>:buffer<Space>
 "   nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
 "   xnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line("'<"),line("'>"))<CR>
 " endtry
+let g:jsx_ext_required = 0
+
+set nolazyredraw

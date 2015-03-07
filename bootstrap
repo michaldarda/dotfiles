@@ -1,21 +1,26 @@
 #!/bin/sh
 
-# ZSH
-ln -fs ~/dotfiles/zshrc ~/.zshrc
-ln -fs ~/dotfiles/zshenv ~/.zshenv
+read -p "This script will override your configs. Are you sure you want to proceed? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  # ZSH
+  ln -fs ~/dotfiles/zshrc ~/.zshrc
+  ln -fs ~/dotfiles/zshenv ~/.zshenv
 
-# VIM
-ln -fs ~/dotfiles/vimrc ~/.vimrc
+  # VIM
+  ln -fs ~/dotfiles/vimrc ~/.vimrc
 
-#TMUX
-ln -fs ~/dotfiles/tmux.conf ~/.tmux.conf
+  #TMUX
+  ln -fs ~/dotfiles/tmux.conf ~/.tmux.conf
 
-# GIT
-ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
-ln -fs ~/dotfiles/git/gitignore ~/.gitignore
+  # GIT
+  ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
+  ln -fs ~/dotfiles/git/gitignore ~/.gitignore
 
-# pry
-ln -fs ~/dotfiles/pryrc ~/.pryrc
+  # pry
+  ln -fs ~/dotfiles/pryrc ~/.pryrc
 
-# gems
-ln -fs ~/dotfiles/gemrc ~/.gemrc
+  # gems
+  ln -fs ~/dotfiles/gemrc ~/.gemrc
+fi
