@@ -398,17 +398,21 @@ set background=light
 
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
-let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 let g:SuperTabDefaultCompletionType = "context"
+
+let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 
 inoremap jj <Esc>
 
 nnoremap <space> :buffers<CR>:buffer<Space>
 
-" try
-"   nnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line('.'),line('.')+v:count1-1)<CR>
-"   xnoremap <buffer> <silent> + :<C-U>silent execute <SID>StageToggle(line("'<"),line("'>"))<CR>
-" endtry
 let g:jsx_ext_required = 0
 
 set nolazyredraw
+
+" Normal mode
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+" Visual mode
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
