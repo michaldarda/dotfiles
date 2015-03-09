@@ -94,6 +94,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'chazy/cscope_maps'
 Plug 'wakatime/vim-wakatime'
 Plug 'pangloss/vim-javascript'
+Plug 'JazzCore/ctrlp-cmatcher'
 call plug#end()
 
 filetype on
@@ -419,3 +420,5 @@ nnoremap <S-k> :m .-2<CR>==
 " Visual mode
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
+
+let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
