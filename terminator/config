@@ -7,15 +7,14 @@
 [profiles]
   [[default]]
     scrollbar_position = hidden
-    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#cc0000:#4e9a06:#c4a000:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
-    login_shell = True
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#cc0000:#4e9a06:#fce94f:#729fcf:#ad7fa8:#06989a:#eeeeec"
     background_image = None
     custom_command = /usr/bin/tmux -2
     use_system_font = False
     foreground_color = "#000000"
     icon_bell = False
     show_titlebar = False
-    font = Consolas 13
+    font = Source Code Pro 13.099609375
     background_color = "#ffffff"
     allow_bold = False
   [[Base16 Chalk Dark]]
@@ -27,7 +26,7 @@
     cursor_color = "#ffffff"
     foreground_color = "#d0d0d0"
     show_titlebar = False
-    font = Consolas 13.099609375
+    font = Source Code Pro 13.099609375
     background_color = "#151515"
     allow_bold = False
 [layouts]

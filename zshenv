@@ -4,7 +4,7 @@ alias vi='vim'
 alias tlf='tail -f'
 
 # general
-alias rl='. ~/.zshrc && . ~/.zshenv'
+alias rl='. ~/.zshrc'
 alias t='touch'
 alias tf='tail -f'
 alias md='mkdir'
@@ -64,7 +64,6 @@ alias gpb="git checkout --"
 
 # quick folder access
 alias d="cd ~/dotfiles"
-alias p="cd ~/Code/play"
 alias w="cd ~/Code/work"
 alias ex="cd ~/Code/exercises"
 alias n="vim ~/Dropbox/notes"
@@ -103,3 +102,12 @@ source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_pacman
 [[ -f ~/zsh_cubiware ]] && source ~/zsh_cubiware
 [[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh
+
+export EDITOR=vim
+
+chruby ruby-1.9
+# source ~/.bin/tmuxinator.zsh
+#
+function open-project() {
+  eval 'pushd && cd $@ && popd'
+}

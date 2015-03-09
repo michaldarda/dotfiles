@@ -69,7 +69,7 @@ Plug 'kchmck/vim-coffee-script'
 " nginx
 Plug 'evanmiller/nginx-vim-syntax'
 "go
-" Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 "clojure
 " Plug 'tpope/vim-fireplace'
 " Plug 'guns/vim-clojure-static'
@@ -253,6 +253,9 @@ let g:ragtag_global_maps = 1
 nnoremap <leader>m :Preview<CR>
 
 nmap <leader>a :Ag ""<Left>
+nmap <leader>cs :cs find s<Space>
+nmap <leader>cs :cg find s<Space>
+nmap <leader>cs :cc find s<Space>
 
 let tlist_clojure_settings = 'lisp;f:function'
 let vimclojure#HighlightBuiltins=1

@@ -75,6 +75,7 @@ export PATH=$PATH:~/.cabal/bin
 #gopath
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/gopath
+export PATH=$PATH:~/gopath/bin
 
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
@@ -109,3 +110,5 @@ ensure_tmux_is_running() {
 }
 
 ensure_tmux_is_running
+
+source ~/.zshenv
