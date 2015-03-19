@@ -84,7 +84,7 @@ setopt cdablevars
 setopt correct
 setopt hist_ignore_space
 
-PROMPT='${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}$ '
+PROMPT='${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 RPROMPT='$(prompt_ruby)'
 
 bindkey -v
