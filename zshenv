@@ -85,6 +85,7 @@ alias railsc="bundle exec rails c"
 alias prailsc="RAILS_ENV=production bundle exec rails c"
 alias my="mysql -u root"
 alias mvim="vim -u ~/.vimrcmin"
+alias tmux-cleanup="tmux kill-session -a"
 
 # mysql
 function myload {
@@ -107,7 +108,3 @@ export EDITOR=vim
 
 chruby ruby-1.9
 # source ~/.bin/tmuxinator.zsh
-#
-function open-project() {
-  eval 'pushd && cd $@ && popd'
-}
