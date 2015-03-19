@@ -86,15 +86,16 @@ Plug 'fatih/vim-go'
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
-Plug 'godlygeek/csapprox'
+"Plug 'godlygeek/csapprox'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 " Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
-Plug 'chazy/cscope_maps'
-Plug 'wakatime/vim-wakatime'
+" Plug 'chazy/cscope_maps'
+" Plug 'wakatime/vim-wakatime'
 Plug 'pangloss/vim-javascript'
 Plug 'JazzCore/ctrlp-cmatcher'
+Plug 'DanielFGray/DistractionFree.vim'
 call plug#end()
 
 filetype on
@@ -196,6 +197,8 @@ nmap <leader>v :tabe ~/.vimrc<CR>
 nmap <leader>n :Note<Space>
 nmap <leader>c :tabnew<CR>
 
+nmap <leader>d :DistractionsToggle<CR>
+
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlP<CR>
@@ -284,9 +287,9 @@ else
   set clipboard=unnamed
 endif
 
-let g:syntastic_check_on_open = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list=1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_enable_signs = 1
+" let g:syntastic_auto_loc_list=1
 
 " Highlight merge conflict markers
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
@@ -421,4 +424,4 @@ nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+colorscheme grb256

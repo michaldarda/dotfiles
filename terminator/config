@@ -14,7 +14,7 @@
     foreground_color = "#000000"
     icon_bell = False
     show_titlebar = False
-    font = Source Code Pro 13.099609375
+    font = Monaco 11
     background_color = "#ffffff"
     allow_bold = False
   [[Base16 Chalk Dark]]
@@ -26,7 +26,7 @@
     cursor_color = "#ffffff"
     foreground_color = "#d0d0d0"
     show_titlebar = False
-    font = Source Code Pro 13.099609375
+    font = Monaco 11
     background_color = "#151515"
     allow_bold = False
 [layouts]
