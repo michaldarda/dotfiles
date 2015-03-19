@@ -1,6 +1,5 @@
 set $mod Mod1
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Consolas 12
+font pango:Monaco 11
 
 floating_modifier $mod
 
