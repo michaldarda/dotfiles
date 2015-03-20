@@ -80,10 +80,14 @@ Plug 'tpope/vim-leiningen'
 " Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
+" color schemes, etc
+" Plug 'godlygeek/csapprox'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 " Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
+" Plug 'chazy/cscope_maps'
+" Plug 'wakatime/vim-wakatime'
 Plug 'pangloss/vim-javascript'
 Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'DanielFGray/DistractionFree.vim'
@@ -392,7 +396,7 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-colorscheme github
+colorscheme grb256
 set background=light
 
 set completeopt=longest,menuone
@@ -416,4 +420,4 @@ nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-colorscheme github
+colorscheme grb256

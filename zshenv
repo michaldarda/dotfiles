@@ -86,6 +86,9 @@ alias prailsc="RAILS_ENV=production bundle exec rails c"
 alias my="mysql -u root"
 alias mvim="vim -u ~/.vimrcmin"
 alias tmux-cleanup="tmux kill-session -a"
+alias bim='vim'
+alias rake="bundle exec rake"
+alias rails="bundle exec rails"
 
 # mysql
 function myload {
