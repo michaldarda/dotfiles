@@ -169,14 +169,14 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf mark
 " normally I always use 2 spaces to indent, exceptions here
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
-set t_Co=256 "256 color mode"
-" " in case t_Co alone doesn't work, add this as well:
-" " i.e. Force 256 colors harder
-let &t_AB="\e[48;5;%dm"
-let &t_AF="\e[38;5;%dm"
-set enc=utf-8
-set term=screen-256color
-let $TERM='screen-256color'
+" set t_Co=256 "256 color mode"
+" " " in case t_Co alone doesn't work, add this as well:
+" " " i.e. Force 256 colors harder
+" let &t_AB="\e[48;5;%dm"
+" let &t_AF="\e[38;5;%dm"
+" set enc=utf-8
+" set term=screen-256color
+" let $TERM='screen-256color'
 
 map <up> <nop>
 map <down> <nop>
