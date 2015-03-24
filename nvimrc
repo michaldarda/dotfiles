@@ -36,9 +36,7 @@ Plug 'janko-m/vim-test'
 Plug 'nicwest/QQ.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'deris/vim-shot-f'
-Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'rhysd/vim-textobj-anyblock'
-Plug 'thinca/vim-textobj-between'
 Plug 'rhysd/vim-operator-surround'
 Plug 'dietsche/vim-lastplace'
 " ruby, rails
@@ -62,8 +60,8 @@ Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'oblitum/rainbow'
 Plug 'tpope/vim-leiningen'
-" Plug 'guns/vim-sexp'
-" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 " haskell
 " Plug 'bitc/vim-hdevtools'
 " Plug 'lukerandall/haskellmode-vim'
@@ -175,7 +173,7 @@ nmap <leader>d :DistractionsToggle<CR>
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
 nmap <leader>t :CtrlP<CR>
-nmap <leader>b :CtrlPBuffer<CR>
+nmap <space> :CtrlPBuffer<CR>
 nmap <Leader>fn :CtrlPFunky<Cr>
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
@@ -187,7 +185,6 @@ if exists("g:ctrlp_user_command")
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 
-let base16colorspace=256
 set cursorline
 
 if has("gui_running")
@@ -247,11 +244,7 @@ let g:slimux_select_from_current_window = 1
 map <Leader>s :SlimuxREPLSendLine<CR>
 vmap <Leader>s :SlimuxREPLSendSelection<CR>
 
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-else
-  set clipboard=unnamed
-endif
+set clipboard=unnamed,unnamedplus
 
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_enable_signs = 1
@@ -331,17 +324,10 @@ map <silent>sd <Plug>(operator-surround-delete)
 map <silent>sr <Plug>(operator-surround-replace)
 
 " delete or replace most inner surround
-" if you use vim-textobj-multiblock
-nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
-nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
-
 " if you use vim-textobj-anyblock
+nmap <silent>saa <Plug>(operator-surround-append)<Plug>(textobj-anyblock-a)
 nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-anyblock-a)
 nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-anyblock-a)
-
-" if you use vim-textobj-between
-nmap <silent>sdb <Plug>(operator-surround-delete)<Plug>(textobj-between-a)
-nmap <silent>srb <Plug>(operator-surround-replace)<Plug>(textobj-between-a)
 
 nnoremap <silent> \a :set opfunc=<SID>AgMotion<CR>g@
 xnoremap <silent> \a :<C-U>call <SID>AgMotion(visualmode())<CR>
@@ -375,8 +361,6 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 
 inoremap jj <Esc>
-
-nnoremap <space> :buffers<CR>:buffer<Space>
 
 let g:jsx_ext_required = 0
 
