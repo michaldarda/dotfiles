@@ -112,3 +112,5 @@ export EDITOR=vim
 # chruby ruby-1.9
 # source ~/.bin/tmuxinator.zsh
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+tic ~/screen-256color.ti
