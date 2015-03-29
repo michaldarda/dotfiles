@@ -21,9 +21,10 @@ Plug 'mkitt/tabline.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
-Plug 'epeli/slimux'
+"Plug 'epeli/slimux'
+Plug 'benmills/vimux'
 Plug 'tpope/vim-repeat'
-Plug 'gorkunov/smartpairs.vim'
+"Plug 'gorkunov/smartpairs.vim', { 'for': 'ruby' }
 Plug 'vim-scripts/TagHighlight'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -32,7 +33,7 @@ Plug 'bogado/file-line'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
-Plug 'janko-m/vim-test'
+Plug 'michaldarda/vim-test'
 Plug 'nicwest/QQ.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'deris/vim-shot-f'
@@ -44,8 +45,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
-Plug 'jgdavey/vim-blockle'
-Plug 'p0deje/vim-ruby-interpolation'
+Plug 'jgdavey/vim-blockle', { 'for': 'ruby'}
+Plug 'p0deje/vim-ruby-interpolation', {'for': 'ruby'}
 "javascript
 Plug 'pangloss/vim-javascript'
 " coffeescript
@@ -55,13 +56,13 @@ Plug 'evanmiller/nginx-vim-syntax'
 "go
 Plug 'fatih/vim-go'
 "clojure
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'oblitum/rainbow'
-Plug 'tpope/vim-leiningen'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-fireplace', { 'for': 'clojure'}
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'guns/vim-clojure-highlight', { 'for': 'clojure' }
+Plug 'oblitum/rainbow', { 'for': 'clojure'}
+Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
+Plug 'guns/vim-sexp', { 'for': 'clojure'}
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure'}
 " haskell
 " Plug 'bitc/vim-hdevtools'
 " Plug 'lukerandall/haskellmode-vim'
@@ -75,7 +76,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 Plug 'DanielFGray/DistractionFree.vim'
-Plug 'cohama/lexima.vim'
+"Plug 'cohama/lexima.vim'
+Plug 'lervag/vimtex', { 'for': 'ruby'}
+Plug 'tpope/vim-projectionist'
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 filetype on
@@ -84,7 +88,8 @@ filetype plugin on
 syntax on
 
 let mapleader=","
-"
+let maplocalleader='\'
+
 set number
 set relativenumber
 set expandtab
@@ -373,6 +378,14 @@ nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-colorscheme github
+colorscheme grb256
 
 let g:rainbow_active = 1
+
+let g:test#strategy = 'vimux'
+
+" praca dyplomowa ustawienia
+autocmd BufRead,BufNewFile /home/michal/Code/play/restemperor/praca/praca_dyplomowa.tex set spell spelllang=pl
+autocmd BufRead,BufNewFile /home/michal/Code/play/restemperor/praca/praca_dyplomowa.tex command Run execute "!./make"
+autocmd BufRead,BufNewFile /home/michal/Code/play/restemperor/praca/praca_dyplomowa.tex map <F5> :Run<CR>
+autocmd BufRead,BufNewFile /home/michal/Code/play/restemperor/praca/praca_dyplomowa.tex set wrap
