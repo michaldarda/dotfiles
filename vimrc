@@ -1,7 +1,4 @@
 set nocompatible
-set shell=$SHELL
-let g:ruby_path = '/usr/bin/ruby'
-let g:haddock_browser="/usr/bin/google-chrome"
 
 filetype off
 
@@ -20,11 +17,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-eunuch'
 Plug 'rking/ag.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'greyblake/vim-preview' "Markdown
 Plug 'mkitt/tabline.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
@@ -73,23 +67,14 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-leiningen'
-" haskell
-" Plug 'bitc/vim-hdevtools'
-" Plug 'lukerandall/haskellmode-vim'
-"  elixir
-" Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
-" Plug 'godlygeek/csapprox'
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
-" Plug 'chazy/cscope_maps'
-" Plug 'wakatime/vim-wakatime'
 Plug 'pangloss/vim-javascript'
-Plug 'JazzCore/ctrlp-cmatcher'
 Plug 'DanielFGray/DistractionFree.vim'
 Plug 'cohama/lexima.vim'
 call plug#end()
@@ -100,7 +85,7 @@ filetype plugin on
 syntax on
 
 let mapleader=","
-"
+
 set number
 set relativenumber
 set expandtab
@@ -162,6 +147,7 @@ set wildmenu
 
 set title
 nnoremap ; :
+set cursorline
 
 " Markdown
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
@@ -169,14 +155,8 @@ au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf mark
 " normally I always use 2 spaces to indent, exceptions here
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
 
-" set t_Co=256 "256 color mode"
-" " " in case t_Co alone doesn't work, add this as well:
-" " " i.e. Force 256 colors harder
-" let &t_AB="\e[48;5;%dm"
-" let &t_AF="\e[38;5;%dm"
-" set enc=utf-8
-" set term=screen-256color
-" let $TERM='screen-256color'
+if !has("gui_running")
+endif
 
 map <up> <nop>
 map <down> <nop>
@@ -195,42 +175,20 @@ nmap <leader>c :tabnew<CR>
 
 nmap <leader>d :DistractionsToggle<CR>
 
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
+" CtrlP
 nmap <leader>t :CtrlP<CR>
 nmap <leader>b :CtrlPBuffer<CR>
 nmap <Leader>fn :CtrlPFunky<Cr>
-
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_extensions = ['funky']
 let g:ctrlp_funky_syntax_highlight = 1
-
+let g:ctrlp_working_path_mode=0
 if exists("g:ctrlp_user_command")
   unlet g:ctrlp_user_command
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
-
-let base16colorspace=256
-set cursorline
-
-if has("gui_running")
-  autocmd GUIEnter * set vb t_vb=
-
-  set shell=/bin/zsh\ -i
-
-  set cursorline
-
-  set guioptions-=m "remove menu bar
-  set guioptions-=T "remove toolbar
-  set guioptions-=r "remove right-hand scroll bar
-  set guioptions-=L "remove left-hand scroll bar
-  set guioptions-=e "console-like tabs in gvim
-  set guioptions+=c
-
-  set background=dark
-
-  set guifont=Consolas\ 13
-end
 
 function! RenameFile()
   let old_name = expand('%')
@@ -244,8 +202,6 @@ endfunction
 map <Leader>r :call RenameFile()<cr>
 
 com! PrettyJSON %!python -m json.tool
-
-let g:ctrlp_working_path_mode=0
 
 let g:notes_directories = ['~/Dropbox/notes']
 let g:ragtag_global_maps = 1
@@ -396,8 +352,6 @@ endfunction
 
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
-colorscheme grb256
-set background=light
 
 set completeopt=longest,menuone
 set omnifunc=syntaxcomplete#Complete
@@ -409,10 +363,10 @@ inoremap jj <Esc>
 
 nnoremap <space> :buffers<CR>:buffer<Space>
 
+" vim-jsx
 let g:jsx_ext_required = 0
 
-set nolazyredraw
-
+" Shifting lines
 " Normal mode
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
@@ -420,4 +374,35 @@ nnoremap <S-k> :m .-2<CR>==
 vnoremap <S-j> :m '>+1<CR>gv=gv
 vnoremap <S-k> :m '<-2<CR>gv=gv
 
-colorscheme grb256
+if has("gui_running")
+  autocmd GUIEnter * set vb t_vb=
+
+  set shell=/bin/zsh\ -i
+
+  set cursorline
+
+  set guioptions-=m "remove menu bar
+  set guioptions-=T "remove toolbar
+  set guioptions-=r "remove right-hand scroll bar
+  set guioptions-=L "remove left-hand scroll bar
+  set guioptions-=e "console-like tabs in gvim
+  set guioptions+=c
+
+  set background=dark
+
+  colorscheme Tomorrow-Night
+
+  set guifont=Monaco\ 13
+else
+  set t_Co=256 "256 color mode"
+  " " in case t_Co alone doesn't work, add this as well:
+  " " i.e. Force 256 colors harder
+  let &t_AB="\e[48;5;%dm"
+  let &t_AF="\e[38;5;%dm"
+  set enc=utf-8
+  set term=screen-256color
+  let $TERM='screen-256color'
+
+  set background=dark
+  colorscheme grb256
+endif

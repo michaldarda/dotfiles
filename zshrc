@@ -70,6 +70,7 @@ export PATH=$PATH:~/dotfiles/scripts
 
 #cabal
 export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.xmonad/bin
 
 #gopath
 export PATH=$PATH:/usr/local/go/bin
@@ -110,4 +111,5 @@ ensure_tmux_is_running() {
 
 ensure_tmux_is_running
 
+#export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
 source ~/.zshenv

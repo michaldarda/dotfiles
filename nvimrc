@@ -21,10 +21,9 @@ Plug 'mkitt/tabline.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
-"Plug 'epeli/slimux'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-repeat'
-"Plug 'gorkunov/smartpairs.vim', { 'for': 'ruby' }
+Plug 'gorkunov/smartpairs.vim', { 'for': 'ruby' }
 Plug 'vim-scripts/TagHighlight'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -33,7 +32,7 @@ Plug 'bogado/file-line'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
-Plug 'michaldarda/vim-test'
+Plug 'janko-m/vim-test'
 Plug 'nicwest/QQ.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'deris/vim-shot-f'
@@ -63,11 +62,6 @@ Plug 'oblitum/rainbow', { 'for': 'clojure'}
 Plug 'tpope/vim-leiningen', { 'for': 'clojure' }
 Plug 'guns/vim-sexp', { 'for': 'clojure'}
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure'}
-" haskell
-" Plug 'bitc/vim-hdevtools'
-" Plug 'lukerandall/haskellmode-vim'
-"  elixir
-" Plug 'elixir-lang/vim-elixir'
 " jsx
 Plug 'mxw/vim-jsx'
 Plug 'vim-scripts/dbext.vim'
@@ -76,7 +70,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 Plug 'DanielFGray/DistractionFree.vim'
-"Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim', { 'for': 'ruby'}
 Plug 'lervag/vimtex', { 'for': 'ruby'}
 Plug 'tpope/vim-projectionist'
 Plug 'PotatoesMaster/i3-vim-syntax'
@@ -375,10 +369,10 @@ set nolazyredraw
 nnoremap <S-j> :m .+1<CR>==
 nnoremap <S-k> :m .-2<CR>==
 " Visual mode
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
+vnoremap <S-j> :m '>+-1<CR>gv=gv
+vnoremap <S-k> :m '<-3<CR>gv=gv
 
-colorscheme grb256
+colorscheme github
 
 let g:rainbow_active = 1
 
