@@ -1,6 +1,6 @@
 # aliases
 alias e='vim'
-alias vi='nvim'
+alias vi='vim'
 alias tlf='tail -f'
 
 # general
@@ -113,4 +113,4 @@ export EDITOR=vim
 # source ~/.bin/tmuxinator.zsh
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-tic ~/screen-256color.ti
+#tic ~/screen-256color.ti
