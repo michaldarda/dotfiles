@@ -23,7 +23,7 @@ Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
 Plug 'epeli/slimux'
 Plug 'tpope/vim-repeat'
-Plug 'gorkunov/smartpairs.vim'
+Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 Plug 'vim-scripts/TagHighlight'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
@@ -57,13 +57,16 @@ Plug 'evanmiller/nginx-vim-syntax'
 "go
 Plug 'fatih/vim-go'
 "clojure
-Plug 'tpope/vim-fireplace'
-Plug 'guns/vim-clojure-static'
-Plug 'guns/vim-clojure-highlight'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-Plug 'tpope/vim-leiningen'
+Plug 'tpope/vim-fireplace', {'for': 'clojure'}
+Plug 'guns/vim-clojure-static', {'for': 'clojure'}
+Plug 'guns/vim-clojure-highlight',{'for': 'clojure'}
+Plug 'oblitum/rainbow', { 'for': 'clojure'}
+Plug 'guns/vim-sexp', {'for': 'clojure'}
+Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
+Plug 'tpope/vim-leiningen',{'for': 'clojure'}
+Plug 'dgrnbrg/vim-redl', {'for': 'clojure'}
+Plug 'tpope/vim-classpath', {'for': 'clojure'}
+Plug 'venantius/vim-cljfmt', {'for': 'clojure'}
 " jsx
 Plug 'mxw/vim-jsx'
 " color schemes, etc
@@ -73,7 +76,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 Plug 'DanielFGray/DistractionFree.vim'
-Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim', {'for': 'ruby'}
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'zhubert/vim-ruby-fmt', {'for': 'ruby'}
 call plug#end()

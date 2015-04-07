@@ -8,4 +8,4 @@ set term=screen-256color
 let $TERM='screen-256color'
 
 set background=dark
-colorscheme grb256
+colorscheme default

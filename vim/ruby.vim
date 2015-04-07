@@ -24,4 +24,5 @@ command! Rgemfile call Rgemfile()
 command! Rglock call Rgemfilelock()
 command! Rgspec call Rgspec()
 
-autocmd FileType ruby autocmd BufWritePost <buffer> Fmt
+"autocmd FileType ruby autocmd BufWritePost <buffer> Fmt
+nmap ff :Fmt<CR>

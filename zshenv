@@ -109,8 +109,5 @@ source ~/dotfiles/zsh_pacman
 
 export EDITOR=vim
 
-# chruby ruby-1.9
-# source ~/.bin/tmuxinator.zsh
+chruby ruby-2.1
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-#tic ~/screen-256color.ti

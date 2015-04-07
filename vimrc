@@ -1,4 +1,7 @@
 set nocompatible
+if has("gui_running")
+  let $GVIM="true"
+endif
 set shell=$SHELL
 
 source ~/dotfiles/vim/plug.vim
