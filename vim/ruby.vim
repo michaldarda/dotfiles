@@ -26,3 +26,7 @@ command! Rgspec call Rgspec()
 
 "autocmd FileType ruby autocmd BufWritePost <buffer> Fmt
 nmap ff :Fmt<CR>
+nmap fs :SyntasticCheck<CR>
+let g:blockle_mapping = 'bl'
+
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
