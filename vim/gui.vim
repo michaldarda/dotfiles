@@ -13,6 +13,8 @@ set guioptions+=c
 
 set background=light
 
-colorscheme eclipse
+colorscheme Tomorrow-Night
 
 set guifont=Monaco\ 13
+
+autocmd Filetype * SemanticHighlight
