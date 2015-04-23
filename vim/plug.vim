@@ -82,6 +82,8 @@ Plug 'zhubert/vim-ruby-fmt', {'for': 'ruby'}
 Plug 'tpope/vim-projectionist'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'zefei/vim-colortuner'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'gabesoft/vim-ags'
 call plug#end()
 
 filetype on

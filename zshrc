@@ -24,7 +24,7 @@ function git_prompt_info() {
 
 # get name of current ruby version
 function prompt_ruby {
-  ruby -e 'print "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"'
+  ruby -e 'print "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"' 2>&1
 }
 
 autoload colors; colors

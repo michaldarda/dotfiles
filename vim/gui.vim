@@ -11,7 +11,7 @@ set guioptions-=L "remove left-hand scroll bar
 set guioptions-=e "console-like tabs in gvim
 set guioptions+=c
 
-set background=light
+"set background=light
 
 colorscheme Tomorrow-Night
 
