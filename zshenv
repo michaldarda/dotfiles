@@ -1,6 +1,6 @@
 # aliases
 alias e='vim'
-alias vi='vim'
+alias vi='nvim'
 alias tlf='tail -f'
 
 # general
