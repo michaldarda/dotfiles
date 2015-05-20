@@ -84,6 +84,8 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'zefei/vim-colortuner'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'gabesoft/vim-ags'
+Plug 'ajh17/Spacegray.vim'
+Plug 'derekwyatt/vim-scala'
 call plug#end()
 
 filetype on

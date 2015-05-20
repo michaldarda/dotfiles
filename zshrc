@@ -110,7 +110,5 @@ ensure_tmux_is_running() {
   fi
 }
 
-ensure_tmux_is_running
-
 #export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
 source ~/.zshenv

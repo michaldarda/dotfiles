@@ -13,7 +13,7 @@ set guioptions+=c
 
 "set background=light
 
-colorscheme Tomorrow-Night
+colorscheme mac_classic
 
 set guifont=Monaco\ 13
 

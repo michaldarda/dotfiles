@@ -53,11 +53,11 @@ let g:jsx_ext_required = 0
 
 source ~/dotfiles/vim/shifting_lines.vim
 
-if has("gui_running") && !has("nvim")
+if has("gui_running") && !has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
-if has("term") && !has("nvim")
+if !has("gui_running")
   source ~/dotfiles/vim/term.vim
 endif
 
