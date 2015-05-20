@@ -89,6 +89,8 @@ alias tmux-cleanup="tmux kill-session -a"
 alias bim='vim'
 alias rake="bundle exec rake"
 alias rails="bundle exec rails"
+alias 19="chruby 1.9"
+alias 21="chruby 2.1"
 
 # mysql
 function myload {
