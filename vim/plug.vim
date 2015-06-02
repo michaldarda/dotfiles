@@ -1,7 +1,6 @@
 filetype off
 
 call plug#begin('~/.vim/plugged')
-Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
@@ -29,7 +28,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 Plug 'scrooloose/syntastic'
 Plug 'bogado/file-line'
-Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'janko-m/vim-test'
@@ -86,6 +84,8 @@ Plug 'jaxbot/semantic-highlight.vim'
 Plug 'gabesoft/vim-ags'
 Plug 'ajh17/Spacegray.vim'
 Plug 'derekwyatt/vim-scala'
+Plug 'juvenn/mustache.vim'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 filetype on

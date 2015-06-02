@@ -113,3 +113,4 @@ export EDITOR=vim
 
 chruby ruby-2.1
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
+alias praca="vim ~/Code/play/praca/praca_dyplomowa.tex"

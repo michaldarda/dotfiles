@@ -89,8 +89,8 @@ nnoremap <space> :buffers<CR>:buffer<Space>
 hi Visual term=reverse cterm=reverse guibg=White
 hi Search term=reverse cterm=reverse guibg=White
 
-set completeopt=longest,menuone
-set omnifunc=syntaxcomplete#Complete
+"set completeopt=longest,menuone
+"set omnifunc=syntaxcomplete#Complete
 
 nmap <leader>h :nohlsearch<cr>
 nmap <leader>v :tabe ~/.vimrc<CR>

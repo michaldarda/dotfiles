@@ -45,7 +45,7 @@ source ~/dotfiles/vim/ag_motion.vim
 
 source ~/dotfiles/vim/praca.vim
 
-let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "context"
 
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 
@@ -65,3 +65,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+
+let g:ycm_add_preview_to_completeopt = 1
