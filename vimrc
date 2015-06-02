@@ -67,3 +67,22 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
 let g:ycm_add_preview_to_completeopt = 1
+
+let g:UltiSnipsExpandTrigger = '<C-@>'   " terminals send C-@ when C-Space is pressed.
+let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
+
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsSnippetDirectories  = ["UltiSnips"]
+
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        call UltiSnips#JumpForwards()
+        if g:ulti_jump_forwards_res == 0
+           return ""  " nothing more to do
+        endif
+    endif
+    return ""
+endfunction
+
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
