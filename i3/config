@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Monaco 11
+font pango:Monaco 13
 
 floating_modifier $mod
 
@@ -10,9 +10,9 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec i3-dmenu-desktop
+bindsym $mod+d exec ~/bin/menu
 # bindsym $mod+p exec i3-dmenu-desktop
-bindsym $mod+p exec i3-dmenu-desktop
+bindsym $mod+p exec ~/bin/menu
 
 # change focus
 bindsym $mod+h focus left
@@ -122,12 +122,13 @@ bar {
     position top
 
     colors {
-      separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #1c648f #1c648f #ffffff
+      separator #000000
+        background #000000
+        statusline #ffffff
+        # set some nice colors      border     background  text
+        focused_workspace #1c648f #2980b9 #ffffff
         active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
+        inactive_workspace #000000 #000000 #ffffff
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
@@ -141,9 +142,10 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # $i3-background
-client.focused #1c648f #1c648f #ffffff #dddddd
-client.focused_inactive #333333 #333333 #888888 #292d2e
-client.unfocused #333333 #333333 #888888 #292d2e
+# colorclass border background text indicator
+client.focused #1c648f #2980b9 #ffffff #dddddd
+client.focused_inactive #333333 #ecf0f1 #888888 #292d2e
+client.unfocused #000000 #000000 #ffffff #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
 new_window 1pixel
@@ -151,3 +153,8 @@ exec "setxkbmap pl"
 exec "~/switch_display"
 exec "nitrogen --restore"
 exec "nm-applet"
+
+assign [instance="gnome-terminal"] $tag1
+assign [class="Firefox"] $tag2
+assign [instance="google-chrome(.*)"] $tag2
+assign [instance="spotify"] $tag4
