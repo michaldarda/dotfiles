@@ -79,13 +79,14 @@ Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'zhubert/vim-ruby-fmt', {'for': 'ruby'}
 Plug 'tpope/vim-projectionist'
 Plug 'jaxbot/semantic-highlight.vim'
-Plug 'zefei/vim-colortuner'
+"Plug 'zefei/vim-colortuner'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'gabesoft/vim-ags'
 Plug 'ajh17/Spacegray.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'juvenn/mustache.vim'
 Plug 'Valloric/YouCompleteMe'
+Plug 'HerringtonDarkholme/vim-worksheet'
 call plug#end()
 
 filetype on
