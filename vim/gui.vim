@@ -1,6 +1,6 @@
 autocmd GUIEnter * set vb t_vb=
 
-set shell=/bin/zsh\ -i
+"set shell=/bin/zsh\ -i
 
 set cursorline
 

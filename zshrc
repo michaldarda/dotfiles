@@ -34,27 +34,6 @@ LSCOLORS="ExGxFxDxCxDxDxhbhdacEc";
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 
-# set the colors to your liking
-local vi_normal_marker="[%{$fg[green]%}%BN%b%{$reset_color%}]"
-local vi_insert_marker="[%{$fg[blue]%}%BI%b%{$reset_color%}]"
-local vi_unknown_marker="[%{$fg[red]%}%BU%b%{$reset_color%}]"
-local vi_mode="$vi_insert_marker"
-vi_mode_indicator () {
-  case ${KEYMAP} in
-    (vicmd)      echo $vi_normal_marker ;;
-    (main|viins) echo $vi_insert_marker ;;
-    (*)          echo $vi_unknown_marker ;;
-  esac
-}
-
-# Reset mode-marker and prompt whenever the keymap changes
-function zle-line-init zle-keymap-select {
-  vi_mode="$(vi_mode_indicator)"
-  zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
@@ -84,20 +63,10 @@ setopt cdablevars
 setopt correct
 setopt hist_ignore_space
 
-PROMPT='${vi_mode} %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+PROMPT=' %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 RPROMPT='$(prompt_ruby)'
 
-bindkey -v
-
-bindkey "^R" history-incremental-pattern-search-backward
-
-# bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey "^?" backward-delete-char
+bindkey -e
 
 export KEYTIMEOUT=1
 

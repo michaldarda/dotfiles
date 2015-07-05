@@ -86,7 +86,8 @@ Plug 'ajh17/Spacegray.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'juvenn/mustache.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'HerringtonDarkholme/vim-worksheet'
+" Plug 'HerringtonDarkholme/vim-worksheet'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 filetype on

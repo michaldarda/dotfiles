@@ -57,9 +57,9 @@ if has("gui_running") && !has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
-if !has("gui_running")
-  source ~/dotfiles/vim/term.vim
-endif
+" if !has("gui_running")
+"   source ~/dotfiles/vim/term.vim
+" endif
 
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
