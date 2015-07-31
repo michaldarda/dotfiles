@@ -55,6 +55,7 @@ export PATH=$PATH:~/.xmonad/bin
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/gopath
 export PATH=$PATH:~/gopath/bin
+export PATH=$PATH:~/.npm/bin
 
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh

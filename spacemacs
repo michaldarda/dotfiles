@@ -26,7 +26,7 @@
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     syntax-checking
+     ;;syntax-checking
      version-control
      ruby
      elixir
@@ -81,7 +81,7 @@ before layers configuration."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not rooms:demotoo crappy.
    dotspacemacs-default-font '("Monaco"
-                               :size 15
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -119,7 +119,7 @@ before layers configuration."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up.
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX."
    dotspacemacs-fullscreen-use-non-native nil
@@ -169,7 +169,6 @@ layers configuration."
      (set-face-attribute face nil :weight 'normal :underline nil))
    (face-list))
   (add-hook 'enh-ruby-mode-hook 'company-mode)
-  (setq-default truncate-lines nil)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
   (evil-leader/set-key "t" 'helm-projectile-find-file)
