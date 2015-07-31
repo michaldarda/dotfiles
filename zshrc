@@ -1,13 +1,3 @@
-source "${HOME}/.zsh/zgen/zgen.zsh"
-
-if ! zgen saved; then
-  zgen load zsh-users/zsh-syntax-highlighting
-  zgen load zsh-users/zsh-history-substring-search
-  zgen load tarruda/zsh-autosuggestions
-
-  zgen save
-fi
-
 export CLICOLOR=1
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -67,6 +57,9 @@ export GOPATH=~/gopath
 export PATH=$PATH:~/gopath/bin
 export PATH=$PATH:~/.npm/bin
 
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 setopt cdablevars
 setopt correct
 setopt hist_ignore_space
@@ -86,11 +79,6 @@ ensure_tmux_is_running() {
     tat
   fi
 }
-
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
 
 #export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
 source ~/.zshenv
