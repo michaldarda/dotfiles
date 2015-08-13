@@ -118,21 +118,21 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-  status_command i3blocks
-    position top
+# bar {
+#   status_command i3blocks
+#     position top
 
-    colors {
-      separator #000000
-        background #000000
-        statusline #ffffff
-        # set some nice colors      border     background  text
-        focused_workspace #1c648f #2980b9 #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #000000 #000000 #ffffff
-        urgent_workspace #2f343a #900000 #ffffff
-    }
-}
+#     colors {
+#       separator #000000
+#         background #000000
+#         statusline #ffffff
+#         # set some nice colors      border     background  text
+#         focused_workspace #1c648f #2980b9 #ffffff
+#         active_workspace #333333 #333333 #ffffff
+#         inactive_workspace #000000 #000000 #ffffff
+#         urgent_workspace #2f343a #900000 #ffffff
+#     }
+# }
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec /usr/bin/pulseaudio-ctl up
@@ -156,8 +156,4 @@ exec "~/switch_display"
 exec "nitrogen --restore"
 exec "xclip"
 exec "nm-applet"
-
-assign [instance="gnome-terminal"] $tag1
-assign [class="Firefox"] $tag2
-assign [instance="google-chrome(.*)"] $tag2
-assign [instance="spotify"] $tag3
+exec_always "lxpanel"

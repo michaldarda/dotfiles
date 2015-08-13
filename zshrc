@@ -81,4 +81,6 @@ ensure_tmux_is_running() {
 }
 
 #export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
+NPM_PACKAGES="${HOME}/.npm-packages"
+PATH="$NPM_PACKAGES/bin:$PATH"
 source ~/.zshenv
