@@ -23,8 +23,6 @@ source ~/dotfiles/vim/clojure.vim
 
 source ~/dotfiles/vim/slime.vim
 
-source ~/dotfiles/vim/ultisnips.vim
-
 "source ~/dotfiles/vim/hardtime.vim
 
 source ~/dotfiles/vim/slimux.vim
@@ -66,23 +64,19 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-let g:ycm_add_preview_to_completeopt = 1
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
-let g:UltiSnipsExpandTrigger = '<C-@>'   " terminals send C-@ when C-Space is pressed.
-let g:UltiSnipsJumpForwardTrigger = '<C-%>' " some key I do not use at all
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
 
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-let g:UltiSnipsSnippetDirectories  = ["UltiSnips"]
-
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        call UltiSnips#JumpForwards()
-        if g:ulti_jump_forwards_res == 0
-           return ""  " nothing more to do
-        endif
-    endif
-    return ""
-endfunction
-
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif

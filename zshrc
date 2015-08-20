@@ -65,7 +65,8 @@ setopt correct
 setopt hist_ignore_space
 
 PROMPT='work %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-RPROMPT='$(prompt_ruby)'
+RPROMPT=''
+# RPROMPT='$(prompt_ruby)'
 
 bindkey -e
 

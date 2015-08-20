@@ -1,8 +1,6 @@
 filetype off
 
 call plug#begin('~/.vim/plugged')
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -29,6 +27,7 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'scrooloose/syntastic'
 Plug 'bogado/file-line'
 Plug 'othree/html5.vim'
+" Plug 'HerringtonDarkholme/vim-worksheet'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'janko-m/vim-test'
 Plug 'nicwest/QQ.vim'
@@ -85,9 +84,13 @@ Plug 'gabesoft/vim-ags'
 Plug 'ajh17/Spacegray.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'juvenn/mustache.vim'
-Plug 'Valloric/YouCompleteMe'
-" Plug 'HerringtonDarkholme/vim-worksheet'
 Plug 'elixir-lang/vim-elixir'
+Plug 'vim-scripts/vim-symbols-strings'
+Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/vimproc.vim'
 call plug#end()
 
 filetype on
+let g:neocomplete#enable_at_startup = 1
