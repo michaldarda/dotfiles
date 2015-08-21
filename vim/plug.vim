@@ -27,7 +27,6 @@ Plug 'tacahiroy/ctrlp-funky'
 Plug 'scrooloose/syntastic'
 Plug 'bogado/file-line'
 Plug 'othree/html5.vim'
-" Plug 'HerringtonDarkholme/vim-worksheet'
 Plug 'vim-scripts/CmdlineComplete'
 Plug 'janko-m/vim-test'
 Plug 'nicwest/QQ.vim'
@@ -53,44 +52,30 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'evanmiller/nginx-vim-syntax'
 "go
 Plug 'fatih/vim-go'
-"clojure
-Plug 'tpope/vim-fireplace', {'for': 'clojure'}
-Plug 'guns/vim-clojure-static', {'for': 'clojure'}
-Plug 'guns/vim-clojure-highlight',{'for': 'clojure'}
-Plug 'oblitum/rainbow', { 'for': 'clojure'}
-Plug 'guns/vim-sexp', {'for': 'clojure'}
-Plug 'tpope/vim-sexp-mappings-for-regular-people', {'for': 'clojure'}
-Plug 'tpope/vim-leiningen',{'for': 'clojure'}
-Plug 'dgrnbrg/vim-redl', {'for': 'clojure'}
-Plug 'tpope/vim-classpath', {'for': 'clojure'}
-Plug 'venantius/vim-cljfmt', {'for': 'clojure'}
 " jsx
 Plug 'mxw/vim-jsx'
-" color schemes, etc
 Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
 Plug 'pangloss/vim-javascript'
 Plug 'DanielFGray/DistractionFree.vim'
-Plug 'cohama/lexima.vim', {'for': 'ruby'}
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'zhubert/vim-ruby-fmt', {'for': 'ruby'}
 Plug 'tpope/vim-projectionist'
-Plug 'jaxbot/semantic-highlight.vim'
-"Plug 'zefei/vim-colortuner'
 Plug 'jaxbot/semantic-highlight.vim'
 Plug 'gabesoft/vim-ags'
 Plug 'ajh17/Spacegray.vim'
 Plug 'derekwyatt/vim-scala'
 Plug 'juvenn/mustache.vim'
 Plug 'elixir-lang/vim-elixir'
-Plug 'vim-scripts/vim-symbols-strings'
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/vimproc.vim'
+Plug 'ervandew/supertab'
+Plug 'sirver/UltiSnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 filetype on
-let g:neocomplete#enable_at_startup = 1
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
