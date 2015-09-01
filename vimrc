@@ -82,3 +82,4 @@ if has('conceal')
 endif
 
 set omnifunc=syntaxcomplete#Complete
+nmap <leader>p :!thyme -d<cr>

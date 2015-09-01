@@ -85,3 +85,4 @@ ensure_tmux_is_running() {
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 source ~/.zshenv
+source ~/dotfiles/docker.zsh
