@@ -72,25 +72,17 @@ alias h="cd ~/"
 # rails, ruby
 alias be='bundle exec'
 alias b='bundle'
-alias rc='rails c'
-alias rs='rails s'
-alias rg='rails g'
-alias rgm='rails g migration'
-alias prake="RAILS_ENV=production bundle exec rake"
-alias rreset="bundle exec rake db:reset"
-alias migr="bundle exec rake db:migrate"
-alias pmigr="RAILS_ENV=production bundle exec rake db:migrate"
-alias prep="bundle exec rake db:test:prepare"
-alias railsc="bundle exec rails c"
-alias prailsc="RAILS_ENV=production bundle exec rails c"
 alias my="mysql -u root"
 alias mvim="vim -u ~/.vimrcmin"
-alias tmux-cleanup="tmux kill-session -a"
 alias bim='vim'
-alias rake="bundle exec rake"
-alias rails="bundle exec rails"
-alias 19="chruby 1.9"
-alias 21="chruby 2.1"
+
+function prake() {
+  RAILS_ENV=production APP_ENV=production bundle exec rake $@
+}
+
+function trake() {
+  RAILS_ENV=test APP_ENV=test bundle exec rake $@
+}
 
 # mysql
 function myload {
@@ -112,5 +104,9 @@ source ~/dotfiles/zsh_pacman
 export EDITOR=vim
 
 chruby ruby-2.1
+
+alias 19="chruby 1.9"
+alias 21="chruby 2.1"
+alias 22="chruby 2.2.3"
+
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
-alias praca="vim ~/Code/play/praca/praca_dyplomowa.tex"
