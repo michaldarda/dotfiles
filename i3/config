@@ -4,7 +4,7 @@ font pango:Cantarell 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -149,11 +149,11 @@ client.focused_inactive #333333 #ecf0f1 #888888 #292d2e
 client.unfocused #000000 #000000 #ffffff #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
-new_window 1pixel
+#new_window 1pixel
 exec "setxkbmap pl"
 exec_always --no-startup-id "xmodmap ~/.Xmodmap"
 exec "~/switch_display"
-exec "nitrogen --restore"
+#exec "nitrogen --restore"
 exec "xclip"
 exec "nm-applet"
 exec_always "lxpanel"
