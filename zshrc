@@ -24,7 +24,7 @@ function git_prompt_info() {
 
 # get name of current ruby version
 function prompt_ruby {
-  ruby -e 'print "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"' 2>&1
+  echo $RUBY_VERSION
 }
 
 autoload colors; colors
@@ -65,7 +65,7 @@ setopt correct
 setopt hist_ignore_space
 
 PROMPT='$(cat ~/komp) %{$fg[blue]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-RPROMPT='$RUBY_VERSION'
+RPROMPT='$(prompt_ruby)'
 
 bindkey -e
 

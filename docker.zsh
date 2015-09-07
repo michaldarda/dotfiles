@@ -17,3 +17,6 @@ function docker-exec() {
 function docker-my() {
   docker exec -it $1 bash -c 'mysql -ppassword'
 }
+
+alias mysql55='docker stop mysql56 && docker start mysql55'
+alias mysql56='docker stop mysql55 && docker start mysql56'
