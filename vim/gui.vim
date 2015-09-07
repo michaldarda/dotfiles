@@ -15,6 +15,6 @@ set guioptions+=c
 
 colorscheme mac_classic
 
-set guifont=Monaco\ 13
+set guifont=Monaco\ Regular\ 12
 
 " autocmd Filetype * SemanticHighlight
