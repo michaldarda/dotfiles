@@ -69,6 +69,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'ervandew/supertab'
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 filetype on

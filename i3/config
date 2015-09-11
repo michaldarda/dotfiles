@@ -149,6 +149,9 @@ client.focused_inactive #333333 #ecf0f1 #888888 #292d2e
 client.unfocused #000000 #000000 #ffffff #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
+for_window [class="Nautilus"] floating enable
+for_window [class="Gnome-alsamixer"] floating enable
+
 #new_window 1pixel
 exec "setxkbmap pl"
 exec_always --no-startup-id "xmodmap ~/.Xmodmap"
