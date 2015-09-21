@@ -1,0 +1,5 @@
+alias acs="apt-cache search"
+alias agi="sudo apt-get install"
+alias agr="sudo apt-get remove"
+alias agy="sudo apt-get update"
+alias agu="sudo apt-get upgrade"

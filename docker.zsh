@@ -1,3 +1,8 @@
+alias dr='sudo docker run'
+alias ds='sudo docker stop'
+alias drmf='sudo docker rm -f'
+alias dexec'sudo docker exec -it'
+
 function cleandocker() {
   docker rm `docker ps --no-trunc -aq`
 }

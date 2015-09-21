@@ -98,6 +98,7 @@ source /usr/local/share/chruby/auto.sh
 # other files
 source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_pacman
+source ~/dotfiles/apt_get.zsh
 [[ -f ~/zsh_cubiware ]] && source ~/zsh_cubiware
 [[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh
 
