@@ -110,4 +110,6 @@ alias 19="chruby 1.9"
 alias 21="chruby 2.1"
 alias 22="chruby 2.2.3"
 
+alias tmux="tmux -2"
+
 export NVIM_TUI_ENABLE_TRUE_COLOR=1

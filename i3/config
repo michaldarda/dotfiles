@@ -90,7 +90,7 @@ bindsym $mod+x [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-bindsym $mod+Ctrl+l exec "dm-tool lock"
+bindsym $mod+Ctrl+l exec "xscreensaver-command -lock"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -159,4 +159,5 @@ exec "~/switch_display"
 exec "nitrogen --restore"
 exec "xclip"
 exec "nm-applet"
+exec "xscreensaver"
 exec_always "lxpanel"

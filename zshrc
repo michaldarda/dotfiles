@@ -80,6 +80,8 @@ ensure_tmux_is_running() {
   fi
 }
 
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
 #export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
