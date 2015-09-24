@@ -92,7 +92,9 @@ function myload {
 }
 
 # chruby
+setopt nullglob
 source /usr/local/share/chruby/chruby.sh
+source ~/.rvm/scripts/extras/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 # other files
@@ -103,8 +105,6 @@ source ~/dotfiles/apt_get.zsh
 [[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh
 
 export EDITOR=vim
-
-chruby ruby-2.1
 
 alias 19="chruby 1.9"
 alias 21="chruby 2.1"
