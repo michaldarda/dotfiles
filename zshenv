@@ -94,7 +94,7 @@ function myload {
 # chruby
 setopt nullglob
 source /usr/local/share/chruby/chruby.sh
-source ~/.rvm/scripts/extras/chruby.sh
+#source ~/.rvm/scripts/extras/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 # other files
