@@ -82,6 +82,9 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 #export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
+
+NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
 source ~/.zshenv
 source ~/dotfiles/docker.zsh
 

@@ -77,9 +77,9 @@ let g:syntastic_auto_loc_list = 1
 " \: "\<TAB>"
 
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
 
 set omnifunc=syntaxcomplete#Complete
 nmap <leader>p :!thyme -d<cr>
