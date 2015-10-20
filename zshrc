@@ -87,3 +87,11 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
 source ~/.zshenv
 source ~/dotfiles/docker.zsh
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+alias docker='sudo docker'
+
+source ~/prompt.zsh
