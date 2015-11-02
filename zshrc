@@ -94,4 +94,4 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 alias docker='sudo docker'
 
-source ~/prompt.zsh
+source ~/dotfiles/prompt.zsh
