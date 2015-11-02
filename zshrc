@@ -86,7 +86,7 @@ PATH="$NPM_PACKAGES/bin:$PATH"
 NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
 source ~/.zshenv
-source ~/dotfiles/docker.zsh
+#source ~/dotfiles/docker.zsh
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"

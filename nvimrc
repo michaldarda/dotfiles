@@ -1,1 +1,1 @@
-
+/home/michal/dotfiles/vimrc
