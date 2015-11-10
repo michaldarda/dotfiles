@@ -43,8 +43,6 @@ source ~/dotfiles/vim/ag_motion.vim
 
 source ~/dotfiles/vim/unite.vim
 
-"let g:SuperTabDefaultCompletionType = "context"
-
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
 
 let g:jsx_ext_required = 0
@@ -59,31 +57,10 @@ if has("nvim") || has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
-" if !has("gui_running")
-"   source ~/dotfiles/vim/term.vim
-" endif
-
 let g:syntastic_check_on_wq = 0
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-
-" Plugin key-mappings.
-" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-" xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: pumvisible() ? "\<C-n>" : "\<TAB>"
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)"
-" \: "\<TAB>"
-
-" For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
 
 set omnifunc=syntaxcomplete#Complete
 nmap <leader>p :!thyme -d<cr>

@@ -13,7 +13,7 @@ set guioptions+=c
 
 "set background=light
 
-colorscheme mac_classic
+colorscheme github
 
 set guifont=Monaco\ Regular\ 12
 
