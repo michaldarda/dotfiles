@@ -24,6 +24,7 @@ Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 Plug 'vim-scripts/TagHighlight'
 Plug 'kien/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'Shougo/unite.vim'
 Plug 'scrooloose/syntastic'
 Plug 'kopischke/vim-fetch'
 Plug 'othree/html5.vim'

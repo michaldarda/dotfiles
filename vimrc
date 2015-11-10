@@ -41,7 +41,7 @@ source ~/dotfiles/vim/surround.vim
 
 source ~/dotfiles/vim/ag_motion.vim
 
-source ~/dotfiles/vim/praca.vim
+source ~/dotfiles/vim/unite.vim
 
 "let g:SuperTabDefaultCompletionType = "context"
 
@@ -51,7 +51,11 @@ let g:jsx_ext_required = 0
 
 source ~/dotfiles/vim/shifting_lines.vim
 
-if has("gui_running") && !has("neovim")
+if has("gui_running")
+  source ~/dotfiles/vim/gui.vim
+endif
+
+if has("nvim") || has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
