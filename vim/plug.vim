@@ -72,6 +72,7 @@ Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 filetype on
