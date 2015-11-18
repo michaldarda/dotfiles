@@ -73,6 +73,7 @@ Plug 'honza/vim-snippets'
 Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-runner'
 call plug#end()
 
 filetype on

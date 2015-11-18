@@ -111,8 +111,8 @@ alias 22="chruby 2.2.3"
 
 alias tmux="tmux -2"
 
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
+alias vim="vim"
 alias gvim="nvim"
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
