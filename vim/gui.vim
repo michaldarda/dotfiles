@@ -12,7 +12,7 @@ set guioptions-=e "console-like tabs in gvim
 set guioptions+=c
 
 set background=dark
-colorscheme grb256
+colorscheme onedark
 
 set guifont=Monaco\ Regular\ 12
 

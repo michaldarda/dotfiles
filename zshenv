@@ -103,7 +103,7 @@ source ~/dotfiles/apt_get.zsh
 [[ -f ~/zsh_cubiware ]] && source ~/zsh_cubiware
 [[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 alias 19="chruby 1.9"
 alias 21="chruby 2.1"
