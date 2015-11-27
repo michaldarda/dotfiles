@@ -74,6 +74,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/goyo.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'geoffharcourt/one-dark.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 filetype on

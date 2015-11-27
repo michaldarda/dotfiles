@@ -7,9 +7,9 @@ set shell=$SHELL
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
 
-nmap <leader>d :DistractionsToggle<CR>
+nmap <leader>d :Goyo<CR>
 
-source ~/dotfiles/vim/ctrlp.vim
+source ~/dotfiles/vim/fzf.vim
 
 source ~/dotfiles/vim/rename_file.vim
 
