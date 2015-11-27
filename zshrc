@@ -1,22 +1,6 @@
-export CLICOLOR=1
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-autoload compinit
-autoload promptinit
-compinit
-promptinit
-
-setopt prompt_subst
-
-export HISTSIZE=1000
-export SAVEHIST=1000
-export HISTFILE="$HOME/.zsh_history"
-
-# get name of current ruby version
-function prompt_ruby {
-  echo $RUBY_VERSION
-}
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
@@ -41,27 +25,26 @@ export GOPATH=~/gopath
 export PATH=$PATH:~/gopath/bin
 export PATH=$PATH:~/.npm/bin
 
-setopt cdablevars
-setopt correct
-setopt hist_ignore_space
-
-bindkey -e
-
-export KEYTIMEOUT=1
-
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-#export PATH=\$PATH:~/.cabal/bin:~/.xmonad/bin
-NPM_PACKAGES="${HOME}/.npm-packages"
-PATH="$NPM_PACKAGES/bin:$PATH"
-
-NOKOGIRI_USE_SYSTEM_LIBRARIES=1
-
-source ~/.zshenv
-#source ~/dotfiles/docker.zsh
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
 
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 alias docker='sudo docker'
+
+source ~/.antigen.zsh
+
+antigen bundle robbyrussell/oh-my-zsh lib/
+plugins=(chruby)
+
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme robbyrussell
+
+antigen apply
+
+source ~/.zshenv
