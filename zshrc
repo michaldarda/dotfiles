@@ -48,3 +48,5 @@ antigen theme robbyrussell
 antigen apply
 
 source ~/.zshenv
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
