@@ -36,6 +36,7 @@ export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 alias docker='sudo docker'
 
+export PURE_PROMPT_SYMBOL=""
 source ~/.antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
@@ -43,7 +44,7 @@ plugins=()
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-antigen theme robbyrussell
+antigen theme minimal
 
 antigen apply
 
@@ -53,3 +54,4 @@ source ~/.zshenv
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
