@@ -39,8 +39,6 @@ source ~/dotfiles/vim/vim_test.vim
 
 source ~/dotfiles/vim/surround.vim
 
-source ~/dotfiles/vim/ag_motion.vim
-
 source ~/dotfiles/vim/unite.vim
 
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=:dbname=api_test_tool'
