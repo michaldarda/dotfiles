@@ -93,8 +93,8 @@ function myload {
 
 # chruby
 setopt nullglob
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+# source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh
 
 # other files
 source ~/dotfiles/zsh_home

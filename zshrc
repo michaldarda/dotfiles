@@ -39,7 +39,7 @@ alias docker='sudo docker'
 source ~/.antigen.zsh
 
 antigen bundle robbyrussell/oh-my-zsh lib/
-plugins=(chruby)
+plugins=()
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 
@@ -50,3 +50,6 @@ antigen apply
 source ~/.zshenv
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
