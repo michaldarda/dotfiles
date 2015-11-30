@@ -17,7 +17,7 @@ source ~/dotfiles/vim/notes.vim
 
 let g:ragtag_global_maps = 1
 
-nmap <leader>a :Ag ""<Left>
+nmap <leader>a :Ag<Space>
 
 source ~/dotfiles/vim/clojure.vim
 

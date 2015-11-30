@@ -1,1 +1,1 @@
-nmap <leader>t :FZF<CR>
+nmap <leader>t :GitFiles<CR>
