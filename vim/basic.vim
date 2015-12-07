@@ -100,8 +100,8 @@ com! PrettyJSON %!python -m json.tool
 
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
-else
-  set clipboard=unnamed
-endif
+" if has('unnamedplus')
+"   set clipboard=unnamed,unnamedplus
+" else
+  set clipboard=unnamedplus
+" endif
