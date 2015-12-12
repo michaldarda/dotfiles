@@ -24,9 +24,10 @@
      markdown
      org
      (shell :variables
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
-     ;;syntax-checking
+     syntax-checking
      version-control
      ruby
      elixir
@@ -169,10 +170,10 @@ layers configuration."
      (set-face-attribute face nil :weight 'normal :underline nil))
    (face-list))
   (add-hook 'enh-ruby-mode-hook 'company-mode)
+  (setq-default truncate-lines nil)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
-  (evil-leader/set-key "t" 'helm-projectile-find-file)
-  (chruby "2.1.5"))
+  (evil-leader/set-key "t" 'helm-projectile-find-file))
 
 
 ;; Do not write anything past this comment. This is where Emacs will

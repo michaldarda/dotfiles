@@ -91,10 +91,7 @@ function myload {
   pv $2 | mysql -u root $1
 }
 
-# chruby
 setopt nullglob
-# source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh
 
 # other files
 source ~/dotfiles/zsh_home
