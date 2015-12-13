@@ -36,10 +36,7 @@ values."
      git
      markdown
      org
-     (shell :variables shell-enable-smart-eshell t)
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     ;;(shell :variables shell-enable-smart-eshell t)
      ;;spell-checking
      ;;syntax-checking
      dockerfile
@@ -47,11 +44,12 @@ values."
      version-control
      (ruby :variables
            ruby-version-manager `rbenv)
+
      ruby-on-rails
      erlang
      elixir
      javascript
-     colors
+     (colors :variables colors-enable-rainbow-identifiers t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -93,6 +91,7 @@ values."
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
    dotspacemacs-startup-lists '(recents projects)
+   eshell-directory-name "~/.emacs.d/eshell"
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
@@ -205,10 +204,6 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (mapc
-   (lambda (face)
-     (set-face-attribute face nil :weight 'normal :underline nil))
-   (face-list))
   )
 
 (defun dotspacemacs/user-config ()
@@ -219,4 +214,5 @@ layers configuration. You are free to put any user code."
    (lambda (face)
      (set-face-attribute face nil :weight 'normal :underline nil))
    (face-list))
+  (setq eshell-directory-name "~/.emacs.d/eshell")
 )
