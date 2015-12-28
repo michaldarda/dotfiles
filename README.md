@@ -2,7 +2,7 @@
 
 ### Requirements
 
-    sudo pacman -S vim zsh tmux ctags indent
+    sudo apt-get install vim zsh tmux ctags indent
 
     gem install pry ctags
 
