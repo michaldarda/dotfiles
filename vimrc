@@ -64,5 +64,3 @@ set omnifunc=syntaxcomplete#Complete
 nmap <leader>p :!thyme -d<cr>
 
 set mouse=a
-
-let test#strategy = "vtr"

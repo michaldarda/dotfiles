@@ -14,6 +14,6 @@ set guioptions+=c
 set background=dark
 colorscheme grb256
 
-set guifont=Monaco\ Regular\ 12
+set guifont=Consolas\ 14
 
 " autocmd Filetype * SemanticHighlight
