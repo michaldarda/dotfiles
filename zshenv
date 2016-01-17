@@ -22,7 +22,6 @@ alias ll='ls -lh'
 
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit"
-alias gpr="git pull --rebase --stat"
 alias gpu="git push"
 alias gpuf="git push -f"
 alias ga="git add"
@@ -141,4 +140,6 @@ fco() {
   git checkout $(echo "$target" | awk '{print $2}')
 }
 
-alias gpr="git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
+gpr() {
+  eval "git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)"
+}
