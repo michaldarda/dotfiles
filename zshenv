@@ -109,8 +109,6 @@ alias 22="chruby 2.2.3"
 alias tmux="tmux -2"
 
 alias vi="vim"
-alias vim="vim"
-alias gvim="vim"
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -142,3 +140,5 @@ fco() {
     fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
   git checkout $(echo "$target" | awk '{print $2}')
 }
+
+alias gpr="git pull --rebase origin $(git rev-parse --abbrev-ref HEAD)"
