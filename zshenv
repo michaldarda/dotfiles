@@ -109,37 +109,38 @@ alias tmux="tmux -2"
 
 alias vi="vim"
 
-export NVIM_TUI_ENABLE_TRUE_COLOR=1
+if ! [ $VIM ]; then
+  export NVIM_TUI_ENABLE_TRUE_COLOR=1
+  # fh - repeat history
+  fh() {
+    eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+  }
 
-# fh - repeat history
-fh() {
-  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
-}
+  # fbr - checkout git branch (including remote branches)
+  fbr() {
+    local branches branch
+    branches=$(git branch --all | grep -v HEAD) &&
+      branch=$(echo "$branches" |
+    fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+      git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+  }
 
-# fbr - checkout git branch (including remote branches)
-fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-# fco - checkout git branch/tag
-fco() {
-  local tags branches target
-  tags=$(
+  # fco - checkout git branch/tag
+  fco() {
+    local tags branches target
+    tags=$(
     git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
-  branches=$(
+    branches=$(
     git branch --all | grep -v HEAD             |
     sed "s/.* //"    | sed "s#remotes/[^/]*/##" |
     sort -u          | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
-  target=$(
+    target=$(
     (echo "$tags"; echo "$branches") |
     fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
-  git checkout $(echo "$target" | awk '{print $2}')
-}
+    git checkout $(echo "$target" | awk '{print $2}')
+  }
 
-gpr() {
-  eval "git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)"
-}
+  gpr() {
+    eval "git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)"
+  }
+fi

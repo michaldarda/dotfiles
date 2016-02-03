@@ -17,12 +17,9 @@ Plug 'mkitt/tabline.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
-Plug 'epeli/slimux'
 Plug 'tpope/vim-repeat'
 Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 Plug 'vim-scripts/TagHighlight'
-Plug 'Shougo/unite.vim'
-"Plug 'scrooloose/syntastic'
 Plug 'kopischke/vim-fetch'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
@@ -48,7 +45,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 " nginx
 Plug 'evanmiller/nginx-vim-syntax'
-"go
+" go
 Plug 'fatih/vim-go'
 " jsx
 Plug 'mxw/vim-jsx'
@@ -71,6 +68,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf'
 Plug 'mattboehm/vim-unstack'
 Plug 'mattn/emmet-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 call plug#end()
 
 filetype on

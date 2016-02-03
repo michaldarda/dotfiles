@@ -1,3 +1,5 @@
+source ~/dotfiles/vim/ctrlp.vim
+
 autocmd GUIEnter * set vb t_vb=
 
 "set shell=/bin/zsh\ -i
@@ -11,9 +13,8 @@ set guioptions-=L "remove left-hand scroll bar
 set guioptions-=e "console-like tabs in gvim
 set guioptions+=c
 
-set background=github
-colorscheme grb256
+colorscheme github
 
-set guifont=Consolas\ 14
+set guifont=Monaco\ 13
 
 " autocmd Filetype * SemanticHighlight
