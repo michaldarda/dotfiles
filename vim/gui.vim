@@ -11,7 +11,7 @@ set guioptions-=L "remove left-hand scroll bar
 set guioptions-=e "console-like tabs in gvim
 set guioptions+=c
 
-set background=dark
+set background=github
 colorscheme grb256
 
 set guifont=Consolas\ 14

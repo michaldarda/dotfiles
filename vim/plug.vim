@@ -68,9 +68,10 @@ Plug 'honza/vim-snippets'
 Plug 'plasticboy/vim-markdown'
 Plug 'chriskempson/base16-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf'
 Plug 'mattboehm/vim-unstack'
 Plug 'mattn/emmet-vim'
->>>>>>> Plugins and cleanup
+call plug#end()
 
 filetype on
 

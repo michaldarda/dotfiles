@@ -6,13 +6,8 @@ set shell=$SHELL
 
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
-
-nmap <leader>d :Goyo<CR>
-
 source ~/dotfiles/vim/fzf.vim
-
 source ~/dotfiles/vim/rename_file.vim
-
 source ~/dotfiles/vim/notes.vim
 
 let g:ragtag_global_maps = 1
