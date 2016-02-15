@@ -30,3 +30,5 @@ set clipboard=unnamedplus
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+highlight LineNr ctermfg=grey
