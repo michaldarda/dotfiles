@@ -25,3 +25,8 @@ set omnifunc=syntaxcomplete#Complete
 
 set mouse=a
 set clipboard=unnamedplus
+
+"let g:ag_prg="ag --vimgrep pry | awk '{split($1, t, \":\"); print t[1]\":\"t[2]\" \"$2\" \"$3\" \"$5\" \"$6\" \"$7;}' | uniq"
+
+" Always use vertical diffs
+set diffopt+=vertical

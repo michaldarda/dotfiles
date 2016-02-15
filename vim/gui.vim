@@ -16,5 +16,3 @@ set guioptions+=c
 colorscheme github
 
 set guifont=Monaco\ 13
-
-" autocmd Filetype * SemanticHighlight

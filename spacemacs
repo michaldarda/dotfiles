@@ -63,8 +63,8 @@ values."
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
    dotspacemacs-delete-orphan-packages t))
-
 (defun dotspacemacs/init ()
+
   "Initialization function.
 This function is called at the very startup of Spacemacs initialization
 before layers configuration.
@@ -101,8 +101,16 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
+<<<<<<< f1a9e5d517307d3044b4b067b282570ab1581825
    dotspacemacs-default-font '("Monaco"
                                :size 17
+||||||| merged common ancestors
+   dotspacemacs-default-font '("Consolas"
+                               :size 18
+=======
+   dotspacemacs-default-font '("Monaco"
+                               :size 18
+>>>>>>> update
                                :weight normal
                                :width normal
                                :powerline-scale 1.0)
@@ -218,21 +226,3 @@ layers configuration. You are free to put any user code."
   (setenv "PATH" (concat (getenv "HOME") "/.rbenv/shims:" (getenv "HOME") "/.rbenv/bin:" (getenv "PATH")))
   (setq exec-path (cons (concat (getenv "HOME") "/.rbenv/shims") (cons (concat (getenv "HOME") "/.rbenv/bin") exec-path)))
   )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("4904daa168519536b08ca4655d798ca0fb50d3545e6244cefcf7d0c7b338af7e" default)))
- '(package-selected-packages
-   (quote
-    (pastelmac-theme orgit helm-flx git-gutter-fringe+ git-gutter+ evil-magit window-numbering web-mode web-beautify volatile-highlights vi-tilde-fringe toc-org tagedit spray smooth-scrolling smeargle smartparens slim-mode scss-mode sass-mode ruby-tools ruby-test-mode ruby-end robe rbenv rainbow-mode rainbow-identifiers rainbow-delimiters projectile-rails powerline popwin pcre2el paradox page-break-lines org-repo-todo org-present org-pomodoro org-plus-contrib org-bullets open-junk-file neotree move-text mmm-mode markdown-toc markdown-mode magit-gitflow magit macrostep linum-relative leuven-theme less-css-mode json-mode js2-refactor js2-mode js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete htmlize highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-descbinds helm-css-scss helm-c-yasnippet helm-ag helm haml-mode google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-commit gh-md flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-matchit evil-jumper evil-indent-textobject evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eval-sexp-fu erlang enh-ruby-mode emmet-mode elisp-slime-nav dockerfile-mode diff-hl define-word company-web company-tern company-statistics company-quickhelp coffee-mode clean-aindent-mode bundler buffer-move auto-yasnippet auto-highlight-symbol auto-dictionary atom-one-dark-theme alchemist aggressive-indent adaptive-wrap ace-window ace-link ac-ispell evil-leader evil which-key quelpa package-build use-package bind-key s dash spacemacs-theme))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
