@@ -1,3 +1,5 @@
+export TERM=xterm-256color
+
 # aliases
 alias e='vim'
 alias vi='vim'

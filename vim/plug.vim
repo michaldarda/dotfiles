@@ -70,6 +70,7 @@ Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'mswift42/vim-themes'
+Plug 'godlygeek/csapprox'
 call plug#end()
 
 filetype on
