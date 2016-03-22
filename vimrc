@@ -33,4 +33,5 @@ set diffopt+=vertical
 
 "highlight LineNr ctermfg=grey
 
-colorscheme  mac_classic
+set t_ut=
+colorscheme macvim
