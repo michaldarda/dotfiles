@@ -1,10 +1,39 @@
-Pry.config.should_load_plugins = false
+if ENV['TERM'] == 'emacs'
+  Pry.config.color = false
+  Pry.config.pager = false
+  Pry.config.auto_indent = false
+end
 
-Pry.config.color = true
-Pry.prompt = [proc { |obj, nest_level| "(#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "(#{obj}):#{nest_level} * " }]
+begin
+  require 'logger'
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+rescue
+end
 
-Pry.config.editor = "vim"
+class String
+  def ar_execute
+    ActiveRecord::Base.connection.execute(self).each(as: :hash).to_a
+  end
 
-Pry.commands.alias_command 'c', 'continue'
-Pry.commands.alias_command 's', 'step'
-Pry.commands.alias_command 'n', 'next'
+  def ar_explain
+    ActiveRecord::Base.connection.execute("EXPLAIN #{self}").each(as: :hash).to_a
+  end
+end
+
+unless ActiveRecord::Relation.instance_methods.include?(:explain)
+  class ActiveRecord::Relation
+    def ar_execute
+      to_sql.ar_execute
+    end
+
+    def ar_explain
+      to_sql.ar_explain
+    end
+  end
+end
+
+class Object
+  def dbg
+    tap{ |obj| puts ?> * 40, obj.inspect, ?< * 40 }
+  end
+end
