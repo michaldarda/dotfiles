@@ -15,4 +15,4 @@ set guioptions+=c
 
 colorscheme github
 
-set guifont=Monaco\ 12
+set guifont=Monaco:h14

@@ -1,1 +1,1 @@
-source ~/dotfiles/vim/fzf.vim
+source ~/dotfiles/vim/ctrlp.vim
