@@ -10,7 +10,7 @@
 
 ### Installation
 
-Run
+Execute
 
     $ ./bootstrap
 
