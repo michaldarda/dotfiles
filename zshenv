@@ -44,6 +44,7 @@ alias gsp="git stash pop"
 alias gsl="git stash list"
 alias gm="git merge"
 alias gc="git commit"
+alias gcm="git commit -m"
 alias gca="git commit -am"
 alias gam="git commit -a --amend"
 alias gun="git reset HEAD~1"
@@ -61,7 +62,7 @@ alias grbi20="git rebase -i HEAD~20"
 alias grbi30="git rebase -i HEAD~30"
 alias grbi40="git rebase -i HEAD~40"
 alias gpb="git checkout --"
-
+alias gpr="git pull --rebase --stat"
 
 # quick folder access
 alias d="cd ~/dotfiles"
@@ -98,14 +99,9 @@ setopt nullglob
 source ~/dotfiles/zsh_home
 source ~/dotfiles/zsh_pacman
 source ~/dotfiles/apt_get.zsh
-[[ -f ~/zsh_cubiware ]] && source ~/zsh_cubiware
-[[ -f ~/.cubiware.zsh ]] && source ~/.cubiware.zsh
+[[ -f ~/zsh_work ]] && source ~/zsh_work # secret work specific stuff
 
 export EDITOR=nvim
-
-alias 19="chruby 1.9"
-alias 21="chruby 2.1"
-alias 22="chruby 2.2.3"
 
 alias tmux="tmux -2"
 
@@ -140,9 +136,5 @@ if ! [ $VIM ]; then
     (echo "$tags"; echo "$branches") |
     fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
     git checkout $(echo "$target" | awk '{print $2}')
-  }
-
-  gpr() {
-    eval "git pull --rebase --stat origin $(git rev-parse --abbrev-ref HEAD)"
   }
 fi
