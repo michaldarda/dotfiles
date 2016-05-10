@@ -75,7 +75,6 @@ alias h="cd ~/"
 alias be='bundle exec'
 alias b='bundle'
 alias my="mysql -u root"
-alias mvim="vim -u ~/.vimrcmin"
 alias bim='vim'
 
 function prake() {
