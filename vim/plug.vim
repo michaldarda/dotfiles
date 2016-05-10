@@ -66,6 +66,7 @@ Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 filetype on
