@@ -34,8 +34,6 @@ export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-alias docker='sudo docker'
-
 export PURE_PROMPT_SYMBOL=""
 source ~/.antigen.zsh
 
