@@ -30,27 +30,12 @@ export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 
-export PATH="$HOME/.linuxbrew/bin:$PATH"
-export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-
-export PURE_PROMPT_SYMBOL=""
-source ~/.antigen.zsh
-
-antigen bundle robbyrussell/oh-my-zsh lib/
-plugins=()
-
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen theme minimal
-
-antigen apply
-
 source ~/.zshenv
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-export NVM_DIR="$HOME/.nvm"
-  . "$(brew --prefix nvm)/nvm.sh"
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
