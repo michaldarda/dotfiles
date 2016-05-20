@@ -44,4 +44,5 @@ augroup BWCCreateDir
 augroup END
 
 set t_ut=
-colorscheme macvim
+
+let g:netrw_localrmdir="rm -r"
