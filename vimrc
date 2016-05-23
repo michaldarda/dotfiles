@@ -46,3 +46,4 @@ augroup END
 set t_ut=
 
 let g:netrw_localrmdir="rm -r"
+colorscheme macvim

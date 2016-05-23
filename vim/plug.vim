@@ -67,6 +67,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'godlygeek/csapprox'
 call plug#end()
 
 filetype on
