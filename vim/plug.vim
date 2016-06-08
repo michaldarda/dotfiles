@@ -48,7 +48,6 @@ Plug 'evanmiller/nginx-vim-syntax'
 Plug 'fatih/vim-go'
 " jsx
 Plug 'mxw/vim-jsx'
-Plug 'vim-scripts/dbext.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'flazz/vim-colorschemes'
@@ -60,7 +59,6 @@ Plug 'ervandew/supertab'
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
 Plug 'plasticboy/vim-markdown'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'mattboehm/vim-unstack'
 Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
@@ -68,6 +66,7 @@ Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'godlygeek/csapprox'
+Plug 'Olical/vim-enmasse'
 call plug#end()
 
 filetype on
