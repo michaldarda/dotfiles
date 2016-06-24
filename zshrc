@@ -39,3 +39,10 @@ source ~/.zshenv
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+setopt inc_append_history
+setopt share_history
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=5000
+SAVEHIST=5000

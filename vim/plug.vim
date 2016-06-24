@@ -65,7 +65,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
 Plug 'slashmili/alchemist.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'godlygeek/csapprox'
+if !has('gui_running')
+  Plug 'godlygeek/csapprox'
+endif
 Plug 'Olical/vim-enmasse'
 call plug#end()
 
