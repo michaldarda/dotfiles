@@ -46,3 +46,15 @@ setopt share_history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' use-simple true
+zstyle ':vcs_info:git*' formats ' (%b)'
+zstyle ':vcs_info:git*' actionformats ' %b|%a'
+
+PROMPT='[%n@%m %2~$vcs_info_msg_0_]$ '
