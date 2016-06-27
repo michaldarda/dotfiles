@@ -71,6 +71,8 @@ endif
 Plug 'Olical/vim-enmasse'
 Plug 'scrooloose/syntastic'
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/vimproc.vim'
 call plug#end()
 
 filetype on

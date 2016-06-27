@@ -9,3 +9,9 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_javascript_checkers = ['eslint']
+
+let g:syntastic_typescript_checks=['tsc']
+let g:syntastic_typescript_tsc_fname = ''
+
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
