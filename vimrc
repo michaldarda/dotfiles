@@ -10,6 +10,7 @@ source ~/dotfiles/vim/ruby.vim
 source ~/dotfiles/vim/vim_test.vim
 source ~/dotfiles/vim/surround.vim
 source ~/dotfiles/vim/shifting_lines.vim
+source ~/dotfiles/vim/syntastic.vim
 
 let g:ragtag_global_maps = 1
 nmap <leader>a :Ag<Space>

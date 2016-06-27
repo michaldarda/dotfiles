@@ -69,6 +69,8 @@ if !has('gui_running')
   Plug 'godlygeek/csapprox'
 endif
 Plug 'Olical/vim-enmasse'
+Plug 'scrooloose/syntastic'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 filetype on
