@@ -31,6 +31,25 @@ Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'rhysd/vim-operator-surround'
 Plug 'dietsche/vim-lastplace'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-projectionist'
+Plug 'ervandew/supertab'
+Plug 'sirver/UltiSnips'
+Plug 'plasticboy/vim-markdown'
+Plug 'honza/vim-snippets'
+Plug 'mattboehm/vim-unstack'
+Plug 'mattn/emmet-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'Olical/vim-enmasse' "edit files in quickfix window
+if !has('gui_running')
+  Plug 'godlygeek/csapprox'
+endif
+
 " ruby, rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -38,41 +57,26 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'jgdavey/vim-blockle'
 Plug 'p0deje/vim-ruby-interpolation'
-"javascript
+
+" javascript
 Plug 'pangloss/vim-javascript'
+" jsx
+Plug 'mxw/vim-jsx'
 " coffeescript
 Plug 'kchmck/vim-coffee-script'
+
+" elixir
+Plug 'elixir-lang/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+
 " nginx
 Plug 'evanmiller/nginx-vim-syntax'
 " go
 Plug 'fatih/vim-go'
-" jsx
-Plug 'mxw/vim-jsx'
-Plug 'tpope/vim-vinegar'
-Plug 'airblade/vim-gitgutter'
-Plug 'flazz/vim-colorschemes'
-Plug 'pangloss/vim-javascript'
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'tpope/vim-projectionist'
-Plug 'elixir-lang/vim-elixir'
-Plug 'ervandew/supertab'
-Plug 'sirver/UltiSnips'
-Plug 'honza/vim-snippets'
-Plug 'plasticboy/vim-markdown'
-Plug 'mattboehm/vim-unstack'
-Plug 'mattn/emmet-vim'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
-Plug 'slashmili/alchemist.vim'
-Plug 'editorconfig/editorconfig-vim'
-if !has('gui_running')
-  Plug 'godlygeek/csapprox'
-endif
-Plug 'Olical/vim-enmasse'
-Plug 'scrooloose/syntastic'
+
+" typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
-Plug 'Shougo/vimproc.vim'
 call plug#end()
 
 filetype on
