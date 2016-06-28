@@ -1,7 +1,7 @@
 " Shifting lines
 " Normal mode
-nnoremap <S-j> :m .+1<CR>==
-nnoremap <S-k> :m .-2<CR>==
+nnoremap <S-down> :m .+1<CR>==
+nnoremap <S-up> :m .-2<CR>==
 " Visual mode
-vnoremap <S-j> :m '>+1<CR>gv=gv
-vnoremap <S-k> :m '<-2<CR>gv=gv
+vnoremap <S-down> :m '>+1<CR>gv=gv
+vnoremap <S-up> :m '<-2<CR>gv=gv
