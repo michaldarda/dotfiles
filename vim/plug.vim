@@ -46,9 +46,10 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
-if !has('gui_running')
-  Plug 'godlygeek/csapprox'
-endif
+Plug 'flazz/vim-colorschemes'
+" if !has('gui_running')
+"   Plug 'godlygeek/csapprox'
+" endif
 
 " ruby, rails
 Plug 'vim-ruby/vim-ruby'
