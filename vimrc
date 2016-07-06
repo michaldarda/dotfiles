@@ -49,4 +49,4 @@ set t_ut=
 let g:netrw_localrmdir="rm -r"
 
 set number
-colorscheme Tomorrow-Night
+colorscheme vwilight

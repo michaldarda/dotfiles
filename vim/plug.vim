@@ -47,9 +47,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
-" if !has('gui_running')
-"   Plug 'godlygeek/csapprox'
-" endif
+Plug 'jaywilliams/vim-vwilight'
 
 " ruby, rails
 Plug 'vim-ruby/vim-ruby'
