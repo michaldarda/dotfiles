@@ -11,6 +11,7 @@ source ~/dotfiles/vim/vim_test.vim
 source ~/dotfiles/vim/surround.vim
 source ~/dotfiles/vim/shifting_lines.vim
 source ~/dotfiles/vim/syntastic.vim
+source ~/dotfiles/vim/ctrlp.vim
 
 let g:ragtag_global_maps = 1
 nmap <leader>a :Ag<Space>
