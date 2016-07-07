@@ -76,6 +76,11 @@ Plug 'fatih/vim-go'
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+
+if !has("gui_running")
+  Plug 'godlygeek/csapprox'
+endif
+
 call plug#end()
 
 filetype on
