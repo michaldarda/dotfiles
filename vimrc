@@ -51,3 +51,5 @@ let g:netrw_localrmdir="rm -r"
 
 set number
 colorscheme vwilight
+
+au BufRead,BufNewFile *.es6 setfiletype javascript
