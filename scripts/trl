@@ -1,4 +1,0 @@
-#!/bin/bash
-
-tssh
-tmux send-keys "tail -f /var/log/cubiware/*.log" C-m

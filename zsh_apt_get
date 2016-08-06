@@ -1,5 +1,0 @@
-alias aup='sudo apt-get update'
-alias aupgr='sudo apt-get upgrade'
-alias ai='sudo apt-get install'
-alias ar='sudo apt-get remove'
-alias aar='sudo add-apt-repository'
