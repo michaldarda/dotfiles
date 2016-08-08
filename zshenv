@@ -95,9 +95,7 @@ function myload {
 setopt nullglob
 
 # other files
-source ~/dotfiles/zsh_home
-source ~/dotfiles/zsh_pacman
-source ~/dotfiles/apt_get.zsh
+[[ -f ~/home.zsh ]] && source ~/home.zsh
 [[ -f ~/zsh_work ]] && source ~/zsh_work # secret work specific stuff
 
 export EDITOR=nvim
