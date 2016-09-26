@@ -103,3 +103,5 @@ export EDITOR=nvim
 alias tmux="tmux -2"
 
 alias vi="vim"
+
+export TESTOPTS="-p"

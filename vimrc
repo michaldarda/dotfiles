@@ -1,5 +1,16 @@
 set nocompatible
+
+" Install vim-plug plugin manager and plugins, when missing
+" https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !echo "Installing vim-plug..." && curl --silent --fail --location --output ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 set shell=$SHELL
+
+set background=dark
 
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
@@ -45,10 +56,16 @@ augroup BWCCreateDir
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
-set t_ut=
+" set t_ut=
 
 let g:netrw_localrmdir="rm -r"
 
 set number
 
 au BufRead,BufNewFile *.es6 setfiletype javascript
+
+" set co
+set termguicolors
+colorscheme jellybeans
+
+nnoremap <Leader>s :SemanticHighlightToggle<cr>

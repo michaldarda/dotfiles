@@ -6,7 +6,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-operator-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'tpope/vim-ragtag'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'xolox/vim-misc'
@@ -18,8 +17,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
-Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
-Plug 'vim-scripts/TagHighlight'
+" Plug 'vim-scripts/TagHighlight'
 Plug 'kopischke/vim-fetch'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
@@ -48,14 +46,19 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
 Plug 'jaywilliams/vim-vwilight'
+Plug 'jacoborus/tender.vim'
+Plug 'jaxbot/semantic-highlight.vim'
+Plug 'trevordmiller/nova-vim'
 
 " ruby, rails
+Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-bundler'
 Plug 'jgdavey/vim-blockle'
 Plug 'p0deje/vim-ruby-interpolation'
+Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 
 " javascript
 Plug 'pangloss/vim-javascript'
@@ -84,3 +87,5 @@ filetype on
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+let test#ruby#runner = 'm'
