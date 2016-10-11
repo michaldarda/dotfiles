@@ -68,4 +68,4 @@ au BufRead,BufNewFile *.es6 setfiletype javascript
 set termguicolors
 colorscheme jellybeans
 
-nnoremap <Leader>s :SemanticHighlightToggle<cr>
+set list listchars=tab:»-,trail:·,extends:»,precedes:«

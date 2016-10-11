@@ -15,3 +15,5 @@ let g:syntastic_typescript_tsc_fname = ''
 
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+let b:syntastic_mode = 'passive'
