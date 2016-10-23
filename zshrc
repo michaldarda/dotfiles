@@ -62,3 +62,6 @@ PROMPT='[%n@%m %2~$vcs_info_msg_0_]$ '
 dme() {
   eval $(docker-machine env)
 }
+
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/share/dotnet/:$PATH"

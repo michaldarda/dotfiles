@@ -62,6 +62,7 @@ Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 
 " javascript
 Plug 'pangloss/vim-javascript'
+Plug 'pmb-btw/xml-syntaxt'
 " jsx
 Plug 'mxw/vim-jsx'
 " coffeescript
@@ -79,6 +80,8 @@ Plug 'fatih/vim-go'
 " typescript
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
+
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 

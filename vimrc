@@ -66,6 +66,6 @@ au BufRead,BufNewFile *.es6 setfiletype javascript
 
 " set co
 set termguicolors
-colorscheme jellybeans
+colorscheme grb256
 
 set list listchars=tab:»-,trail:·,extends:»,precedes:«
