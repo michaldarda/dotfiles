@@ -10,8 +10,6 @@ endif
 
 set shell=$SHELL
 
-set background=dark
-
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
 source ~/dotfiles/vim/rename_file.vim
@@ -56,15 +54,11 @@ augroup BWCCreateDir
   autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
-" set t_ut=
-
 let g:netrw_localrmdir="rm -r"
 
 set number
 
 au BufRead,BufNewFile *.es6 setfiletype javascript
-
-" set co
 set termguicolors
 colorscheme grb256
 
