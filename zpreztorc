@@ -1,13 +1,14 @@
 zstyle ':prezto:*:*' color 'yes'
 
 zstyle ':prezto:load' pmodule \
-  'directory' \
-  'utility' \
+  'autosuggestions' \
   'completion' \
+  'directory' \
   'git' \
+  'history-substring-search' \
   'prompt' \
   'syntax-highlighting' \
-  'history-substring-search' \
+  'utility' \
 
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 zstyle ':prezto:module:editor' dot-expansion 'yes'
