@@ -64,4 +64,4 @@ dme() {
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/share/dotnet/:$PATH"
 
-PROMPT='%F{green}%2~%f%F{yellow}$vcs_info_msg_0_%f $ '
+PROMPT='%F{green}%2~%f%F{yellow}$vcs_info_msg_0_%f %F{cyan}$%f '
