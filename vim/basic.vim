@@ -2,6 +2,8 @@ filetype indent on
 filetype plugin on
 syntax on
 
+set shell=$SHELL
+
 let mapleader=","
 
 set expandtab
@@ -98,6 +100,10 @@ com! PrettyJSON %!python -m json.tool
 
 match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 
-set clipboard=unnamedplus
-
 set ttyfast
+set omnifunc=syntaxcomplete#Complete
+set mouse=a
+set clipboard=unnamed
+set diffopt+=vertical
+set number
+set termguicolors

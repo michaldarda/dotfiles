@@ -31,7 +31,6 @@ Plug 'rhysd/vim-operator-surround'
 Plug 'dietsche/vim-lastplace'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-projectionist'
-Plug 'ervandew/supertab'
 Plug 'sirver/UltiSnips'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
@@ -48,7 +47,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jaywilliams/vim-vwilight'
 Plug 'jacoborus/tender.vim'
 Plug 'jaxbot/semantic-highlight.vim'
-Plug 'trevordmiller/nova-vim'
+Plug 'lifepillar/vim-mucomplete'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -81,7 +80,7 @@ Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
-Plug 'OmniSharp/omnisharp-vim'
+" Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
