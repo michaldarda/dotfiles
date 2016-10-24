@@ -16,7 +16,6 @@ source ~/dotfiles/vim/ruby.vim
 source ~/dotfiles/vim/vim_test.vim
 source ~/dotfiles/vim/surround.vim
 source ~/dotfiles/vim/shifting_lines.vim
-source ~/dotfiles/vim/syntastic.vim
 source ~/dotfiles/vim/ctrlp.vim
 source ~/dotfiles/vim/ragtag.vim
 source ~/dotfiles/vim/ag.vim
@@ -25,9 +24,13 @@ source ~/dotfiles/vim/es6.vim
 source ~/dotfiles/vim/create_parent_dir.vim
 source ~/dotfiles/vim/markdown.vim
 source ~/dotfiles/vim/ulti_snips.vim
+source ~/dotfiles/vim/neomake.vim
 
 if has("gui_running") || has("nvim") || has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
 colorscheme grb256
+
+set exrc
+set secure

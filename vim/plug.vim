@@ -27,7 +27,6 @@ Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
 Plug 'rhysd/vim-operator-surround'
 Plug 'dietsche/vim-lastplace'
-Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-projectionist'
 Plug 'sirver/UltiSnips'
 Plug 'plasticboy/vim-markdown'
@@ -42,6 +41,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'neomake/neomake'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -55,7 +55,7 @@ Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 
 " javascript
 Plug 'pangloss/vim-javascript'
-Plug 'pmb-btw/xml-syntaxt'
+Plug 'pmb-btw/xml-syntax'
 " jsx
 Plug 'mxw/vim-jsx'
 " coffeescript
