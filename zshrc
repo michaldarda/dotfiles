@@ -54,10 +54,8 @@ setopt prompt_subst
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' use-simple true
-zstyle ':vcs_info:git*' formats ' (%b)'
+zstyle ':vcs_info:git*' formats ' %b'
 zstyle ':vcs_info:git*' actionformats ' %b|%a'
-
-PROMPT='[%n@%m %2~$vcs_info_msg_0_]$ '
 
 dme() {
   eval $(docker-machine env)
@@ -65,3 +63,5 @@ dme() {
 
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/share/dotnet/:$PATH"
+
+PROMPT='%2~$vcs_info_msg_0_ $ '
