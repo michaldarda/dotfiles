@@ -18,29 +18,15 @@ source ~/dotfiles/vim/surround.vim
 source ~/dotfiles/vim/shifting_lines.vim
 source ~/dotfiles/vim/syntastic.vim
 source ~/dotfiles/vim/ctrlp.vim
-
-let g:ragtag_global_maps = 1
-nmap <leader>a :Ag<Space>
-cmap <c-x> <Plug>CmdlineCompleteForward
+source ~/dotfiles/vim/ragtag.vim
+source ~/dotfiles/vim/ag.vim
+source ~/dotfiles/vim/cmdline_complete.vim
+source ~/dotfiles/vim/es6.vim
+source ~/dotfiles/vim/create_parent_dir.vim
+source ~/dotfiles/vim/markdown.vim
 
 if has("gui_running") || has("nvim") || has("neovim")
   source ~/dotfiles/vim/gui.vim
 endif
 
-" http://stackoverflow.com/questions/4292733/vim-creating-parent-directories-on-save
-function s:MkNonExDir(file, buf)
-  if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
-    let dir=fnamemodify(a:file, ':h')
-    if !isdirectory(dir)
-      call mkdir(dir, 'p')
-    endif
-  endif
-endfunction
-augroup BWCCreateDir
-  autocmd!
-  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-augroup END
-let g:netrw_localrmdir="rm -r"
-
-au BufRead,BufNewFile *.es6 setfiletype javascript
 colorscheme grb256

@@ -31,9 +31,6 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" set wildignore+=*.swp,*.bak,*.pyc,*.class,*.jar,*.gif,*.png,*.jpg,*.jpeg,*.otf,*.svg,*.ttf,*.eot,*.woff
-" set wildignore+=/tmp,*/tmp/*,*.so,*.swp,*.zip,*/vendor/*,*/\.git/*
-
 set showmatch
 set nowrap
 set smarttab
@@ -60,15 +57,9 @@ set ttimeoutlen=1
 set smartindent
 set showtabline=2
 
-" set wildmode=longest,list,full
-" set wildmenu
-
 set title
 nnoremap ; :
 set cursorline
-
-" Markdown
-au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,README.md,README setf markdown
 
 " normally I always use 2 spaces to indent, exceptions here
 autocmd FileType java,go,c,python set tabstop=4|set shiftwidth=4|set expandtab
@@ -86,11 +77,8 @@ imap <right> <nop>
 inoremap jj <Esc>
 nnoremap <space> :buffers<CR>:buffer<Space>
 
-hi Visual term=reverse cterm=reverse guibg=White
-hi Search term=reverse cterm=reverse guibg=White
-
-"set completeopt=longest,menuone
-"set omnifunc=syntaxcomplete#Complete
+" hi Visual term=reverse cterm=reverse guibg=White
+" hi Search term=reverse cterm=reverse guibg=White
 
 nmap <leader>h :nohlsearch<cr>
 nmap <leader>v :tabe ~/.vimrc<CR>
