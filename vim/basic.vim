@@ -75,7 +75,6 @@ imap <left> <nop>
 imap <right> <nop>
 
 inoremap jj <Esc>
-nnoremap <space> :buffers<CR>:buffer<Space>
 
 " hi Visual term=reverse cterm=reverse guibg=White
 " hi Search term=reverse cterm=reverse guibg=White

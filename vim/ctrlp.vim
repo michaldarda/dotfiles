@@ -1,7 +1,7 @@
 nmap <leader>t :CtrlP<CR>
-nmap <leader>b :CtrlPBuffer<CR>
-nmap <Leader>fn :CtrlPFunky<Cr>
-let g:ctrlp_match_window_bottom = 0
+nmap <leader>fn :CtrlPFunky<Cr>
+nmap <space> :CtrlPBuffer<CR>
+let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_extensions = ['funky']

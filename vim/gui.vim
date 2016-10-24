@@ -1,3 +1,4 @@
 set cursorline
-set guifont=Consolas:h18
+set guifont=Consolas:h16
 set noeb vb t_vb=
+let test#strategy = 'iterm'
