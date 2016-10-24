@@ -24,6 +24,7 @@ source ~/dotfiles/vim/cmdline_complete.vim
 source ~/dotfiles/vim/es6.vim
 source ~/dotfiles/vim/create_parent_dir.vim
 source ~/dotfiles/vim/markdown.vim
+source ~/dotfiles/vim/ulti_snips.vim
 
 if has("gui_running") || has("nvim") || has("neovim")
   source ~/dotfiles/vim/gui.vim

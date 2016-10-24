@@ -12,12 +12,10 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'mkitt/tabline.vim'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
-" Plug 'vim-scripts/TagHighlight'
 Plug 'kopischke/vim-fetch'
 Plug 'othree/html5.vim'
 Plug 'vim-scripts/CmdlineComplete'
@@ -34,7 +32,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'sirver/UltiSnips'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
-Plug 'mattboehm/vim-unstack'
 Plug 'mattn/emmet-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'rking/ag.vim'
@@ -44,9 +41,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
-Plug 'jaywilliams/vim-vwilight'
-Plug 'jacoborus/tender.vim'
-Plug 'jaxbot/semantic-highlight.vim'
 Plug 'lifepillar/vim-mucomplete'
 
 " ruby, rails
@@ -85,9 +79,3 @@ Plug 'Quramy/tsuquyomi'
 call plug#end()
 
 filetype on
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-let test#ruby#runner = 'm'
