@@ -74,8 +74,6 @@ Plug 'fatih/vim-go'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
-" Plug 'OmniSharp/omnisharp-vim'
-
 call plug#end()
 
 filetype on
