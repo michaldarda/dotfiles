@@ -1,1 +1,1 @@
-cmap <c-x> <Plug>CmdlineCompleteForward
+cmap <c-n> <Plug>CmdlineCompleteForward

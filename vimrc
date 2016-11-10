@@ -26,7 +26,11 @@ source ~/dotfiles/vim/markdown.vim
 source ~/dotfiles/vim/ulti_snips.vim
 source ~/dotfiles/vim/neomake.vim
 
-if has("gui_running") || has("nvim") || has("neovim")
+if has("nvim") || has("neovim")
+  source ~/dotfiles/vim/n.vim
+endif
+
+if has("gui_running") 
   source ~/dotfiles/vim/gui.vim
 endif
 
