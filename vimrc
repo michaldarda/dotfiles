@@ -14,7 +14,6 @@ source ~/dotfiles/vim/rename_file.vim
 source ~/dotfiles/vim/notes.vim
 source ~/dotfiles/vim/ruby.vim
 source ~/dotfiles/vim/vim_test.vim
-source ~/dotfiles/vim/surround.vim
 source ~/dotfiles/vim/shifting_lines.vim
 source ~/dotfiles/vim/ctrlp.vim
 source ~/dotfiles/vim/ragtag.vim
@@ -30,7 +29,7 @@ if has("nvim") || has("neovim")
   source ~/dotfiles/vim/n.vim
 endif
 
-if has("gui_running") 
+if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
 

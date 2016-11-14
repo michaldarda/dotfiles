@@ -25,7 +25,6 @@ Plug 'deris/vim-shot-f'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'rhysd/vim-textobj-anyblock'
 Plug 'thinca/vim-textobj-between'
-Plug 'rhysd/vim-operator-surround'
 Plug 'dietsche/vim-lastplace'
 Plug 'tpope/vim-projectionist'
 Plug 'sirver/UltiSnips'
@@ -42,6 +41,7 @@ Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'neomake/neomake'
+Plug 'tpope/vim-surround'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
