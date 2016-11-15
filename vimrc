@@ -24,6 +24,8 @@ source ~/dotfiles/vim/create_parent_dir.vim
 source ~/dotfiles/vim/markdown.vim
 source ~/dotfiles/vim/ulti_snips.vim
 source ~/dotfiles/vim/neomake.vim
+source ~/dotfiles/vim/fns.vim
+source ~/dotfiles/vim/secret.vim
 
 if has("nvim") || has("neovim")
   source ~/dotfiles/vim/n.vim
@@ -33,7 +35,7 @@ if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
 
-colorscheme grb256
+colorscheme dzo
 
 set exrc
 set secure
