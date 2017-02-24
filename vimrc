@@ -26,6 +26,7 @@ source ~/dotfiles/vim/ulti_snips.vim
 source ~/dotfiles/vim/neomake.vim
 source ~/dotfiles/vim/fns.vim
 source ~/dotfiles/vim/secret.vim
+source ~/dotfiles/vim/golang.vim
 
 if has("nvim") || has("neovim")
   source ~/dotfiles/vim/n.vim
@@ -39,3 +40,4 @@ colorscheme dzo
 
 set exrc
 set secure
+set autowrite
