@@ -40,7 +40,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
 Plug 'lifepillar/vim-mucomplete'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
 
 " ruby, rails
@@ -75,6 +75,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
 Plug 'Blevs/vim-dzo'
+
+Plug 'w0rp/ale'
+Plug 'jodosha/vim-godebug'
 
 call plug#end()
 
