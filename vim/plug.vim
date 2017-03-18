@@ -42,6 +42,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'lifepillar/vim-mucomplete'
 " Plug 'neomake/neomake'
 Plug 'tpope/vim-surround'
+" Plug 'Shougo/deoplete.nvim'
+Plug 'Quramy/tsuquyomi'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -72,9 +74,10 @@ Plug 'fatih/vim-go'
 
 " typescript
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
 
-Plug 'Blevs/vim-dzo'
+Plug 'vim-syntastic/syntastic'
+Plug 'fcpg/vim-orbital'
+" Plug 'w0rp/ale'
 
 Plug 'w0rp/ale'
 Plug 'jodosha/vim-godebug'

@@ -1,4 +1,4 @@
-set nocompatible
+  set nocompatible
 
 " Install vim-plug plugin manager and plugins, when missing
 " https://github.com/junegunn/vim-plug
@@ -36,8 +36,6 @@ if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
 
-colorscheme grb256
-
 set exrc
 set secure
 set autowrite
@@ -49,3 +47,22 @@ let g:ale_sign_column_always = 1
 " " some other plugin which sets quickfix errors, etc.
 " let g:ale_keep_list_window_open = 1
 
+
+let g:tsuquyomi_completion_detail = 1
+
+" let g:ale_set_loclist = 0
+" let g:ale_set_quickfix = 1
+" let g:ale_open_list = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_go_checkers = ['errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+let g:go_list_type = "quickfix"
+
+colorscheme grb256
