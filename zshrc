@@ -68,3 +68,5 @@ PROMPT='%F{green}%2~%f%F{yellow}$vcs_info_msg_0_%f %F{cyan}$%f '
 
 alias vi="nvim"
 alias vim="nvim"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
