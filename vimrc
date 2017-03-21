@@ -40,3 +40,8 @@ set secure
 set autowrite
 
 colorscheme grb256
+
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+
+let g:hardtime_default_on = 1

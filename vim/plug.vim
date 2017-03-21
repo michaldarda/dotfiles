@@ -39,7 +39,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'flazz/vim-colorschemes'
-Plug 'lifepillar/vim-mucomplete'
 Plug 'tpope/vim-surround'
 Plug 'Quramy/tsuquyomi'
 
@@ -77,6 +76,8 @@ Plug 'fcpg/vim-orbital'
 
 Plug 'w0rp/ale'
 Plug 'jodosha/vim-godebug'
+
+Plug 'takac/vim-hardtime'
 
 call plug#end()
 
