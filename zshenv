@@ -119,3 +119,5 @@ fco() {
     fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
   git checkout $(echo "$target" | awk '{print $2}')
 }
+
+alias tst="tig status"
