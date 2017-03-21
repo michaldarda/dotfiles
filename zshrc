@@ -70,3 +70,8 @@ alias vi="nvim"
 alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey -s '\e[OA' ''
+bindkey -s '\e[OB' ''
+bindkey -s '\e[OC' ''
+bindkey -s '\e[OD' ''
