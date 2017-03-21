@@ -1,1 +1,3 @@
 bind main s !git rebase --interactive %(commit)^
+bind status C !git commit --verbose
+bind status A !git commit --amend --verbose
