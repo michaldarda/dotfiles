@@ -79,6 +79,9 @@ Plug 'jodosha/vim-godebug'
 
 Plug 'takac/vim-hardtime'
 
+Plug 'tomasiser/vim-code-dark'
+Plug 'YorickPeterse/happy_hacking.vim'
+
 call plug#end()
 
 filetype on
