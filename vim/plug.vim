@@ -81,6 +81,7 @@ Plug 'takac/vim-hardtime'
 
 Plug 'tomasiser/vim-code-dark'
 Plug 'YorickPeterse/happy_hacking.vim'
+Plug 'tpope/vim-dotenv'
 
 call plug#end()
 
