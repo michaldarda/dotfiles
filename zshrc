@@ -27,7 +27,6 @@ export PATH=$PATH:~/.xmonad/bin
 #gopath
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=~/gopath
-export PATH=$PATH:~/gopath/bin
 export PATH=$PATH:~/.npm/bin
 
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
@@ -75,3 +74,7 @@ bindkey -s '\e[OA' ''
 bindkey -s '\e[OB' ''
 bindkey -s '\e[OC' ''
 bindkey -s '\e[OD' ''
+
+alias cdg="cd $GOPATH"
+
+export PATH=$PATH:~/gopath/bin

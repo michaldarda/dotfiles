@@ -31,6 +31,6 @@ endif
 if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 set termguicolors
 colorscheme codedark
