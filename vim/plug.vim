@@ -79,9 +79,10 @@ Plug 'jodosha/vim-godebug'
 
 Plug 'takac/vim-hardtime'
 
-Plug 'tomasiser/vim-code-dark'
+Plug 'michaldarda/vim-code-dark'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'tpope/vim-dotenv'
+Plug 'brooth/far.vim'
 
 call plug#end()
 

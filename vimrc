@@ -34,5 +34,4 @@ endif
 let g:hardtime_default_on = 0
 set termguicolors
 colorscheme codedark
-
 autocmd VimEnter * silent! Dotenv .env
