@@ -1,123 +1,36 @@
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
 export TERM=xterm-256color
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-# aliases
-alias e='vim'
-alias vi='vim'
-alias tlf='tail -f'
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/dotfiles/scripts
 
-# general
-alias rl='. ~/.zshrc'
-alias t='touch'
-alias tf='tail -f'
-alias md='mkdir'
+#cabal
+export PATH=$PATH:~/.cabal/bin
+export PATH=$PATH:~/.xmonad/bin
 
-# Push and pop directories on directory stack
-alias pu='pushd'
-alias po='popd'
+#gopath
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=~/gopath
+export PATH=$PATH:~/.npm/bin
 
-# cds
-alias ..='cd ../..'
-alias -- -='cd -'
+export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-# ll
-alias ll='ls -lh'
+export NPM_PACKAGES="${HOME}/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
 
-# git
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit"
-alias gpu="git push"
-alias gpuf="git push -f"
-alias ga="git add"
-alias gd="git diff"
-alias gch="git checkout"
-alias gchf="git checkout --"
-alias gchb="git checkout -b"
-alias gb="git branch"
-alias gbd="git branch -D"
-alias gst="git status -sb"
-alias grh="git reset --hard"
-alias grs="git reset --soft"
-alias gr="git reset"
-alias grpo="git remote prune origin"
-alias gcl="git clone"
-alias gs="git stash"
-alias gsp="git stash pop"
-alias gsl="git stash list"
-alias gm="git merge"
-alias gc="git commit"
-alias gcm="git commit -m"
-alias gca="git commit -am"
-alias gam="git commit -a --amend"
-alias gun="git reset HEAD~1"
-alias gdl="git diff HEAD~1 HEAD"
-alias gds="git diff --staged"
-alias gcf="git clean -f"
-alias gbl="git blame"
-alias grbi="git rebase -i HEAD~5"
-alias grbi1="git rebase -i HEAD~1"
-alias grbi2"git rebase -i HEAD~2"
-alias grbi3="git rebase -i HEAD~3"
-alias grbi4="git rebase -i HEAD~4"
-alias grbi10="git rebase -i HEAD~10"
-alias grbi20="git rebase -i HEAD~20"
-alias grbi30="git rebase -i HEAD~30"
-alias grbi40="git rebase -i HEAD~40"
-alias gpb="git checkout --"
-alias gpr="git pull --rebase --stat"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/usr/local/share/dotnet/:$PATH"
 
-# quick folder access
-alias d="cd ~/dotfiles"
-alias w="cd ~/Code/work"
-alias ex="cd ~/Code/exercises"
-alias n="vim ~/Dropbox/notes"
-alias h="cd ~/"
-
-# rails, ruby
-alias be='bundle exec'
-alias b='bundle'
-alias my="mysql -u root"
-alias bim='vim'
-
-function prake() {
-  RAILS_ENV=production APP_ENV=production bundle exec rake $@
-}
-
-function trake() {
-  RAILS_ENV=test APP_ENV=test bundle exec rake $@
-}
-
-# mysql
-function myload {
-  mysql -u root -e "drop database $1" -T
-  mysql -u root -e "create database $1" -T
-  pv $2 | mysql -u root $1
-}
-
-setopt nullglob
-
-# other files
-[[ -f ~/home.zsh ]] && source ~/home.zsh
-[[ -f ~/zsh_work ]] && source ~/zsh_work # secret work specific stuff
+export PATH=$PATH:~/gopath/bin
 
 export EDITOR=nvim
 
-alias tmux="tmux -2"
-
-alias vi="vim"
-
 export TESTOPTS="-p"
-
-fco() {
-  local tags branches target
-  tags=$(
-    git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
-  branches=$(
-    git branch --all | grep -v HEAD             |
-    sed "s/.* //"    | sed "s#remotes/[^/]*/##" |
-    sort -u          | awk '{print "\x1b[34;1mbranch\x1b[m\t" $1}') || return
-  target=$(
-    (echo "$tags"; echo "$branches") |
-    fzf-tmux -l30 -- --no-hscroll --ansi +m -d "\t" -n 2) || return
-  git checkout $(echo "$target" | awk '{print $2}')
-}
-
-alias tst="tig status"
