@@ -31,8 +31,6 @@ Plug 'sirver/UltiSnips'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
-Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
 Plug 'Shougo/vimproc.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
@@ -83,6 +81,11 @@ Plug 'michaldarda/vim-code-dark'
 Plug 'YorickPeterse/happy_hacking.vim'
 Plug 'tpope/vim-dotenv'
 Plug 'brooth/far.vim'
+Plug 'godoctor/godoctor.vim'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 

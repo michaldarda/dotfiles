@@ -7,4 +7,4 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-map <Leader>r :call RenameFile()<cr>
+map <Leader>f :call RenameFile()<cr>

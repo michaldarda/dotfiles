@@ -4,7 +4,7 @@ syntax on
 
 set shell=$SHELL
 
-let mapleader=","
+let mapleader="\<Space>"
 
 set expandtab
 set tabstop=2
