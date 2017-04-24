@@ -34,3 +34,4 @@ export PATH=$PATH:~/gopath/bin
 export EDITOR=nvim
 
 export TESTOPTS="-p"
+export PATH="$PATH:/usr/local/Cellar/node/7.9.0/bin"
