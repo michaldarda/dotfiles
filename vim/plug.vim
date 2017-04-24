@@ -86,6 +86,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
