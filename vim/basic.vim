@@ -50,10 +50,6 @@ set splitright
 " dont add the comments
 set formatoptions-=or
 
-" removes the delay when hitting esc in insert mode
-set noesckeys
-set ttimeout
-set ttimeoutlen=1
 set smartindent
 set showtabline=2
 
