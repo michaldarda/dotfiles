@@ -72,8 +72,10 @@ Plug 'leafgarland/typescript-vim'
 
 Plug 'fcpg/vim-orbital'
 
-Plug 'w0rp/ale'
-Plug 'jodosha/vim-godebug'
+" Plug 'w0rp/ale'
+if has("nvim")
+  Plug 'jodosha/vim-godebug'
+endif
 
 Plug 'takac/vim-hardtime'
 
