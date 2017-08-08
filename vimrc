@@ -35,7 +35,7 @@ if has("gui_running")
 endif
 let g:hardtime_default_on = 0
 set termguicolors
-colorscheme default
+colorscheme grb256
 autocmd VimEnter * silent! Dotenv .env
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
