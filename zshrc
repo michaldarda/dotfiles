@@ -181,7 +181,7 @@ if [ -f '/Users/michal/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/michal/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/michal/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
-. /Users/michal/.nix-profile/etc/profile.d/nix.sh
+# . /Users/michal/.nix-profile/etc/profile.d/nix.sh
 
 # Outputs current branch info in prompt format
 function git_prompt_info() {
