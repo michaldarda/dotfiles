@@ -118,6 +118,9 @@ alias grbi30="git rebase -i HEAD~30"
 alias grbi40="git rebase -i HEAD~40"
 alias gpb="git checkout --"
 alias gpr="git pull --rebase --stat"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
+alias gma="git merge --abort"
 
 # quick folder access
 alias d="cd ~/dotfiles"
