@@ -1,6 +1,4 @@
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8

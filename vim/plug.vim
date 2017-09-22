@@ -30,7 +30,7 @@ Plug 'sirver/UltiSnips'
 Plug 'plasticboy/vim-markdown'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
