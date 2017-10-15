@@ -61,7 +61,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 
 " nginx
-Plug 'evanmiller/nginx-vim-syntax'
+Plug 'chr4/nginx.vim'
 " go
 Plug 'fatih/vim-go'
 
