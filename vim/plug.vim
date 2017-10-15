@@ -87,7 +87,6 @@ Plug 'zchee/deoplete-go'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
-Plug 'posva/vim-vue'
 
 Plug 'posva/vim-vue'
 Plug 'slim-template/vim-slim'
