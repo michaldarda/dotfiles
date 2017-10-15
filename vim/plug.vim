@@ -9,7 +9,6 @@ Plug 'kana/vim-operator-user'
 Plug 'tpope/vim-ragtag'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'xolox/vim-misc'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-scripts/loremipsum'
 Plug 'tpope/vim-abolish'
@@ -89,6 +88,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'posva/vim-vue'
+
+Plug 'posva/vim-vue'
+Plug 'slim-template/vim-slim'
 
 call plug#end()
 

@@ -458,3 +458,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+rbenvuse() {
+  rbenv local $1
+  rbenv global $1
+  rbenv shell $1
+}
