@@ -464,3 +464,5 @@ rbenvuse() {
   rbenv global $1
   rbenv shell $1
 }
+
+export PATH=$HOME/.cargo/bin:$PATH
