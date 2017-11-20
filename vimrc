@@ -34,7 +34,8 @@ if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
 let g:hardtime_default_on = 0
-set termguicolors
-colorscheme grb256
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
+
+set termguicolors
+colorscheme codedark

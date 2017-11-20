@@ -34,7 +34,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
-Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-surround'
 Plug 'Quramy/tsuquyomi'
 
@@ -90,6 +89,7 @@ Plug 'posva/vim-vue'
 Plug 'slim-template/vim-slim'
 
 Plug 'mileszs/ack.vim'
+Plug 'quanganhdo/grb256'
 
 call plug#end()
 
