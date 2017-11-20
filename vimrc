@@ -16,7 +16,6 @@ source ~/dotfiles/vim/vim_test.vim
 source ~/dotfiles/vim/shifting_lines.vim
 " source ~/dotfiles/vim/ctrlp.vim
 source ~/dotfiles/vim/ragtag.vim
-source ~/dotfiles/vim/ag.vim
 source ~/dotfiles/vim/cmdline_complete.vim
 source ~/dotfiles/vim/es6.vim
 source ~/dotfiles/vim/create_parent_dir.vim
@@ -27,6 +26,7 @@ source ~/dotfiles/vim/secret.vim
 source ~/dotfiles/vim/golang.vim
 source ~/dotfiles/vim/fzf.vim
 source ~/dotfiles/vim/iabbrev.vim
+source ~/dotfiles/vim/ack.vim
 if has("nvim") || has("neovim")
   source ~/dotfiles/vim/n.vim
 endif
@@ -36,11 +36,5 @@ endif
 let g:hardtime_default_on = 0
 set termguicolors
 colorscheme grb256
-autocmd VimEnter * silent! Dotenv .env
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
-if executable("rg")
-  set grepprg=rg\ --vimgrep\ --no-heading
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-endif
-let g:jsx_ext_required = 0

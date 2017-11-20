@@ -79,8 +79,6 @@ Plug 'takac/vim-hardtime'
 
 Plug 'michaldarda/vim-code-dark'
 Plug 'YorickPeterse/happy_hacking.vim'
-Plug 'tpope/vim-dotenv'
-Plug 'brooth/far.vim'
 Plug 'godoctor/godoctor.vim'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go'
@@ -90,6 +88,8 @@ Plug 'vimwiki/vimwiki'
 
 Plug 'posva/vim-vue'
 Plug 'slim-template/vim-slim'
+
+Plug 'mileszs/ack.vim'
 
 call plug#end()
 

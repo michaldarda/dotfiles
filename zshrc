@@ -456,13 +456,8 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
-rbenvuse() {
-  rbenv local $1
-  rbenv global $1
-  rbenv shell $1
-}
-
 export PATH=$HOME/.cargo/bin:$PATH
+
+rgr() {
+  ag -0 -l $1 | xargs -0 sed -ri.bak -e "s/$1/$2/g"
+}
