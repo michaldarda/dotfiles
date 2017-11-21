@@ -37,5 +37,18 @@ let g:hardtime_default_on = 0
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
 
-set termguicolors
-colorscheme codedark
+" set termguicolors
+colorscheme jellybeans
+set nonumber
+
+" Map key to toggle opt
+function MapToggle(key, opt)
+  let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
+  exec 'nnoremap '.a:key.' '.cmd
+  exec 'inoremap '.a:key." \<C-O>".cmd
+endfunction
+command -nargs=+ MapToggle call MapToggle(<f-args>)
+
+" Display-altering option toggles
+MapToggle <leader>h hlsearch
+MapToggle <leader>n number

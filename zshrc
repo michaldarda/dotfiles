@@ -46,15 +46,6 @@ alias cdg="cd $GOPATH"
 
 set -o allexport
 
-autoload -U add-zsh-hook
-load-local-conf() {
-    # check file exists, is regular file and is readable:
-    if [[ -f .env && -r .env ]]; then
-        source .env
-    fi
-}
-add-zsh-hook chpwd load-local-conf
-
 # aliases
 alias e='vim'
 alias vi='vim'

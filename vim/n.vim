@@ -1,5 +1,5 @@
-let test#strategy = "neovim"
+" let test#strategy = "neovim"
 
-tnoremap jj <C-\><C-n>
+" tnoremap jj <C-\><C-n>
 
-set inccommand=nosplit
+" set inccommand=nosplit

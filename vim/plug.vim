@@ -90,6 +90,7 @@ Plug 'slim-template/vim-slim'
 
 Plug 'mileszs/ack.vim'
 Plug 'quanganhdo/grb256'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
