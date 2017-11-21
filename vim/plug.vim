@@ -95,3 +95,5 @@ Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 filetype on
+
+" hi VertSplit guibg=bg guifg=bg

@@ -52,3 +52,6 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 " Display-altering option toggles
 MapToggle <leader>h hlsearch
 MapToggle <leader>n number
+
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE
