@@ -35,7 +35,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'tpope/vim-surround'
-Plug 'Quramy/tsuquyomi'
+Plug 'w0rp/ale'
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'mileszs/ack.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-dispatch'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -47,48 +56,8 @@ Plug 'jgdavey/vim-blockle'
 Plug 'p0deje/vim-ruby-interpolation'
 Plug 'gorkunov/smartpairs.vim', {'for': 'ruby'}
 
-" javascript
-Plug 'pangloss/vim-javascript'
-Plug 'pmb-btw/xml-syntax'
-" jsx
-Plug 'mxw/vim-jsx'
-" coffeescript
-Plug 'kchmck/vim-coffee-script'
-
-" elixir
-Plug 'elixir-lang/vim-elixir'
-Plug 'slashmili/alchemist.vim'
-
-" nginx
-Plug 'chr4/nginx.vim'
-" go
-Plug 'fatih/vim-go'
-
-" typescript
-Plug 'leafgarland/typescript-vim'
-
 Plug 'fcpg/vim-orbital'
 
-" Plug 'w0rp/ale'
-if has("nvim")
-  Plug 'jodosha/vim-godebug'
-endif
-
-Plug 'takac/vim-hardtime'
-
-Plug 'michaldarda/vim-code-dark'
-Plug 'YorickPeterse/happy_hacking.vim'
-Plug 'godoctor/godoctor.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'vimwiki/vimwiki'
-
-Plug 'posva/vim-vue'
-Plug 'slim-template/vim-slim'
-
-Plug 'mileszs/ack.vim'
 Plug 'quanganhdo/grb256'
 Plug 'nanotech/jellybeans.vim'
 

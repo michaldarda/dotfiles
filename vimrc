@@ -27,6 +27,7 @@ source ~/dotfiles/vim/golang.vim
 source ~/dotfiles/vim/fzf.vim
 source ~/dotfiles/vim/iabbrev.vim
 source ~/dotfiles/vim/ack.vim
+source ~/dotfiles/vim/pretty_xml.vim
 if has("nvim") || has("neovim")
   source ~/dotfiles/vim/n.vim
 endif
@@ -45,7 +46,6 @@ set nonumber
 function MapToggle(key, opt)
   let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
   exec 'nnoremap '.a:key.' '.cmd
-  exec 'inoremap '.a:key." \<C-O>".cmd
 endfunction
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 
