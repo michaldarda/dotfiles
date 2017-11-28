@@ -463,3 +463,4 @@ else
   alias vi=$nvimcmd
   export EDITOR=$nvimcmd
 fi
+source /Users/michal/.rvm/scripts/rvm
