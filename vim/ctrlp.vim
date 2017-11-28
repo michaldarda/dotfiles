@@ -10,3 +10,5 @@ if exists("g:ctrlp_user_command")
 endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 let g:ctrlp_match_func = { 'match': 'cpsm#CtrlPMatch' }
+
+nmap <leader><space> :CtrlPBuffer<CR>

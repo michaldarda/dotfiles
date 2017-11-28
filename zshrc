@@ -34,8 +34,6 @@ dme() {
 
 PROMPT='%F{green}%2~%f%F{yellow}$vcs_info_msg_0_%f %F{cyan}$%f '
 
-alias vi="nvim"
-alias vim="nvim"
 
 bindkey -s '\e[OA' ''
 bindkey -s '\e[OB' ''
@@ -47,8 +45,6 @@ alias cdg="cd $GOPATH"
 set -o allexport
 
 # aliases
-alias e='vim'
-alias vi='vim'
 alias tlf='tail -f'
 
 # general
@@ -452,3 +448,18 @@ export PATH=$HOME/.cargo/bin:$PATH
 rgr() {
   ag -0 -l $1 | xargs -0 sed -ri.bak -e "s/$1/$2/g"
 }
+
+if [ ! -e /tmp/nvimsocket ]; then
+  nvimcmd="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
+  alias e=$nvimcmd
+  alias vi=$nvimcmd
+  alias vi=$nvimcmd
+  alias vim=$nvimcmd
+  export EDITOR=$nvimcmd
+else
+  nvimcmd="nvr --remote"
+  alias nvim=$nvimcmd
+  alias vim=$nvimcmd
+  alias vi=$nvimcmd
+  export EDITOR=$nvimcmd
+fi
