@@ -38,8 +38,6 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-go'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
@@ -60,6 +58,9 @@ Plug 'fcpg/vim-orbital'
 
 Plug 'quanganhdo/grb256'
 Plug 'nanotech/jellybeans.vim'
+
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 
 call plug#end()
 

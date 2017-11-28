@@ -14,7 +14,7 @@ source ~/dotfiles/vim/notes.vim
 source ~/dotfiles/vim/ruby.vim
 source ~/dotfiles/vim/vim_test.vim
 source ~/dotfiles/vim/shifting_lines.vim
-" source ~/dotfiles/vim/ctrlp.vim
+source ~/dotfiles/vim/ctrlp.vim
 source ~/dotfiles/vim/ragtag.vim
 source ~/dotfiles/vim/cmdline_complete.vim
 source ~/dotfiles/vim/es6.vim
@@ -24,7 +24,7 @@ source ~/dotfiles/vim/ulti_snips.vim
 source ~/dotfiles/vim/fns.vim
 source ~/dotfiles/vim/secret.vim
 source ~/dotfiles/vim/golang.vim
-source ~/dotfiles/vim/fzf.vim
+" source ~/dotfiles/vim/fzf.vim
 source ~/dotfiles/vim/iabbrev.vim
 source ~/dotfiles/vim/ack.vim
 source ~/dotfiles/vim/pretty_xml.vim
