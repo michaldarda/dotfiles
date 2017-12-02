@@ -463,4 +463,8 @@ else
   alias vi=$nvimcmd
   export EDITOR=$nvimcmd
 fi
-source /Users/michal/.rvm/scripts/rvm
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+source /Users/michal/Downloads/google-cloud-sdk/completion.zsh.inc
+source /Users/michal/Downloads/google-cloud-sdk/path.zsh.inc
