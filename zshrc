@@ -445,26 +445,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
 
 export PATH=$HOME/.cargo/bin:$PATH
 
-rgr() {
-  ag -0 -l $1 | xargs -0 sed -ri.bak -e "s/$1/$2/g"
-}
+# if [ ! -e /tmp/nvimsocket ]; then
+#   nvimcmd="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
+#   alias e=$nvimcmd
+#   alias vi=$nvimcmd
+#   alias vi=$nvimcmd
+#   alias vim=$nvimcmd
+#   export EDITOR=$nvimcmd
 
-if [ ! -e /tmp/nvimsocket ]; then
-  nvimcmd="NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim"
-  alias e=$nvimcmd
-  alias vi=$nvimcmd
-  alias vi=$nvimcmd
-  alias vim=$nvimcmd
-  export EDITOR=$nvimcmd
-else
-  nvimcmd="nvr --remote"
-  alias nvim=$nvimcmd
-  alias vim=$nvimcmd
-  alias vi=$nvimcmd
-  export EDITOR=$nvimcmd
-fi
+nvimcmd="nvim"
+alias nvim=$nvimcmd
+alias vim=$nvimcmd
+alias vi=$nvimcmd
+export EDITOR=$nvimcmd
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-source /Users/michal/Downloads/google-cloud-sdk/completion.zsh.inc
-source /Users/michal/Downloads/google-cloud-sdk/path.zsh.inc

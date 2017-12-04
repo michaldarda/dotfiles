@@ -1,6 +1,7 @@
 filetype off
 
 call plug#begin('~/.vim/plugged')
+Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
