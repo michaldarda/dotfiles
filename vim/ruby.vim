@@ -8,21 +8,21 @@ function! OpenFileInCWD(filename)
   endif
 endfunction
 
-function! Rgemfile()
+function! Egemfile()
   call OpenFileInCWD("Gemfile")
 endfunction
 
-function! Rgemfilelock()
+function! Egemfilelock()
   call OpenFileInCWD("Gemfile.lock")
 endfunction
 
-function! Rgspec()
+function! Egspec()
   execute "edit **/*.gemspec"
 endfunction
 
-command! Rgemfile call Rgemfile()
-command! Rglock call Rgemfilelock()
-command! Rgspec call Rgspec()
+command! Egemfile call Egemfile()
+command! Eglock call Egemfilelock()
+command! Egspec call Egspec()
 
 "autocmd FileType ruby autocmd BufWritePost <buffer> Fmt
 nmap ff :Fmt<CR>

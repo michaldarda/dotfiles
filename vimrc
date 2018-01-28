@@ -9,6 +9,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
+source ~/dotfiles/vim/filetypes.vim
 source ~/dotfiles/vim/rename_file.vim
 source ~/dotfiles/vim/notes.vim
 source ~/dotfiles/vim/ruby.vim
@@ -34,6 +35,7 @@ endif
 if has("gui_running")
   source ~/dotfiles/vim/gui.vim
 endif
+source ~/dotfiles/vim/vimterm.vim
 let g:hardtime_default_on = 0
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
@@ -55,3 +57,7 @@ MapToggle <leader>n number
 
 set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
+
+if has('gui_vimr')
+  set number
+endif

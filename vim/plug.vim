@@ -34,11 +34,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Olical/vim-enmasse' "edit files in quickfix window
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'zchee/deoplete-go'
 Plug 'vimwiki/vimwiki'
 Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
@@ -62,6 +60,8 @@ Plug 'nanotech/jellybeans.vim'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
+Plug 'wvffle/vimterm'
+Plug 'onemanstartup/vim-slim'
 
 call plug#end()
 
