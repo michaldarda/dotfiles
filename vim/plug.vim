@@ -63,6 +63,8 @@ Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 Plug 'wvffle/vimterm'
 Plug 'onemanstartup/vim-slim'
 
+Plug 'Yggdroot/indentLine'
+
 call plug#end()
 
 filetype on
