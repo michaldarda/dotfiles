@@ -55,9 +55,13 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 MapToggle <leader>h hlsearch
 MapToggle <leader>n number
 
-set fillchars+=vert:│
-hi VertSplit ctermbg=NONE guibg=NONE
 
 if has('gui_vimr')
   set number
 endif
+
+colorscheme default
+
+set fillchars=""
+hi vertsplit guifg=black guibg=black ctermbg=black ctermfg=black
+

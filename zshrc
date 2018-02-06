@@ -433,15 +433,7 @@ setopt auto_cd
 setopt multios
 setopt prompt_subst
 
-[[ -n "$WINDOW" ]] && SCREEN_NO="%B$WINDOW%b " || SCREEN_NO=""
-
-local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='%{$fg_bold[magenta]%}%c%{$reset_color%} $(git_prompt_info)'
-
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%} %{$fg[yellow]%}✗"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
+PROMPT='🦄 %{$fg_bold[magenta]%}  %c%{$reset_color%} $(git_prompt_info)'
 
 export PATH=$HOME/.cargo/bin:$PATH
 
