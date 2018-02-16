@@ -65,6 +65,8 @@ Plug 'onemanstartup/vim-slim'
 
 Plug 'Yggdroot/indentLine'
 
+Plug 'justinmk/vim-dirvish'
+
 call plug#end()
 
 filetype on

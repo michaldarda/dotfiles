@@ -183,7 +183,7 @@ setopt auto_cd
 setopt multios
 setopt prompt_subst
 
-PROMPT='🦄  %{$fg_bold[magenta]%}%c%{$reset_color%} $(git_current_branch) $ '
+PROMPT='🦄 %{$fg_bold[magenta]%}%c%{$reset_color%} $(git_current_branch) $ '
 
 nvimcmd="nvim"
 alias nvim=$nvimcmd
