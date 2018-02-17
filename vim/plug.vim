@@ -61,7 +61,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 Plug 'wvffle/vimterm'
-Plug 'onemanstartup/vim-slim'
+" Plug 'onemanstartup/vim-slim'
 
 Plug 'Yggdroot/indentLine'
 
