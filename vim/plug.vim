@@ -63,9 +63,7 @@ Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
 Plug 'wvffle/vimterm'
 " Plug 'onemanstartup/vim-slim'
 
-Plug 'Yggdroot/indentLine'
-
-Plug 'justinmk/vim-dirvish'
+Plug 'thiagoalessio/rainbow_levels.vim'
 
 call plug#end()
 
