@@ -58,8 +58,7 @@ Plug 'fcpg/vim-orbital'
 Plug 'quanganhdo/grb256'
 Plug 'nanotech/jellybeans.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nixprime/cpsm', { 'do': 'env PY3=OFF ./install.sh' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'wvffle/vimterm'
 " Plug 'onemanstartup/vim-slim'
 
