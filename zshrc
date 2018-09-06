@@ -1,3 +1,5 @@
+bindkey -e
+
 topcmds() {
   history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
 }
@@ -191,6 +193,7 @@ alias vim=$nvimcmd
 alias vi=$nvimcmd
 export EDITOR=$nvimcmd
 
+export PATH=/Users/michal/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 cdp() {
