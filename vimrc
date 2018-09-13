@@ -60,7 +60,6 @@ if has('gui_vimr')
   set number
 endif
 
-colorscheme jellybeans
 let g:rainbow_levels = [
     \{'ctermfg': 110, 'guifg': '#8fbfdc'},
     \{'ctermfg': 167, 'guifg': '#cf6a4c'},
@@ -111,3 +110,6 @@ au BufLeave *.slim :RainbowLevelsOff
 " au TabLeave *.slim :RainbowLevelsOff
 
 map <leader>l :RainbowLevelsToggle<cr>
+
+colorscheme default
+set t_md=
