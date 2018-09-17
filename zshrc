@@ -203,3 +203,6 @@ cdp() {
 
 export PATH=/Users/michal/.local/bin:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+alias pac='pacman'
+alias 'sudo=sudo '
