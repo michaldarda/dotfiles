@@ -1,3 +1,11 @@
+" Install vim-plug plugin manager and plugins, when missing
+" https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !echo "Installing vim-plug..." && curl --silent --fail --location --output ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
 filetype off
 
 call plug#begin('~/.vim/plugged')
@@ -35,13 +43,14 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
-" Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim'
 " Plug 'zchee/deoplete-go'
 Plug 'vimwiki/vimwiki'
 Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-dispatch'
+Plug 'w0rp/ale'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'

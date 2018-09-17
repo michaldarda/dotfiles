@@ -150,3 +150,7 @@ inoremap <expr> <c-k> ("\<C-p>")
 set exrc
 set secure
 set autowrite
+
+set termguicolors
+colorscheme jellybeans
+set nonumber

@@ -1,14 +1,8 @@
 set nocompatible
 
-" Install vim-plug plugin manager and plugins, when missing
-" https://github.com/junegunn/vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !echo "Installing vim-plug..." && curl --silent --fail --location --output ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
+let g:deoplete#enable_at_startup = 1
 source ~/dotfiles/vim/filetypes.vim
 source ~/dotfiles/vim/rename_file.vim
 source ~/dotfiles/vim/notes.vim
@@ -40,10 +34,6 @@ let g:hardtime_default_on = 0
 let g:deoplete#enable_at_startup = 1
 set wildmode=longest:full,list:full
 
-set termguicolors
-colorscheme jellybeans
-set nonumber
-
 " Map key to toggle opt
 function MapToggle(key, opt)
   let cmd = ':set '.a:opt.'! \| set '.a:opt."?\<CR>"
@@ -54,11 +44,6 @@ command -nargs=+ MapToggle call MapToggle(<f-args>)
 " Display-altering option toggles
 MapToggle <leader>h hlsearch
 MapToggle <leader>n number
-
-
-if has('gui_vimr')
-  set number
-endif
 
 let g:rainbow_levels = [
     \{'ctermfg': 110, 'guifg': '#8fbfdc'},
@@ -111,5 +96,5 @@ au BufLeave *.slim :RainbowLevelsOff
 
 map <leader>l :RainbowLevelsToggle<cr>
 
-colorscheme default
-set t_md=
+colorscheme spacegray
+let g:spacegray_low_contrast = 1
