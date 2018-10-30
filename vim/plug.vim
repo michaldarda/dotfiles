@@ -51,6 +51,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-dispatch'
 Plug 'w0rp/ale'
+Plug 'raghur/fruzzy', {'do': { -> fruzzy#install()}}
+Plug 'Shougo/denite.nvim'
 
 " ruby, rails
 Plug 'nelstrom/vim-textobj-rubyblock'
@@ -67,7 +69,7 @@ Plug 'fcpg/vim-orbital'
 Plug 'quanganhdo/grb256'
 Plug 'nanotech/jellybeans.vim'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'wvffle/vimterm'
 " Plug 'onemanstartup/vim-slim'
 
