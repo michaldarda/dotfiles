@@ -49,7 +49,7 @@ MapToggle <leader>n number
 set fillchars=""
 hi vertsplit guifg=black guibg=black ctermbg=black ctermfg=black
 
-colorscheme spacegray
+colorscheme grb256
 let g:spacegray_low_contrast = 1
 
 hi Normal ctermbg=NONE

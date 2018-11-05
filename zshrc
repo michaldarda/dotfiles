@@ -193,7 +193,7 @@ alias vim=$nvimcmd
 alias vi=$nvimcmd
 export EDITOR=$nvimcmd
 
-export PATH=/Users/michal/.rbenv/bin:$PATH
+export PATH=/home/michal/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 cdp() {
@@ -201,8 +201,9 @@ cdp() {
   eval "cd $file"
 }
 
-export PATH=/Users/michal/.local/bin:$PATH
+export PATH=/home/michal/.local/bin:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 alias pac='pacman'
 alias 'sudo=sudo '
+
