@@ -311,7 +311,8 @@ values."
    dotspacemacs-whitespace-cleanup 'trailing
 
    truncate-lines t
-   ))
+   mmm-submode-decoration-level 2))
+
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -351,6 +352,10 @@ you should place your code here."
 
   (setq indent-tabs-mode nil
         js-indent-level 2)
+
+  (add-hook 'mmm-mode-hook
+            (lambda ()
+              (set-face-background 'mmm-default-submode-face nil)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
