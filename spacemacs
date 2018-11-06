@@ -64,14 +64,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(vue-mode
-                                      lsp-mode
-                                      lsp-vue
-                                      company-lsp
-                                      lsp-ui
-                                      editorconfig
+   dotspacemacs-additional-packages '(editorconfig
                                       gruvbox-theme
-                                      ripgrep)
+                                      ripgrep
+                                      emacs-pug-mode)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -298,7 +294,7 @@ values."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `ag', `pt', `ack' and `grep'.
    ;; (default '("ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("ag" "pt" "ack" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
    ;; The default package repository used if no explicit repository has been
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
@@ -330,32 +326,14 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (require 'vue-mode)
-
-  (require 'lsp-mode)
-
-  (require 'lsp-ui)
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
-
-  (require 'lsp-vue)
-  (add-hook 'vue-mode-hook #'lsp-vue-mmm-enable)
-
-  ;; (with-eval-after-load 'lsp-uimode
-  ;;   (require 'lsp-flycheck)
-  ;;   )
-
-  (require 'company-lsp)
-  (push 'company-lsp company-backends)
-
   (require 'editorconfig)
   (editorconfig-mode 1)
 
-  (setq indent-tabs-mode nil
-        js-indent-level 2)
+  (require 'pug-mode)
 
-  (add-hook 'mmm-mode-hook
-            (lambda ()
-              (set-face-background 'mmm-default-submode-face nil)))
+  (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
+
+  (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
