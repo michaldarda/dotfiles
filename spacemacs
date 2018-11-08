@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     racket
+     yaml
      html
      ruby
      javascript
@@ -59,6 +61,8 @@ values."
      evil-snipe
      vinegar
      git
+
+     racket
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -66,8 +70,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(editorconfig
                                       gruvbox-theme
-                                      ripgrep
-                                      emacs-pug-mode)
+                                      ripgrep)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -307,7 +310,10 @@ values."
    dotspacemacs-whitespace-cleanup 'trailing
 
    truncate-lines t
-   mmm-submode-decoration-level 2))
+   mmm-submode-decoration-level 2
+
+   custom-file "~/.emacs.d/custom.el"
+   ))
 
 
 (defun dotspacemacs/user-init ()
@@ -335,20 +341,3 @@ you should place your code here."
 
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
   )
-
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data ripgrep wgrep smex ivy-hydra counsel-projectile counsel swiper ivy smeargle orgit magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit-popup ghub treepy graphql evil-nerd-commenter ws-butler winum which-key web-beautify vue-mode volatile-highlights vi-tilde-fringe uuidgen use-package unfill toc-org spaceline rvm ruby-tools ruby-test-mode rubocop rspec-mode robe restart-emacs request rbenv rake rainbow-delimiters popwin persp-mode paradox org-projectile org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree mwim move-text minitest markdown-toc magit macrostep lsp-vue lsp-ui lorem-ipsum livid-mode linum-relative link-hint json-mode js2-refactor js-doc jbeans-theme indent-guide hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag gruvbox-theme google-translate golden-ratio gnuplot git-gutter-fringe git-gutter-fringe+ gh-md fuzzy flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-commentary evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump diminish diff-hl define-word company-tern company-statistics company-lsp column-enforce-mode coffee-mode clean-aindent-mode chruby bundler auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((((class color) (min-colors 89)) (:foreground "#cccccc" :background "#151515")))))

@@ -206,4 +206,4 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 alias pac='pacman'
 alias 'sudo=sudo '
-
+alias open='xdg-open'
