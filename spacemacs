@@ -31,7 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     racket
+     rust
+     sql
      yaml
      html
      ruby
@@ -42,7 +43,10 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ;; helm
-     ivy
+     (ivy :variables
+          ivy-enable-advanced-buffer-information t
+          ivy-height 10
+          ivy-re-builders-plist '((t . spacemacs/ivy--regex-plus)))
      auto-completion
      better-defaults
      emacs-lisp
@@ -63,6 +67,7 @@ values."
      git
 
      racket
+     python
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -70,11 +75,12 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(editorconfig
                                       gruvbox-theme
-                                      ripgrep)
+                                      ripgrep
+                                      flx)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(spaceline)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -323,6 +329,10 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  (setq-default
+   split-height-threshold nil
+   split-width-threshold 0
+   frame-title-format '("emacs %f"))
   )
 
 (defun dotspacemacs/user-config ()
@@ -332,12 +342,14 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+
+  (setq powerline-default-separator 'nil)
   (require 'editorconfig)
   (editorconfig-mode 1)
 
-  (require 'pug-mode)
-
   (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
-
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+
+  (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
+  (setq backup-by-copying t)
   )
