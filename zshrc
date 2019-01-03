@@ -8,11 +8,6 @@ function update_gem_ctags {
   bundle show --paths | xargs ctags -R
 }
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
 setopt inc_append_history
 setopt share_history
 
@@ -123,10 +118,6 @@ alias bim='vim'
 
 setopt nullglob
 
-# # # other files
-[[ -f ~/home.zsh ]] && source ~/home.zsh
-[[ -f ~/zsh_work ]] && source ~/zsh_work # secret work specific stuff
-
 alias tmux="tmux -2"
 
 alias vi="vim"
@@ -193,17 +184,22 @@ alias vim=$nvimcmd
 alias vi=$nvimcmd
 export EDITOR=$nvimcmd
 
-export PATH=/home/michal/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
-
 cdp() {
   file=$(cat ~/.projects | fzf)
   eval "cd $file"
 }
 
 export PATH=/home/michal/.local/bin:$PATH
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 alias pac='pacman'
 alias 'sudo=sudo '
 alias open='xdg-open'
+
+[ -f ~/.work.zsh ] && source ~/.work.zsh
+
+source /Users/mdarda/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=/home/michal/.rbenv/bin:$PATH
+eval "$(rbenv init -)"

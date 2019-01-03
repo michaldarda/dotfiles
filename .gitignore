@@ -2,3 +2,4 @@
 .projections.json
 .vimrc
 vim/secret.vim
+zsh-syntax-highlighting
