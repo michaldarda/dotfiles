@@ -193,7 +193,19 @@ export PATH=/home/michal/.local/bin:$PATH
 
 alias pac='pacman'
 alias 'sudo=sudo '
-alias open='xdg-open'
+
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+  ;;
+  Linux)
+    # commands for Linux go here
+    alias open='xdg-open'
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
 
 [ -f ~/.work.zsh ] && source ~/.work.zsh
 
