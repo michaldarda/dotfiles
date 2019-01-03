@@ -1,6 +1,6 @@
 " Install vim-plug plugin manager and plugins, when missing
 " https://github.com/junegunn/vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   silent !echo "Installing vim-plug..." && curl --silent --fail --location --output ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
