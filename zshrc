@@ -150,7 +150,7 @@ fi
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Outputs the name of the current branch
 # Usage example: git pull origin $(git_current_branch)
@@ -213,5 +213,5 @@ source /Users/mdarda/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-export PATH=/home/michal/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/completions/asdf.bash
