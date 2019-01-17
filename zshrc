@@ -213,5 +213,5 @@ source /Users/mdarda/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-. $HOME/.asdf/asdf.sh
-# . $HOME/.asdf/completions/asdf.bash
+eval "$(jump shell zsh)"
+# eval "$(direnv hook zsh)"

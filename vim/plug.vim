@@ -43,8 +43,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
-Plug 'Shougo/deoplete.nvim'
-" Plug 'zchee/deoplete-go'
 Plug 'vimwiki/vimwiki'
 Plug 'mileszs/ack.vim'
 Plug 'flazz/vim-colorschemes'
@@ -69,14 +67,7 @@ Plug 'fcpg/vim-orbital'
 Plug 'quanganhdo/grb256'
 Plug 'nanotech/jellybeans.vim'
 
-" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'wvffle/vimterm'
-" Plug 'onemanstartup/vim-slim'
-
-Plug 'thiagoalessio/rainbow_levels.vim'
-
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 filetype on
-
-" hi VertSplit guibg=bg guifg=bg

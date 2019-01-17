@@ -86,7 +86,6 @@ match Todo '\v^(\<|\=|\>){7}([^=].+)?$'
 set ttyfast
 set omnifunc=syntaxcomplete#Complete
 set mouse=a
-set clipboard=unnamed
 set diffopt+=vertical
 set number
 

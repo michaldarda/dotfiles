@@ -54,9 +54,9 @@ values."
      ;; git
      markdown
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
      version-control
@@ -353,4 +353,5 @@ you should place your code here."
 
   (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
   (setq backup-by-copying t)
+  (setq-default shell-file-name "/usr/local/bin/zsh")
   )

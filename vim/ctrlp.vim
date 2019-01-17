@@ -1,4 +1,5 @@
 nmap <leader>p :CtrlP<CR>
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files --exclude-standard'] 
 let g:ctrlp_match_window_bottom = 1
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
