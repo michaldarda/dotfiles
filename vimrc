@@ -2,7 +2,6 @@ set nocompatible
 
 source ~/dotfiles/vim/plug.vim
 source ~/dotfiles/vim/basic.vim
-source ~/dotfiles/vim/denite.vim
 source ~/dotfiles/vim/filetypes.vim
 source ~/dotfiles/vim/rename_file.vim
 source ~/dotfiles/vim/notes.vim
