@@ -40,6 +40,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-# eval "$(rbenv init -)"
+export PROMPT='%{$fg_bold[yellow]%}%c%{$reset_color%} $(gitprompt) $ '
 
-alias impd='impostor firewall | bash - & impostor server & impostor tray &'
+export LSCOLORS="Gxfxcxdxbxegedabagacad"

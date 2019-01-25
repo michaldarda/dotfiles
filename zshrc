@@ -142,13 +142,10 @@ bindkey '^Z' fancy-ctrl-z
 # ls colors
 autoload -U colors && colors
 
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
 # setopt auto_cd
 # setopt multios
 setopt prompt_subst
-
-PROMPT='%{$fg_bold[yellow]%}%c%{$reset_color%} $(gitprompt) $ '
 
 alias vim='nvim'
 alias vi='nvim'
@@ -179,3 +176,9 @@ esac
 
 eval "$(jump shell zsh)"
 # eval "$(direnv hook zsh)"
+
+alias impd='impostor firewall | bash - & impostor server & impostor tray &'
+
+eval "$(rbenv init -)"
+
+

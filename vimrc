@@ -1,5 +1,4 @@
 let g:python_host_skip_check=1
-" let g:loaded_python3_provider=1
 
 set nocompatible
 
@@ -49,7 +48,6 @@ set fillchars=""
 hi vertsplit guifg=black guibg=black ctermbg=black ctermfg=black
 
 colorscheme grb256
-let g:spacegray_low_contrast = 1
 
 hi Normal ctermbg=NONE
 
