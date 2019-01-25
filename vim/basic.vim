@@ -151,5 +151,4 @@ set secure
 set autowrite
 
 set termguicolors
-colorscheme jellybeans
 set nonumber
