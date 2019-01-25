@@ -1,13 +1,5 @@
 bindkey -e
 
-topcmds() {
-  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
-}
-
-function update_gem_ctags {
-  bundle show --paths | xargs ctags -R
-}
-
 setopt inc_append_history
 setopt share_history
 
@@ -15,28 +7,25 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
+# external plugins
+source ~/git-prompt.zsh/git-prompt.zsh
+source /Users/mdarda/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' use-simple true
-zstyle ':vcs_info:git*' formats ' %b'
-zstyle ':vcs_info:git*' actionformats ' %b|%a'
+topcmds() {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+}
+
+update_gem_ctags() {
+  bundle show --paths | xargs ctags -R
+}
 
 dme() {
   eval $(docker-machine env)
 }
 
-bindkey -s '\e[OA' ''
-bindkey -s '\e[OB' ''
-bindkey -s '\e[OC' ''
-bindkey -s '\e[OD' ''
-
 alias cdg="cd $GOPATH"
-
-set -o allexport
 
 # aliases
 alias tlf='tail -f'
@@ -116,8 +105,6 @@ alias b='bundle'
 alias my="mysql -u root"
 alias bim='vim'
 
-setopt nullglob
-
 alias tmux="tmux -2"
 
 alias vi="vim"
@@ -152,44 +139,24 @@ bindkey '^Z' fancy-ctrl-z
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Outputs the name of the current branch
-# Usage example: git pull origin $(git_current_branch)
-# Using '--quiet' with 'symbolic-ref' will not cause a fatal error (128) if
-# it's not a symbolic ref, but in a Git repo.
-function git_current_branch() {
-  local ref
-  ref=$(command git symbolic-ref --quiet HEAD 2> /dev/null)
-  local ret=$?
-  if [[ $ret != 0 ]]; then
-    [[ $ret == 128 ]] && return  # no git repo.
-    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return
-  fi
-  echo ${ref#refs/heads/}
-}
 # ls colors
 autoload -U colors && colors
 
-# Enable ls colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-setopt auto_cd
-setopt multios
+# setopt auto_cd
+# setopt multios
 setopt prompt_subst
 
-PROMPT='%{$fg_bold[yellow]%}%c%{$reset_color%} $(git_current_branch) $ '
+PROMPT='%{$fg_bold[yellow]%}%c%{$reset_color%} $(gitprompt) $ '
 
-nvimcmd="nvim"
-alias nvim=$nvimcmd
-alias vim=$nvimcmd
-alias vi=$nvimcmd
-export EDITOR=$nvimcmd
+alias vim='nvim'
+alias vi='nvim'
 
 cdp() {
   file=$(cat ~/.projects | fzf)
   eval "cd $file"
 }
-
-export PATH=/home/michal/.local/bin:$PATH
 
 alias pac='pacman'
 alias 'sudo=sudo '
@@ -209,9 +176,6 @@ esac
 
 [ -f ~/.work.zsh ] && source ~/.work.zsh
 
-source /Users/mdarda/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(jump shell zsh)"
 # eval "$(direnv hook zsh)"

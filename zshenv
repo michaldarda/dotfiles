@@ -1,5 +1,5 @@
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/bin:$PATH"
+export PATH=/home/michal/.local/bin:$PATH
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
@@ -40,5 +40,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
+alias impd='impostor firewall | bash - & impostor server & impostor tray &'
