@@ -82,9 +82,6 @@ alias tmux="tmux -2"
 
 alias tst="tig status"
 
-alias vim='nvim'
-alias vi='nvim'
-
 alias impd='impostor firewall | bash - & impostor server & impostor tray &'
 
 case `uname` in
