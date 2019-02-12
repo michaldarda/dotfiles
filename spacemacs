@@ -149,7 +149,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(jbeans
+   dotspacemacs-themes '(adwaita
+                         jbeans
                          spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -157,7 +158,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Consolas"
-                               :size 22
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -354,4 +355,6 @@ you should place your code here."
   (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
   (setq backup-by-copying t)
   (setq-default shell-file-name "/usr/local/bin/zsh")
+
+  (global-hl-line-mode -1)
   )

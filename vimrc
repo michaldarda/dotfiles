@@ -47,8 +47,6 @@ MapToggle <leader>n number
 set fillchars=""
 hi vertsplit guifg=black guibg=black ctermbg=black ctermfg=black
 
-colorscheme grb256
+colorscheme default
 
 hi Normal ctermbg=NONE
-
-set clipboard=unnamedplus " use system clipboard
