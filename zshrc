@@ -72,8 +72,6 @@ cdp() {
 [ -f ~/.work.zsh ] && source ~/.work.zsh
 
 eval "$(jump shell zsh)"
-# eval "$(direnv hook zsh)"
-
+eval "$(direnv hook zsh)"
 eval "$(rbenv init -)"
-
 

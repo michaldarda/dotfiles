@@ -77,7 +77,8 @@ values."
    dotspacemacs-additional-packages '(editorconfig
                                       gruvbox-theme
                                       ripgrep
-                                      flx)
+                                      flx
+                                      direnv)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -355,6 +356,8 @@ you should place your code here."
   (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
   (setq backup-by-copying t)
   (setq-default shell-file-name "/usr/local/bin/zsh")
+
+  (direnv-mode)
 
   (global-hl-line-mode -1)
   )
