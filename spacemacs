@@ -37,7 +37,7 @@ values."
      yaml
      html
      ruby
-     javascript
+     (javascript :variables javascript-fmt-tool 'prettier)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -61,7 +61,7 @@ values."
      syntax-checking
      version-control
 
-     evil-cleverparens
+     ;; evil-cleverparens
      evil-commentary
      evil-snipe
      vinegar
@@ -69,6 +69,7 @@ values."
 
      racket
      python
+     prettier
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -318,6 +319,8 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'trailing
 
+   dotspacemacs-mode-line-theme 'spacemacs
+
    truncate-lines t
    mmm-submode-decoration-level 2
 
@@ -356,6 +359,8 @@ you should place your code here."
   (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
   (setq backup-by-copying t)
   (setq-default shell-file-name "/usr/local/bin/zsh")
+
+  (add-hook 'web-mode-hook 'prettier-js-mode)
 
   (direnv-mode)
 
