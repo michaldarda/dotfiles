@@ -31,19 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     vimscript
-     rust
-     sql
-     yaml
-     html
-     ruby
-     (javascript :variables javascript-fmt-tool 'prettier)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; helm
      (ivy :variables
           ivy-enable-advanced-buffer-information t
           ivy-height 10
@@ -51,25 +43,29 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
-     ;; git
      markdown
      org
+     vimscript
+     rust
+     sql
+     yaml
+     html
+     ruby
+     ruby-on-rails
+     (javascript :variables javascript-fmt-tool 'prettier)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
      syntax-checking
      version-control
-
-     ;; evil-cleverparens
      evil-commentary
      evil-snipe
      vinegar
      git
-
      racket
      python
      prettier
+     gtags
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -151,8 +147,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(adwaita
-                         jbeans
+   dotspacemacs-themes '(jbeans
+                         adwaita
                          spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -160,7 +156,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Consolas"
-                               :size 16
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -360,7 +356,7 @@ you should place your code here."
   (setq backup-by-copying t)
   (setq-default shell-file-name "/usr/local/bin/zsh")
 
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+  ;; (add-hook 'web-mode-hook 'prettier-js-mode)
 
   (direnv-mode)
 

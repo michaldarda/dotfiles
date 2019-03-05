@@ -22,7 +22,7 @@ alias ll='ls -lh'
 
 # git
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit"
-alias gpu="git push"
+alias gpu='[[ -z $(git config "branch.$(git symbolic-ref --short HEAD).merge") ]] && git push -u origin $(git symbolic-ref --short HEAD) || git push'
 alias gpuf="git push -f"
 alias ga="git add"
 alias gd="git diff"
