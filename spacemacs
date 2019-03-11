@@ -361,4 +361,9 @@ you should place your code here."
   (direnv-mode)
 
   (global-hl-line-mode -1)
+
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-indent-style 2)
   )

@@ -5,7 +5,7 @@ export LC_ALL=en_US.UTF-8
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 export EDITOR=vim
 
-export PROMPT='%{$fg_bold[yellow]%}%c%{$reset_color%} $(gitprompt) $ '
+export PROMPT='🐌 %{$fg_bold[yellow]%}%c%{$reset_color%} $(gitprompt) $ '
 
 export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
