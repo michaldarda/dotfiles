@@ -366,4 +366,13 @@ you should place your code here."
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-code-indent-offset 2)
   (setq web-mode-indent-style 2)
+
+  (setq js2-mode-show-parse-errors nil)
+  (setq js2-mode-show-strict-warnings nil)
+
+  (setq fci-rule-column 80)
+  (turn-on-fci-mode)
+
+  (setq-default abbrev-mode t)
+  (setq abbrev-file-name "~/dotfiles/abbrev_defs")
   )

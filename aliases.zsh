@@ -77,6 +77,7 @@ alias be='bundle exec'
 alias b='bundle'
 alias my="mysql -u root"
 alias bim='vim'
+alias vi='vim'
 
 alias tmux="tmux -2"
 
@@ -98,3 +99,5 @@ case `uname` in
     # commands for FreeBSD go here
   ;;
 esac
+
+alias ll='exa -abghHliS --git'
