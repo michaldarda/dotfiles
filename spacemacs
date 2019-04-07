@@ -316,11 +316,6 @@ values."
    dotspacemacs-whitespace-cleanup 'trailing
 
    dotspacemacs-mode-line-theme 'spacemacs
-
-   truncate-lines t
-   mmm-submode-decoration-level 2
-
-   custom-file "~/.emacs.d/custom.el"
    ))
 
 
@@ -332,10 +327,29 @@ executes.
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   (setq-default
+   custom-file "~/.emacs.d/custom.el"
+
    split-height-threshold nil
    split-width-threshold 0
-   frame-title-format '("emacs %f"))
-  )
+   frame-title-format '("emacs %f")
+   powerline-default-separator 'nil
+   backup-directory-alist '(("." . "~/.emacs.d/.backups"))
+   backup-by-copying t
+   shell-file-name "/usr/local/bin/zsh"
+
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-indent-style 2
+
+   js2-mode-show-parse-errors nil
+   js2-mode-show-strict-warnings nil
+
+   mmm-submode-decoration-level 2
+
+   abbrev-mode t
+   truncate-lines t
+   ))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -345,34 +359,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  (setq powerline-default-separator 'nil)
   (require 'editorconfig)
   (editorconfig-mode 1)
 
   (add-to-list 'auto-mode-alist '("\\.vue\\'" . web-mode))
   (define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 
-  (setq backup-directory-alist '(("." . "~/.emacs.d/.backups")))
-  (setq backup-by-copying t)
-  (setq-default shell-file-name "/usr/local/bin/zsh")
-
-  ;; (add-hook 'web-mode-hook 'prettier-js-mode)
-
   (direnv-mode)
 
   (global-hl-line-mode -1)
 
-  (setq web-mode-markup-indent-offset 2)
-  (setq web-mode-css-indent-offset 2)
-  (setq web-mode-code-indent-offset 2)
-  (setq web-mode-indent-style 2)
-
-  (setq js2-mode-show-parse-errors nil)
-  (setq js2-mode-show-strict-warnings nil)
-
-  (setq fci-rule-column 80)
-  (turn-on-fci-mode)
-
-  (setq abbrev-file-name "~/dotfiles/abbrev_defs")
-  (setq-default abbrev-mode t)
+  (load "~/dotfiles/emacs/abbrevs.el")
   )
