@@ -351,6 +351,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
    truncate-lines t
 
    evil-want-abbrev-expand-on-insert-exit nil
+
+   fci-rule-column 100
    ))
 
 (defun dotspacemacs/user-config ()
@@ -372,4 +374,8 @@ you should place your code here."
   (global-hl-line-mode -1)
 
   (load "~/dotfiles/emacs/abbrevs.el")
+
+  ;; Show 80-column marker
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  (global-fci-mode 1)
   )
