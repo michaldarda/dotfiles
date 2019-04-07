@@ -349,6 +349,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    abbrev-mode t
    truncate-lines t
+
+   evil-want-abbrev-expand-on-insert-exit nil
    ))
 
 (defun dotspacemacs/user-config ()
