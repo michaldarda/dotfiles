@@ -66,6 +66,8 @@ values."
      python
      prettier
      gtags
+     elm
+     docker
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
