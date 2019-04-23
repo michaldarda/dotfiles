@@ -101,3 +101,11 @@ case `uname` in
 esac
 
 alias ll='exa -abghHliS --git'
+
+alias dc='docker-compose'
+alias dcr='docker-compose run'
+alias dcu='docker-compose up'
+alias dce='docker-compose exec'
+alias dcps='docker-compose ps'
+alias dctop='docker-compose top'
+alias dcl='docker-compose logs -f'
