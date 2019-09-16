@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(typescript
+   '(elixir
+     typescript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -56,7 +57,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     syntax-checking
+     ;; syntax-checking
      version-control
      evil-commentary
      evil-snipe
@@ -71,6 +72,7 @@ values."
      coffeescript
      import-js
      floobits
+     ;; scheme
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -160,8 +162,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas"
-                               :size 22
+   dotspacemacs-default-font '("Monaco"
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
