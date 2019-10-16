@@ -30,7 +30,10 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(elixir
+   '(
+     (elixir :variables
+             elixir-backend
+             'lsp elixir-ls-path "~/elixir-ls/release")
      typescript
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -73,6 +76,8 @@ values."
      import-js
      floobits
      ;; scheme
+     lsp
+     dap
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
