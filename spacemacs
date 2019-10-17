@@ -75,7 +75,7 @@ values."
      coffeescript
      import-js
      floobits
-     ;; scheme
+     scheme
      lsp
      dap
    )
@@ -366,7 +366,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    fci-rule-column 100
 
-   geiser-chicken-binary "guile"
    ))
 
 (defun dotspacemacs/user-config ()
@@ -388,6 +387,10 @@ you should place your code here."
   (global-hl-line-mode -1)
 
   (load "~/dotfiles/emacs/abbrevs.el")
+
+  (setq geiser-chicken-compile-geiser-p nil)
+  (setq geiser-active-implementations '(chicken))
+  (setq geiser-chicken-binary "chicken-csi")
 
   ;; ;; Show 80-column marker
   ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
