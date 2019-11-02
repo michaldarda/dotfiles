@@ -34,7 +34,10 @@ values."
      (elixir :variables
              elixir-backend
              'lsp elixir-ls-path "~/elixir-ls/release")
-     typescript
+     (typescript
+      :variables
+      typescript-fmt-tool 'prettier
+      typescript-fmt-on-save t)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -56,7 +59,9 @@ values."
      html
      ruby
      ruby-on-rails
-     (javascript :variables javascript-fmt-tool 'prettier)
+     (javascript :variables
+                 javascript-fmt-tool 'prettier
+                 javascript-fmt-on-save t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
@@ -78,6 +83,7 @@ values."
      scheme
      lsp
      dap
+     ;; chicken
    )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -385,6 +391,8 @@ you should place your code here."
   (direnv-mode)
 
   (global-hl-line-mode -1)
+
+  (menu-bar-mode 1)
 
   (load "~/dotfiles/emacs/abbrevs.el")
 

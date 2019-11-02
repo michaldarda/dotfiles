@@ -109,4 +109,7 @@ alias dce='docker-compose exec'
 alias dcps='docker-compose ps'
 alias dctop='docker-compose top'
 alias dcl='docker-compose logs -f'
-alias code='code-insiders'
+alias csi='chicken-csi'
+
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
