@@ -52,18 +52,18 @@
     (spacemacs/declare-prefix-for-mode 'elixir-mode "mx" "execute")
     (spacemacs/declare-prefix-for-mode 'elixir-mode "md" "debug")
     (spacemacs/set-leader-keys-for-major-mode 'elixir-mode
-      "el" 'alchemist-eval-current-line
-      "eL" 'alchemist-eval-print-current-line
-      "er" 'alchemist-eval-region
-      "eR" 'alchemist-eval-print-region
-      "eb" 'alchemist-eval-buffer
-      "eB" 'alchemist-eval-print-buffer
-      "ej" 'alchemist-eval-quoted-current-line
-      "eJ" 'alchemist-eval-print-quoted-current-line
-      "eu" 'alchemist-eval-quoted-region
-      "eU" 'alchemist-eval-print-quoted-region
-      "ev" 'alchemist-eval-quoted-buffer
-      "eV" 'alchemist-eval-print-quoted-buffer
+      "eL" 'alchemist-eval-current-line
+      "el" 'alchemist-eval-print-current-line
+      "eR" 'alchemist-eval-region
+      "er" 'alchemist-eval-print-region
+      "eB" 'alchemist-eval-buffer
+      "eb" 'alchemist-eval-print-buffer
+      "eJ" 'alchemist-eval-quoted-current-line
+      "ej" 'alchemist-eval-print-quoted-current-line
+      "eU" 'alchemist-eval-quoted-region
+      "eu" 'alchemist-eval-print-quoted-region
+      "eV" 'alchemist-eval-quoted-buffer
+      "ev" 'alchemist-eval-print-quoted-buffer
 
       "gt" 'alchemist-project-toggle-file-and-tests
       "gT" 'alchemist-project-toggle-file-and-tests-other-window
