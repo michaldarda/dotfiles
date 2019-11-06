@@ -1,0 +1,3 @@
+[submodule "spacemacs-layers/elixir"]
+	path = spacemacs-layers/elixir
+	url = https://github.com/michaldarda/elixir
