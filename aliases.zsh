@@ -94,6 +94,8 @@ case `uname` in
     alias open='xdg-open'
     alias pac='pacman'
     alias 'sudo=sudo '
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
   ;;
   FreeBSD)
     # commands for FreeBSD go here
@@ -110,6 +112,4 @@ alias dcps='docker-compose ps'
 alias dctop='docker-compose top'
 alias dcl='docker-compose logs -f'
 alias csi='chicken-csi'
-
-#alias pbcopy='xclip -selection clipboard'
-#alias pbpaste='xclip -selection clipboard -o'
+alias cat='bat --theme 1337 -p'
