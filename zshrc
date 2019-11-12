@@ -74,5 +74,3 @@ cdp() {
 eval "$(jump shell zsh)"
 eval "$(direnv hook zsh)"
 # eval "$(rbenv init -)"
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
