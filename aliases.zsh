@@ -111,5 +111,5 @@ alias dctop='docker-compose top'
 alias dcl='docker-compose logs -f'
 alias csi='chicken-csi'
 
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+#alias pbcopy='xclip -selection clipboard'
+#alias pbpaste='xclip -selection clipboard -o'
