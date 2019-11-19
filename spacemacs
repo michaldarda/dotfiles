@@ -351,7 +351,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
    powerline-default-separator 'nil
    backup-directory-alist '(("." . "~/.emacs.d/.backups"))
    backup-by-copying t
-   shell-file-name "/usr/local/bin/zsh"
+   shell-file-name "/bin/sh"
 
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2

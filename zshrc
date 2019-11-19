@@ -11,9 +11,10 @@ function source_if_possible() { if [[ -r $1 ]]; then source $1; fi }
 
 # external plugins
 source_if_possible ~/git-prompt.zsh/git-prompt.zsh
-source_if_possible ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source_if_possible /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-source_if_possible ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source_if_possible ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source_if_possible ~/zsh-autosuggestions/zsh-autosuggestions.zsh
+source_if_possible ~/zsh-history-substring-search/zsh-history-substring-search.zsh
+source_if_possible ~/zsh-completions/zsh-completions.zsh
 
 source ~/dotfiles/aliases.zsh
 
