@@ -91,7 +91,8 @@ values."
                                       gruvbox-theme
                                       ripgrep
                                       flx
-                                      direnv)
+                                      direnv
+                                      doom-themes)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -164,14 +165,16 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(jbeans
-                         adwaita
+                         doom-one
+                         doom-vibrant
                          spacemacs-dark
+                         adwaita
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Consolas"
+   dotspacemacs-default-font '("Input Mono Narrow"
                                :size 20
                                :weight normal
                                :width normal
@@ -351,7 +354,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
    powerline-default-separator 'nil
    backup-directory-alist '(("." . "~/.emacs.d/.backups"))
    backup-by-copying t
-   shell-file-name "/bin/sh"
+   shell-file-name "/usr/local/bin/fish"
 
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
@@ -397,6 +400,8 @@ you should place your code here."
   (setq geiser-chicken-compile-geiser-p nil)
   (setq geiser-active-implementations '(chicken))
   (setq geiser-chicken-binary "chicken-csi")
+
+  (set-background-color "black")
 
   ;; ;; Show 80-column marker
   ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
