@@ -6,7 +6,6 @@ SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_b:bundle
 SETUVAR _fish_abbr_be:bundle\x20exec
 SETUVAR _fish_abbr_bim:vim
-SETUVAR _fish_abbr_cat:bat\x20\x2d\x2dtheme\x201337\x20\x2dp
 SETUVAR _fish_abbr_csi:chicken\x2dcsi
 SETUVAR _fish_abbr_d:cd\x20\x7e/dotfiles
 SETUVAR _fish_abbr_dc:docker\x2dcompose

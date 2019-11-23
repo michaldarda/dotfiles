@@ -173,8 +173,8 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Input Mono Narrow"
-                               :size 20
+   dotspacemacs-default-font '("Fira Code"
+                               :size 26
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -353,7 +353,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
    powerline-default-separator 'nil
    backup-directory-alist '(("." . "~/.emacs.d/.backups"))
    backup-by-copying t
-   shell-file-name "/usr/local/bin/fish"
+   ; shell-file-name "/usr/local/bin/fish"
 
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
