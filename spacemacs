@@ -30,7 +30,7 @@ values."
    dotspacemacs-configuration-layer-path '("~/dotfiles/spacemacs-layers")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(erlang
      (typescript
       :variables
       typescript-fmt-tool 'prettier
@@ -399,6 +399,9 @@ you should place your code here."
   (setq geiser-chicken-compile-geiser-p nil)
   (setq geiser-active-implementations '(chicken))
   (setq geiser-chicken-binary "chicken-csi")
+
+  (global-set-key (kbd "<M-s-left>") 'evil-prev-buffer)
+  (global-set-key (kbd "<M-s-right>") 'evil-next-buffer)
 
   ;; (set-background-color "black")
 
