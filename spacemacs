@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(erlang
+     shell-scripts
      (typescript
       :variables
       typescript-fmt-tool 'prettier
@@ -392,7 +393,7 @@ you should place your code here."
 
   (global-hl-line-mode -1)
 
-  (menu-bar-mode 1)
+  ;; (menu-bar-mode 1)
 
   (load "~/dotfiles/emacs/abbrevs.el")
 
