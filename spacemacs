@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '("~/dotfiles/spacemacs-layers")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(erlang
+   '(react
+     erlang
      shell-scripts
      (typescript
       :variables
