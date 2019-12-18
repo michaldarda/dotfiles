@@ -1,0 +1,26 @@
+{
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Material Theme Ocean High Contrast",
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.fontWeight": "100",
+    "terminal.integrated.fontFamily": "Input Mono Narrow, Menlo, Monaco, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 15,
+    "[elixir]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.wordBasedSuggestions": false,
+        "editor.formatOnType": true,
+        "editor.acceptSuggestionOnEnter": "off",
+        "editor.trimAutoWhitespace": false,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "editor.defaultFormatter": "JakeBecker.elixir-ls",
+        "editor.formatOnSave": true
+    },
+    "elixirLS.suggestSpecs": false,
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "editor.rulers": [80, 100]
+}
