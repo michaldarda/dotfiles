@@ -1,5 +1,5 @@
-status --is-interactive; and source (jump shell fish | psub)
-direnv hook fish | source
+# status --is-interactive; and source (jump shell fish | psub)
+# direnv hook fish | source
 
 if test -e ~/.work.fish
     . ~/.work.fish
