@@ -1,5 +1,10 @@
-# status --is-interactive; and source (jump shell fish | psub)
-# direnv hook fish | source
+if type -q jump
+   status --is-interactive; and source (jump shell fish | psub)
+end
+
+if type -q direnv
+  direnv hook fish | source
+end
 
 if test -e ~/.work.fish
     . ~/.work.fish
@@ -102,4 +107,7 @@ function fco -d "Fuzzy-find and checkout a branch"
 end
 
 set -Ux EDITOR vim
-# source ~/.asdf/asdf.fish
+
+if test -d ~/.asdf
+  source ~/.asdf/asdf.fish
+end
