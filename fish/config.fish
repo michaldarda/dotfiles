@@ -102,4 +102,4 @@ function fco -d "Fuzzy-find and checkout a branch"
 end
 
 set -Ux EDITOR vim
-source ~/.asdf/asdf.fish
+# source ~/.asdf/asdf.fish
