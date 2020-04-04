@@ -99,3 +99,6 @@ function fco -d "Fuzzy-find and checkout a branch"
 end
 
 set -Ux EDITOR vim
+
+function fish_right_prompt -d "Write out the right prompt"
+end
