@@ -7,7 +7,11 @@ if type -q direnv
 end
 
 if test -e ~/.work.fish
-    . ~/.work.fish
+  . ~/.work.fish
+end
+
+if type -q jump
+  starship init fish | source
 end
 
 # git
