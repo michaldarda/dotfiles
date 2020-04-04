@@ -10,18 +10,6 @@ if test -e ~/.work.fish
     . ~/.work.fish
 end
 
-function fish_prompt --description 'Write out the prompt'
-    if not set -q __git_cb
-      set __git_cb ":"(set_color -o cyan)(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
-    end
-
-    if not set -q __prompt_pwd
-      set __prompt_pwd (set_color -o yellow)(prompt_pwd)(set_color normal)
-    end
-
-    printf '%s%s $ ' $__prompt_pwd $__git_cb
-end
-
 # git
 function gl
   git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit
