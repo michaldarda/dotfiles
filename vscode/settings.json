@@ -1,10 +1,10 @@
 {
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 3,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "GitHub Plus",
-    "editor.fontFamily": "Consolas, Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.colorTheme": "One Dark Pro",
+    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     "editor.fontWeight": "100",
     "terminal.integrated.fontFamily": "Consolas, Input Mono Narrow, Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 16,
@@ -56,9 +56,10 @@
     "vim.statusBarColors.easymotioninputmode": "#007ACC",
     "vim.statusBarColors.surroundinputmode": "#007ACC",
     "workbench.colorCustomizations": {
-        "statusBar.background": "#B48EAD",
-        "statusBar.noFolderBackground": "#B48EAD",
-        "statusBar.debuggingBackground": "#B48EAD"
+        "statusBar.background": "#8FBCBB",
+        "statusBar.noFolderBackground": "#8FBCBB",
+        "statusBar.debuggingBackground": "#8FBCBB",
+        "statusBar.foreground": "#434C5E"
     },
     "editor.wordWrap": "on",
 }
