@@ -62,7 +62,7 @@ abbr grbi30 "git rebase -i HEAD~30"
 abbr grbi40 "git rebase -i HEAD~40"
 abbr gpb "git checkout --"
 abbr gpr "git pull --rebase --stat"
-abbr grc "git rebase --continue"
+# abbr grc "git rebase --continue"
 abbr gra "git rebase --abort"
 abbr gma "git merge --abort"
 
@@ -93,6 +93,7 @@ abbr dctop 'docker-compose top'
 abbr dcl 'docker-compose logs -f'
 abbr csi 'chicken-csi'
 alias cat 'bat --theme 1337 -p'
+alias curl 'curlie'
 
 function fco -d "Fuzzy-find and checkout a branch"
     git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
@@ -102,3 +103,5 @@ set -Ux EDITOR vim
 
 function fish_right_prompt -d "Write out the right prompt"
 end
+
+set -x ERL_AFLAGS "-kernel shell_history enabled"

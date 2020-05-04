@@ -82,9 +82,12 @@ values."
      scheme
      lsp
      dap
-     (elixir :variables elixir-ls-path "~/elixir-ls/release")
+     (elixir :variables elixir-backend 'lsp)
+     clojure
+     parinfer
+     helpful
      ;; chicken
-   )
+     )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -176,7 +179,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 18
+                               :size 24
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -404,6 +407,19 @@ you should place your code here."
 
   (global-set-key (kbd "<M-s-left>") 'evil-prev-buffer)
   (global-set-key (kbd "<M-s-right>") 'evil-next-buffer)
+
+  ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+
+  (global-prettify-symbols-mode 0)
+  (setq prettify-symbols-unprettify-at-point t)
+  (setq clojure--prettify-symbols-alist '())
+
+  (advice-add 'risky-local-variable-p :override #'ignore)
+
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (setq clojure--prettify-symbols-alist '())
+              (push '("<=" . ?≤) prettify-symbols-alist)))
 
   ;; (set-background-color "black")
 

@@ -75,3 +75,5 @@ cdp() {
 eval "$(jump shell zsh)"
 eval "$(direnv hook zsh)"
 # eval "$(rbenv init -)"
+
+source /home/michal/.config/broot/launcher/bash/br

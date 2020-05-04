@@ -50,7 +50,6 @@ SETUVAR _fish_abbr_grbi3:git\x20rebase\x20\x2di\x20HEAD\x7e3
 SETUVAR _fish_abbr_grbi30:git\x20rebase\x20\x2di\x20HEAD\x7e30
 SETUVAR _fish_abbr_grbi4:git\x20rebase\x20\x2di\x20HEAD\x7e4
 SETUVAR _fish_abbr_grbi40:git\x20rebase\x20\x2di\x20HEAD\x7e40
-SETUVAR _fish_abbr_grc:git\x20rebase\x20\x2d\x2dcontinue
 SETUVAR _fish_abbr_grh:git\x20reset\x20\x2d\x2dhard
 SETUVAR _fish_abbr_grpo:git\x20remote\x20prune\x20origin
 SETUVAR _fish_abbr_grs:git\x20reset\x20\x2d\x2dsoft
