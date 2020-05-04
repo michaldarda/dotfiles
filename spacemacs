@@ -30,25 +30,29 @@ values."
    dotspacemacs-configuration-layer-path '("~/dotfiles/spacemacs-layers")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(react
-     erlang
-     shell-scripts
-     (typescript
-      :variables
-      typescript-fmt-tool 'prettier
-      typescript-fmt-on-save t)
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
+   '(better-defaults
      (ivy :variables
           ivy-enable-advanced-buffer-information t
           ivy-height 10
           ivy-re-builders-plist '((t . spacemacs/ivy--regex-plus)))
      auto-completion
-     better-defaults
+     version-control
+     evil-commentary
+     evil-snipe
+     vinegar
+     helpful
      emacs-lisp
+     erlang
+     (elixir :variables elixir-backend 'alchemist)
+     clojure
+     ruby
+     ruby-on-rails
+     react
+     shell-scripts
+     (typescript
+      :variables
+      typescript-fmt-tool 'prettier
+      typescript-fmt-on-save t)
      markdown
      org
      vimscript
@@ -56,8 +60,6 @@ values."
      sql
      yaml
      html
-     ruby
-     ruby-on-rails
      (javascript :variables
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t)
@@ -65,10 +67,6 @@ values."
             shell-default-height 30
             shell-default-position 'bottom)
      ;; syntax-checking
-     version-control
-     evil-commentary
-     evil-snipe
-     vinegar
      git
      racket
      python
@@ -82,11 +80,6 @@ values."
      scheme
      lsp
      dap
-     (elixir :variables elixir-backend 'lsp)
-     (elixir :variables elixir-backend 'alchemist)
-     clojure
-     parinfer
-     helpful
      ;; chicken
      )
    ;; List of additional packages that will be installed without being
@@ -102,7 +95,7 @@ values."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(spaceline)
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -344,7 +337,9 @@ values."
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'trailing
 
-   dotspacemacs-mode-line-theme 'spacemacs
+   dotspacemacs-mode-line-theme 'doom
+
+   dotspacemacs-frame-title-format "emacs %f"
    ))
 
 
@@ -393,6 +388,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (setq frame-title-format '("emacs %f"))
+
   (require 'editorconfig)
   (editorconfig-mode 1)
 
@@ -414,7 +411,8 @@ you should place your code here."
   (global-set-key (kbd "<M-s-left>") 'evil-prev-buffer)
   (global-set-key (kbd "<M-s-right>") 'evil-next-buffer)
 
-  ;; (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-racket-mode)
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
 
   (global-prettify-symbols-mode 0)
   (setq prettify-symbols-unprettify-at-point t)
@@ -459,12 +457,4 @@ you should place your code here."
           (append my-fira-code-ligatures prettify-symbols-alist))
     (prettify-symbols-mode))
 
-  ;; (my-set-fira-code-ligatures)
-  (add-hook'elixir-mode-hook 'my-set-fira-code-ligatures)
-
-  ;; (set-background-color "black")
-
-  ;; ;; Show 80-column marker
-  ;; (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  ;; (global-fci-mode 1)
-  )
+  (add-hook 'prog-mode-hook 'my-set-fira-code-ligatures))
