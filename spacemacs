@@ -173,12 +173,12 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 24
+                               :size 18
                                :weight semi-bold
                                :width normal
                                :powerline-scale 1.1
                                "Fira Code Symbol",
-                               :size 24
+                               :size 18
                                :weight semi-bold
                                :width normal
                                :powerline-scale 1.1)
@@ -340,8 +340,7 @@ values."
    dotspacemacs-mode-line-theme 'doom
 
    dotspacemacs-frame-title-format "emacs %f"
-   ))
-
+   doom-modeline-env-elixir-executable "~/.asdf/shims/elixir"))
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
@@ -376,9 +375,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    evil-want-abbrev-expand-on-insert-exit nil
 
-   fci-rule-column 100
-
-   ))
+   fci-rule-column 100))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -420,44 +417,48 @@ you should place your code here."
 
   (advice-add 'risky-local-variable-p :override #'ignore)
 
-  (defun my-correct-symbol-bounds (pretty-alist)
-    "Prepend a TAB character to each symbol in this alist,
+  (if (eq system-type 'darwin)
+      (mac-auto-operator-composition-mode))
+
+  (when (eq system-type 'linux)
+    (defun my-correct-symbol-bounds (pretty-alist)
+      "Prepend a TAB character to each symbol in this alist,
     this way compose-region called by prettify-symbols-mode
     will use the correct width of the symbols
     instead of the width measured by char-width."
-    (mapcar (lambda (el)
-              (setcdr el (string ?\t (cdr el)))
-              el)
-            pretty-alist))
+      (mapcar (lambda (el)
+                (setcdr el (string ?\t (cdr el)))
+                el)
+              pretty-alist))
 
-  (defun my-ligature-list (ligatures codepoint-start)
-    "Create an alist of strings to replace with codepoints starting from codepoint-start."
-    (let ((codepoints (-iterate '1+ codepoint-start (length ligatures))))
-      (-zip-pair ligatures codepoints)))
+    (defun my-ligature-list (ligatures codepoint-start)
+      "Create an alist of strings to replace with codepoints starting from codepoint-start."
+      (let ((codepoints (-iterate '1+ codepoint-start (length ligatures))))
+        (-zip-pair ligatures codepoints)))
 
-  (setq my-fira-code-ligatures
-        (let* ((ligs '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
-                       "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
-                       "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
-                       "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
-                       ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
-                       "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
-                       "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
-                       "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
-                       ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
-                       "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
-                       "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
-                       "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
-                       "x" ":" "+" "+" "*")))
-          (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
+    (setq my-fira-code-ligatures
+          (let* ((ligs '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+                         "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+                         "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+                         "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+                         ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+                         "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+                         "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+                         "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+                         ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+                         "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+                         "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+                         "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+                         "x" ":" "+" "+" "*")))
+            (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
 
-  (defun my-set-fira-code-ligatures ()
-    "Add hasklig ligatures for use with prettify-symbols-mode."
-    (setq prettify-symbols-alist
-          (append my-fira-code-ligatures prettify-symbols-alist))
-    (prettify-symbols-mode))
+    (defun my-set-fira-code-ligatures ()
+      "Add hasklig ligatures for use with prettify-symbols-mode."
+      (setq prettify-symbols-alist
+            (append my-fira-code-ligatures prettify-symbols-alist))
+      (prettify-symbols-mode))
 
-  (add-hook 'prog-mode-hook 'my-set-fira-code-ligatures)
+    (add-hook 'prog-mode-hook 'my-set-fira-code-ligatures))
 
   (defun artist-mode-toggle-emacs-state ()
     (if artist-mode
@@ -465,4 +466,11 @@ you should place your code here."
       (evil-exit-emacs-state)))
 
   (unless (eq dotspacemacs-editing-style 'emacs)
-    (add-hook 'artist-mode-hook #'artist-mode-toggle-emacs-state)))
+    (add-hook 'artist-mode-hook #'artist-mode-toggle-emacs-state))
+
+  (setq alchemist-mix-command "~/.asdf/shims/mix")
+  (setq alchemist-mix-env "dev")
+  (setq alchemist-iex-program-name "~/.asdf/shims/iex")
+  (setq alchemist-execute-command "~/.asdf/shims/elixir")
+  (setq alchemist-compile-command "~/.asdf/shims/elixirc")
+  (setq flycheck-elixir-credo-executable "~/.asdf/shims/mix"))
