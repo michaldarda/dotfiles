@@ -172,14 +172,14 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code"
-                               :size 18
-                               :weight semi-bold
+   dotspacemacs-default-font '("Liga Consolas"
+                               :size 24
+                               :weight normal
                                :width normal
                                :powerline-scale 1.1
                                "Fira Code Symbol",
-                               :size 18
-                               :weight semi-bold
+                               :size 24
+                               :weight normal
                                :width normal
                                :powerline-scale 1.1)
    ;; The leader key
@@ -387,6 +387,8 @@ you should place your code here."
 
   (setq frame-title-format '("emacs %f"))
 
+  (setq all-the-icons-color-icons nil)
+
   (require 'editorconfig)
   (editorconfig-mode 1)
 
@@ -420,7 +422,7 @@ you should place your code here."
   (if (eq system-type 'darwin)
       (mac-auto-operator-composition-mode))
 
-  (when (eq system-type 'linux)
+  (when (eq system-type 'gnu/linux)
     (defun my-correct-symbol-bounds (pretty-alist)
       "Prepend a TAB character to each symbol in this alist,
     this way compose-region called by prettify-symbols-mode
@@ -458,7 +460,8 @@ you should place your code here."
             (append my-fira-code-ligatures prettify-symbols-alist))
       (prettify-symbols-mode))
 
-    (add-hook 'prog-mode-hook 'my-set-fira-code-ligatures))
+    ;; (add-hook 'prog-mode-hook 'my-set-fira-code-ligatures)
+    )
 
   (defun artist-mode-toggle-emacs-state ()
     (if artist-mode
