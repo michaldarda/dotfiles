@@ -30,7 +30,8 @@ values."
    dotspacemacs-configuration-layer-path '("~/dotfiles/spacemacs-layers")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(better-defaults
+   '(go
+     better-defaults
      (ivy :variables
           ivy-enable-advanced-buffer-information t
           ivy-height 10
@@ -172,13 +173,13 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Liga Consolas"
-                               :size 24
+   dotspacemacs-default-font '("Fira Code"
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1
                                "Fira Code Symbol",
-                               :size 24
+                               :size 18
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)

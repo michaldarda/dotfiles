@@ -1,31 +1,44 @@
 {
-    "window.zoomLevel": 3,
+    "workbench.activityBar.visible": false,
+    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
-    "workbench.colorTheme": "One Dark Pro",
-    "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.fontWeight": "100",
-    "terminal.integrated.fontFamily": "Consolas, Input Mono Narrow, Menlo, Monaco, 'Courier New', monospace",
-    "terminal.integrated.fontSize": 16,
+    "window.menuBarVisibility": "toggle",
+    "editor.lineNumbers": "off",
+    "editor.fontFamily": "'Consolas'",
+    "editor.tabSize": 2,
+    "editor.wordWrapColumn": 100,
+    "editor.fontSize": 16,
     "[elixir]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.wordBasedSuggestions": false,
-        "editor.formatOnType": true,
-        "editor.acceptSuggestionOnEnter": "off",
-        "editor.trimAutoWhitespace": false,
-        "files.trimTrailingWhitespace": true,
-        "files.insertFinalNewline": true,
-        "editor.defaultFormatter": "elixir-lsp.elixir-ls",
         "editor.formatOnSave": true
     },
-    "elixirLS.suggestSpecs": false,
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "editor.rulers": [80, 100],
-    "editor.trimAutoWhitespace": true,
+    "editor.fontLigatures": true,
+    "breadcrumbs.enabled": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    },
+    "terminal.integrated.fontFamily": "'Consolas', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integreted.fontLigatures": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "<C-b>": false
+    },
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["j", "k"],
+            "after": ["<esc>"]
+        },
         {
             "before": [
                 ";",
@@ -43,23 +56,8 @@
             ]
         }
     ],
-    "vim.statusBarColorControl": true,
-    "vim.statusBarColors.normal": ["#8FBCBB", "#434C5E"],
-    "vim.statusBarColors.insert": "#BF616A",
-    "vim.statusBarColors.visual": "#B48EAD",
-    "vim.statusBarColors.visualline": "#B48EAD",
-    "vim.statusBarColors.visualblock": "#A3BE8C",
-    "vim.statusBarColors.replace": "#D08770",
-    "vim.statusBarColors.commandlineinprogress": "#007ACC",
-    "vim.statusBarColors.searchinprogressmode": "#007ACC",
-    "vim.statusBarColors.easymotionmode": "#007ACC",
-    "vim.statusBarColors.easymotioninputmode": "#007ACC",
-    "vim.statusBarColors.surroundinputmode": "#007ACC",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#8FBCBB",
-        "statusBar.noFolderBackground": "#8FBCBB",
-        "statusBar.debuggingBackground": "#8FBCBB",
-        "statusBar.foreground": "#434C5E"
-    },
-    "editor.wordWrap": "on",
+    "sync.gist": "76d03ff9852d4f6e7e01df2c6140f8bc",
+    "FSharp.useSdkScripts": true,
+    "workbench.colorTheme": "Atomize",
+    "calva.paredit.defaultKeyMap": "none"
 }
