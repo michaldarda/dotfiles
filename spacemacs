@@ -163,9 +163,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-one
+   dotspacemacs-themes '(jbeans
+                         doom-one
                          doom-vibrant
-                         jbeans
                          spacemacs-dark
                          spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
@@ -375,7 +375,9 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    evil-want-abbrev-expand-on-insert-exit nil
 
-   fci-rule-column 100))
+   fci-rule-column 100)
+
+  (menu-bar-mode 1))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -398,8 +400,6 @@ you should place your code here."
   (direnv-mode)
 
   (global-hl-line-mode -1)
-
-  ;; (menu-bar-mode 1)
 
   (load "~/dotfiles/emacs/abbrevs.el")
 

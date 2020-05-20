@@ -18,3 +18,4 @@ disabled = true
 
 [git_branch]
 style = "yellow"
+symbol = ""
