@@ -1,5 +1,0 @@
-rofi.font: Cantarell 16
-rofi.matching: fuzzy
-rofi.case-sensitive: false
-rofi.case-sensitivity: false
-rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
