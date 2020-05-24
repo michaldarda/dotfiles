@@ -164,25 +164,21 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(jbeans
-                         doom-one
-                         doom-vibrant
-                         spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(doom-one-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Fira Code"
-                               :size 18
+   dotspacemacs-default-font '("Liga Consolas"
+                               ;; :size 18
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1
+                               :powerline-scale 1.0
                                "Fira Code Symbol",
-                               :size 18
+                               ;; :size 18
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.0)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
