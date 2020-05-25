@@ -12,6 +12,7 @@ end
 
 if test -e ~/.asdf/asdf.fish
   . ~/.asdf/asdf.fish
+  . ~/.asdf/completions/asdf.fish
 end
 
 if type -q jump
