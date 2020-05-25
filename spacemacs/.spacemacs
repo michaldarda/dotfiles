@@ -398,7 +398,7 @@ you should place your code here."
 
   (global-hl-line-mode -1)
 
-  (load "~/dotfiles/emacs/abbrevs.el")
+  (load "~/.emacs.d/abbrevs.el")
 
   (setq geiser-chicken-compile-geiser-p nil)
   (setq geiser-active-implementations '(chicken))
