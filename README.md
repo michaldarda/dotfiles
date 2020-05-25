@@ -1,20 +1,9 @@
 # dotfiles
 
-### Requirements
+Dotfiles managed by GNU Stow.
 
-    sudo apt-get install vim zsh tmux ctags indent
+Install GNU Stow
 
-    gem install pry ctags
-
-    gem ctags
-
-### Installation
-
-Execute
-
-    $ ./bootstrap
-
-### Vim
-
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-    Run :BundleInstall in vim.
+```sh
+sudo pacman -S stow
+```
