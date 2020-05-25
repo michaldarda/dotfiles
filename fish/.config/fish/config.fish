@@ -10,6 +10,10 @@ if test -e ~/.work.fish
   . ~/.work.fish
 end
 
+if test -e ~/.asdf/asdf.fish
+  . ~/.asdf/asdf.fish
+end
+
 if type -q jump
   starship init fish | source
 end
