@@ -1,9 +1,11 @@
 #!/usr/bin/bash
 
-stow spacemacs
-stow emacs
 stow fish
 stow starship
+stow vim
+stow neovim
+stow spacemacs
+stow emacs
 stow tmux
 stow tig
 stow git
