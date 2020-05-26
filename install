@@ -12,4 +12,7 @@ stow kitty
 if [ "$(uname)" == "Darwin" ]; then
   stow vscode@macOS
 fi
+if [ "$(uname)" == "Linux" ]; then
+  stow vscode@linux
+fi
 stow git
