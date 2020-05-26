@@ -1,5 +1,2 @@
 .DS_Store
-.projections.json
-.vimrc
-vim/secret.vim
-zsh-syntax-highlighting
+fish/.config/fish/functions/fzf_key_bindings.fish
