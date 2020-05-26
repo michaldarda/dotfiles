@@ -1,0 +1,6 @@
+// Empty
+
+[{
+  "key": "shift+cmd+f",
+  "command": "search.action.openNewEditor",
+}]
