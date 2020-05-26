@@ -8,5 +8,8 @@ stow spacemacs
 stow emacs
 stow tmux
 stow tig
-stow git
 stow kitty
+if [ "$(uname)" == "Darwin" ]; then
+  stow vscode@macOS
+fi
+stow git
