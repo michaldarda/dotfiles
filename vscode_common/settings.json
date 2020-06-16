@@ -4,10 +4,10 @@
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
     "editor.lineNumbers": "off",
-    "editor.fontFamily": "'Consolas'",
+    "editor.fontFamily": "Consolas",
     "editor.tabSize": 2,
     "editor.wordWrapColumn": 100,
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
     "[elixir]": {
         "editor.formatOnSave": true
     },
@@ -23,9 +23,8 @@
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true
     },
-    "terminal.integrated.fontFamily": "'Consolas', 'monospace', monospace, 'Droid Sans Fallback'",
-    "terminal.integrated.fontSize": 16,
-    "terminal.integreted.fontLigatures": true,
+    "terminal.integrated.fontFamily": "'Consolas'",
+    "terminal.integrated.fontSize": 14,
     "workbench.iconTheme": "material-icon-theme",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -58,6 +57,6 @@
     ],
     "sync.gist": "76d03ff9852d4f6e7e01df2c6140f8bc",
     "FSharp.useSdkScripts": true,
-    "workbench.colorTheme": "Atom One Light",
+    "workbench.colorTheme": "GitHub Light",
     "calva.paredit.defaultKeyMap": "none"
 }

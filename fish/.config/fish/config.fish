@@ -97,7 +97,7 @@ abbr dcps 'docker-compose ps'
 abbr dctop 'docker-compose top'
 abbr dcl 'docker-compose logs -f'
 abbr csi 'chicken-csi'
-alias cat 'bat --theme 1337 -p'
+alias cat 'bat --theme OneHalfLight -p'
 alias curl 'curlie'
 
 function fco -d "Fuzzy-find and checkout a branch"
