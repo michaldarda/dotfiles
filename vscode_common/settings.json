@@ -4,7 +4,7 @@
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
     "editor.lineNumbers": "off",
-    "editor.fontFamily": "Consolas",
+    "editor.fontFamily": "Fira Code",
     "editor.tabSize": 2,
     "editor.wordWrapColumn": 100,
     "editor.fontSize": 14,
