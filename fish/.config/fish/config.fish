@@ -93,7 +93,6 @@ abbr dcps 'docker-compose ps'
 abbr dctop 'docker-compose top'
 abbr dcl 'docker-compose logs -f'
 abbr csi 'chicken-csi'
-alias cat 'bat --theme OneHalfLight -p'
 
 function fco -d "Fuzzy-find and checkout a branch"
   git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
@@ -107,6 +106,7 @@ function fish_right_prompt -d "Write out the right prompt"
 end
 
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+
 if status --is-interactive
   eval (/opt/homebrew/bin/brew shellenv)
 end
@@ -115,5 +115,3 @@ source /opt/homebrew/opt/asdf/libexec/asdf.fish
 if type -q jump
    status --is-interactive; and source (jump shell fish | psub)
 end
-
-set PATH $HOME/.cargo/bin $PATH
