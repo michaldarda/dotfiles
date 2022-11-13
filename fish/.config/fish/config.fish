@@ -1,7 +1,3 @@
-if type -q jump
-   status --is-interactive; and source (jump shell fish | psub)
-end
-
 if type -q direnv
   direnv hook fish | source
 end
@@ -15,7 +11,7 @@ if test -e ~/.asdf/asdf.fish
   . ~/.asdf/completions/asdf.fish
 end
 
-if type -q jump
+if type -q starship
   starship init fish | source
 end
 
@@ -98,15 +94,26 @@ abbr dctop 'docker-compose top'
 abbr dcl 'docker-compose logs -f'
 abbr csi 'chicken-csi'
 alias cat 'bat --theme OneHalfLight -p'
-alias curl 'curlie'
 
 function fco -d "Fuzzy-find and checkout a branch"
-    git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
+  git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
 end
 
-set -Ux EDITOR vim
+set -Ux EDITOR code
+
+set -Ux PROJECTS_HOME $HOME/devel
 
 function fish_right_prompt -d "Write out the right prompt"
 end
 
 set -x ERL_AFLAGS "-kernel shell_history enabled"
+if status --is-interactive
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+if type -q jump
+   status --is-interactive; and source (jump shell fish | psub)
+end
+
+set PATH $HOME/.cargo/bin $PATH

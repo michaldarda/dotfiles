@@ -1,10 +1,7 @@
 {
-    "workbench.activityBar.visible": false,
-    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
     "window.menuBarVisibility": "toggle",
-    "editor.lineNumbers": "off",
-    "editor.fontFamily": "Fira Code",
+    "editor.lineNumbers": "on",
     "editor.tabSize": 2,
     "editor.wordWrapColumn": 100,
     "editor.fontSize": 14,
@@ -12,20 +9,19 @@
         "editor.formatOnSave": true
     },
     "editor.fontLigatures": true,
-    "breadcrumbs.enabled": true,
     "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true,
-        "editor.formatOnPaste": true
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        // "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // "editor.formatOnSave": true,
+        // "editor.formatOnPaste": true
     },
     "[javascriptreact]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true
     },
-    "terminal.integrated.fontFamily": "'Consolas'",
+    "terminal.integrated.fontFamily": "'Fira Code'",
     "terminal.integrated.fontSize": 14,
-    "workbench.iconTheme": "material-icon-theme",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -57,6 +53,73 @@
     ],
     "sync.gist": "76d03ff9852d4f6e7e01df2c6140f8bc",
     "FSharp.useSdkScripts": true,
-    "workbench.colorTheme": "GitHub Light",
-    "calva.paredit.defaultKeyMap": "none"
+    "calva.paredit.defaultKeyMap": "none",
+    "terminal.integrated.shell.osx": "/opt/homebrew/bin/fish",
+    "tws.trimOnSave": true,
+    "ruby.rubocop.onSave": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.showTabs": false,
+    "gitProjectManager.baseProjectsFolders": [
+        "/Users/Michal.Darda/devel"
+    ],
+    "files.insertFinalNewline": true,
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+    "window.autoDetectColorScheme": true,
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.editor.showIcons": false,
+    "vscode_custom_css.policy": true,
+    "editor.scrollBeyondLastLine": false,
+    "notebook.breadcrumbs.showCodeCells": false,
+     // macOS Modern Tweaks
+    "editor.fontWeight": "normal",
+
+    // Disable Tab File Icons
+    // Disable Red Sidebar Errors
+    "problems.decorations.enabled": false,
+    "mcfs.notifications": {
+        "hasOpenedConnectionManager": false,
+        "hasConnectedToMC": false,
+        "dontShowConnectionManagerAlert": false,
+        "hasShownChangelog": true
+    },
+    "explorer.confirmDelete": false,
+    "customizeUI.stylesheet": {
+        ".actions-container[aria-label='Editor actions'] .action-item .action-label:not([title='More Actions...'])": "display: none !important;"
+    },
+    "window.openFoldersInNewWindow": "off",
+    "editor.inlineSuggest.enabled": true,
+    "terminal.integrated.defaultLocation": "editor",
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 1,
+    "workbench.colorTheme": "Default Light+",
+    "workbench.activityBar.visible": false,
+    "workbench.tips.enabled": false,
+    "breadcrumbs.enabled": false,
+    "breadcrumbs.icons": false,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.symbolPath": "off",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.preferredDarkColorTheme": "One Dark Pro",
+    "editor.fontFamily": "Consolas ligaturized v3",
+    "workbench.iconTheme": "vscode-icons",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "workbench.layoutControl.enabled": false,
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": true,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": true,
+    "zenMode.restore": false,
+    "zenMode.hideActivityBar": true,
+    "vscode_custom_css.imports": [
+        "file:///Users/michal.darda/dotfiles/vscode.css"
+    ],
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+    },
+    "window.zoomLevel": 1
 }

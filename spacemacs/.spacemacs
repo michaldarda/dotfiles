@@ -67,7 +67,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; syntax-checking
+     syntax-checking
      git
      racket
      python
@@ -92,7 +92,8 @@ values."
                                       ripgrep
                                       flx
                                       direnv
-                                      doom-themes)
+                                      doom-themes
+                                      night-owl-theme)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -164,13 +165,13 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-one-light)
+   dotspacemacs-themes '(night-owl)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               ;; :size 18
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.0
@@ -374,7 +375,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
    fci-rule-column 100)
 
-  (menu-bar-mode -1))
+  (menu-bar-mode 1))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -416,8 +417,10 @@ you should place your code here."
 
   (advice-add 'risky-local-variable-p :override #'ignore)
 
-  (if (eq system-type 'darwin)
-      (mac-auto-operator-composition-mode))
+  ;; (if (eq system-type 'darwin)
+  ;;     (mac-auto-operator-composition-mode))
+
+  (set-background-color "#000000")
 
   (when (eq system-type 'gnu/linux)
     (defun my-correct-symbol-bounds (pretty-alist)

@@ -1,6 +1,9 @@
 // Empty
 
-[{
-  "key": "shift+cmd+f",
-  "command": "search.action.openNewEditor",
-}]
+[
+  { "key": "ctrl+k", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"}
+//   {
+//   "key": "shift+cmd+f",
+//   "command": "search.action.openNewEditor",
+// }
+]

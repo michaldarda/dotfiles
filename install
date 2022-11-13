@@ -15,4 +15,4 @@ fi
 if [ "$(uname)" == "Linux" ]; then
   stow vscode@linux
 fi
-stow git
+#stow git
