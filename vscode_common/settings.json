@@ -6,7 +6,7 @@
     "editor.lineNumbers": "on",
     "editor.tabSize": 2,
     "editor.wordWrapColumn": 100,
-    "editor.fontSize": 16,
+    "editor.fontSize": 13,
     "[elixir]": {
         "editor.formatOnSave": true
     },
@@ -123,5 +123,5 @@
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
     },
-    "window.zoomLevel": 1
+    "window.zoomLevel": 3
 }
