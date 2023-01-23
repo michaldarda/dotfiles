@@ -107,12 +107,12 @@ end
 
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 
-if brew
+if type -q brew
 	if status --is-interactive
 	  eval (/opt/homebrew/bin/brew shellenv)
 	end
+  source /opt/homebrew/opt/asdf/libexec/asdf.fish
 end
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
 if type -q jump
    status --is-interactive; and source (jump shell fish | psub)
