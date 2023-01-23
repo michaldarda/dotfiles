@@ -95,7 +95,7 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.value": 1,
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "GitHub Dark Default",
     "workbench.activityBar.visible": false,
     "workbench.tips.enabled": false,
     "breadcrumbs.enabled": false,

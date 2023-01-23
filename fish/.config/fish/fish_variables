@@ -10,7 +10,7 @@ SETUVAR --export PROJECTS_HOME:/Users/michal\x2edarda/devel
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3400
+SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_b:bundle
 SETUVAR _fish_abbr_be:bundle\x20exec
 SETUVAR _fish_abbr_bim:vim
@@ -102,4 +102,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR --export fish_user_paths:/Users/Michal\x2eDarda/\x2erbenv/bin\x20/usr/local/opt/fzf/bin\x20/Users/Michal\x2eDarda/\x2erbenv/shims\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x1e/Users/Michal\x2eDarda/dotfiles/bin\x1e/opt/homebrew/opt/fzf/bin
+SETUVAR --export fish_user_paths:/home/michal/\x2elocal/bin\x1e/home/michal/\x2ecargo/bin\x1e/Users/Michal\x2eDarda/\x2erbenv/bin\x20/usr/local/opt/fzf/bin\x20/Users/Michal\x2eDarda/\x2erbenv/shims\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x20/Users/Michal\x2eDarda/dotfiles/bin\x1e/Users/Michal\x2eDarda/dotfiles/bin\x1e/opt/homebrew/opt/fzf/bin
