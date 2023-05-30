@@ -95,7 +95,11 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.value": 1,
+<<<<<<< HEAD
     "workbench.colorTheme": "GitHub Dark Default",
+=======
+    "workbench.colorTheme": "Default Light Modern",
+>>>>>>> b3c9fc4 (Just some stuff)
     "workbench.activityBar.visible": false,
     "workbench.tips.enabled": false,
     "breadcrumbs.enabled": false,
@@ -123,5 +127,10 @@
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
     },
-    "window.zoomLevel": 3
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.includeLanguages": {
+        "html.erb": "html"
+    },
+    "window.zoomLevel": 1,
+    "githubPullRequests.pullBranch": "never"
 }

@@ -117,3 +117,5 @@ end
 if type -q jump
    status --is-interactive; and source (jump shell fish | psub)
 end
+
+fish_add_path /Users/michal.darda/.local/bin/
