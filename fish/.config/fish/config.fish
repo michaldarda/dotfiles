@@ -98,7 +98,7 @@ function fco -d "Fuzzy-find and checkout a branch"
   git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
 end
 
-set -Ux EDITOR code
+set -Ux EDITOR vim
 
 set -Ux PROJECTS_HOME $HOME/devel
 
