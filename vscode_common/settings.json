@@ -95,11 +95,7 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.value": 1,
-<<<<<<< HEAD
-    "workbench.colorTheme": "GitHub Dark Default",
-=======
-    "workbench.colorTheme": "Default Light Modern",
->>>>>>> b3c9fc4 (Just some stuff)
+    "workbench.colorTheme": "One Dark Pro",
     "workbench.activityBar.visible": false,
     "workbench.tips.enabled": false,
     "breadcrumbs.enabled": false,
@@ -132,5 +128,16 @@
         "html.erb": "html"
     },
     "window.zoomLevel": 1,
-    "githubPullRequests.pullBranch": "never"
+    "githubPullRequests.pullBranch": "never",
+  "apc.header": {
+     "height": 0.0000001,
+  },
+    "apc.stylesheet": {
+       ".tabs": {
+         "opacity": 0,
+      }
+},
+"workbench.editor.enablePreview": false,
+"redhat.telemetry.enabled": true,
+
 }
