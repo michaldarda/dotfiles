@@ -104,8 +104,8 @@ if type -q /opt/homebrew/bin/brew
     end
 end
 
-if type -q starship
-    starship init fish | source
+if type -q /opt/homebrew/bin/starship
+    /opt/homebrew/bin/starship init fish | source
 end
 
 if type -q jump
