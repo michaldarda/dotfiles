@@ -1,23 +1,17 @@
 if type -q direnv
-  direnv hook fish | source
+    direnv hook fish | source
 end
 
 if test -e ~/.work.fish
-  . ~/.work.fish
+    . ~/.work.fish
 end
-
-if test -e ~/.asdf/asdf.fish
-  . ~/.asdf/asdf.fish
-  . ~/.asdf/completions/asdf.fish
-end
-
 
 # git
 function gl
-  git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit
+    git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit
 end
 function gpu
-  git push -u origin (git symbolic-ref --short HEAD) || git push
+    git push -u origin (git symbolic-ref --short HEAD) || git push
 end
 
 abbr rl "source ~/.config/fish/config.fish"
@@ -73,26 +67,26 @@ abbr h "cd ~/"
 
 # rails, ruby
 abbr be 'bundle exec'
-abbr b 'bundle'
+abbr b bundle
 abbr my "mysql -u root"
-abbr bim 'vim'
-abbr vi 'vim'
+abbr bim vim
+abbr vi vim
 
 abbr tst "tig status"
 
 abbr ll 'exa -abghHliS --git'
 
-abbr dc 'docker-compose'
+abbr dc docker-compose
 abbr dcr 'docker-compose run'
 abbr dcu 'docker-compose up'
 abbr dce 'docker-compose exec'
 abbr dcps 'docker-compose ps'
 abbr dctop 'docker-compose top'
 abbr dcl 'docker-compose logs -f'
-abbr csi 'chicken-csi'
+abbr csi chicken-csi
 
 function fco -d "Fuzzy-find and checkout a branch"
-  git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
+    git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
 end
 
 set -Ux EDITOR vim
@@ -105,18 +99,17 @@ end
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 
 if type -q /opt/homebrew/bin/brew
-	if status --is-interactive
-	  eval (/opt/homebrew/bin/brew shellenv)
-	end
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+    if status --is-interactive
+        eval (/opt/homebrew/bin/brew shellenv)
+    end
 end
 
 if type -q starship
-  starship init fish | source
+    starship init fish | source
 end
 
 if type -q jump
-   status --is-interactive; and source (jump shell fish | psub)
+    status --is-interactive; and source (jump shell fish | psub)
 end
 
 fish_add_path /Users/michal.darda/.local/bin/
@@ -126,3 +119,5 @@ set -x RUBY_PACKAGE_MANAGER_INSTALL echo
 set -x NODE_PACKAGE_MANAGER_INSTALL echo
 set -x EDITOR nvim
 set -x NODE_PACKAGE_MANAGER_INSTALL echo
+
+zoxide init fish | source
