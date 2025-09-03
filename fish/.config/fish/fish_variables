@@ -1,16 +1,18 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export EDITOR:code
+SETUVAR --export EDITOR:nvim
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
 SETUVAR FZF_LEGACY_KEYBINDINGS:1
 SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
-SETUVAR --export PROJECTS_HOME:/home/michal/devel
+SETUVAR --export PROJECTS_HOME:/Users/michal\x2edarda/devel
+SETUVAR --export SSH_AGENT_PID:41446
+SETUVAR --export SSH_AUTH_SOCK:/var/folders/lr/_yghd9vj0511q0kk_38lmfjw0000gp/T//ssh\x2danZEGoH6QbJD/agent\x2e41445
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3800
 SETUVAR _fish_abbr_b:bundle
 SETUVAR _fish_abbr_be:bundle\x20exec
 SETUVAR _fish_abbr_bim:vim
@@ -74,22 +76,23 @@ SETUVAR _fish_abbr_vi:vim
 SETUVAR _fish_abbr_w:cd\x20\x7e/Code/work
 SETUVAR fish_color_autosuggestion:9C9C9C
 SETUVAR fish_color_cancel:\x2dr
-SETUVAR fish_color_command:F4F4F4
-SETUVAR fish_color_comment:B0B0B0
+SETUVAR fish_color_command:164CC9
+SETUVAR fish_color_comment:007B7B
 SETUVAR fish_color_cwd:green
 SETUVAR fish_color_cwd_root:red
-SETUVAR fish_color_end:969696
-SETUVAR fish_color_error:FFA779
+SETUVAR fish_color_end:02BDBD
+SETUVAR fish_color_error:9177E5
 SETUVAR fish_color_escape:00a6b2
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
 SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_keyword:164CC9
 SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
 SETUVAR fish_color_normal:normal
 SETUVAR fish_color_operator:00a6b2
-SETUVAR fish_color_param:A0A0F0
-SETUVAR fish_color_quote:666A80
-SETUVAR fish_color_redirection:FAFAFA
+SETUVAR fish_color_param:4319CC
+SETUVAR fish_color_quote:4C3499
+SETUVAR fish_color_redirection:248E8E
 SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_status:red

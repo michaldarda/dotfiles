@@ -11,9 +11,6 @@ if test -e ~/.asdf/asdf.fish
   . ~/.asdf/completions/asdf.fish
 end
 
-if type -q starship
-  starship init fish | source
-end
 
 # git
 function gl
@@ -107,11 +104,15 @@ end
 
 set -x ERL_AFLAGS "-kernel shell_history enabled"
 
-if type -q brew
+if type -q /opt/homebrew/bin/brew
 	if status --is-interactive
 	  eval (/opt/homebrew/bin/brew shellenv)
 	end
   source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
+
+if type -q starship
+  starship init fish | source
 end
 
 if type -q jump
@@ -119,3 +120,9 @@ if type -q jump
 end
 
 fish_add_path /Users/michal.darda/.local/bin/
+/opt/homebrew/bin/mise activate fish | source
+
+set -x RUBY_PACKAGE_MANAGER_INSTALL echo
+set -x NODE_PACKAGE_MANAGER_INSTALL echo
+set -x EDITOR nvim
+set -x NODE_PACKAGE_MANAGER_INSTALL echo
