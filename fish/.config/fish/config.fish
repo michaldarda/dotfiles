@@ -121,3 +121,5 @@ set -x EDITOR nvim
 set -x NODE_PACKAGE_MANAGER_INSTALL echo
 
 zoxide init fish | source
+
+source "$HOME/.cargo/env.fish"
