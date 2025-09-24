@@ -1,7 +1,3 @@
-if type -q direnv
-    direnv hook fish | source
-end
-
 if test -e ~/.work.fish
     . ~/.work.fish
 end
@@ -106,10 +102,6 @@ end
 
 if type -q /opt/homebrew/bin/starship
     /opt/homebrew/bin/starship init fish | source
-end
-
-if type -q jump
-    status --is-interactive; and source (jump shell fish | psub)
 end
 
 fish_add_path /Users/michal.darda/.local/bin/
