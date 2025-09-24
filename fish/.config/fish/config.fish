@@ -82,7 +82,11 @@ abbr dcl 'docker-compose logs -f'
 abbr csi chicken-csi
 
 function fco -d "Fuzzy-find and checkout a branch"
-    git branch --all | grep -v HEAD | string trim | sed 's/remotes\/origin\///g' | fzf | read -l result; and git checkout "$result"
+    # Get branches from reflog (recently checked out) and all branches, prioritizing recent ones
+    begin
+        git reflog --pretty=format:'%gs' | grep 'checkout: moving from .* to ' | sed 's/checkout: moving from .* to //' | head -20
+        git branch -a | sed 's/^\* //; s/^  //; s/remotes\/origin\///g' | grep -v '^HEAD'
+    end | awk '!seen[$0]++' | fzf | read --local result; and git checkout "$result"
 end
 
 set -Ux EDITOR vim
